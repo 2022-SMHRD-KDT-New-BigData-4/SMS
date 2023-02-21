@@ -1,6 +1,6 @@
 package com.smhrd.model;
 
-public class MemberVO {
+public class userVO {
 	
 	private String userId;
 	private String userPw;
@@ -10,7 +10,7 @@ public class MemberVO {
 	
 	
 	// 회원가입 0221
-	public MemberVO(String userId, String userPw, String userTel, String userName) {
+	public userVO(String userId, String userPw, String userTel, String userName) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
