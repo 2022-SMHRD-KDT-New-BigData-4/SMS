@@ -5,13 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/login.css" />
 </head>
 <body>
-	 <!-- 큰디브 -->
+	<!-- 큰디브 -->
     <div id="main">
         <!-- 큰디브안에 작은 디브1 -->
-        <img src="./img/로고4.png">
+        <img src="./img/로고4.png" alt="">
         <!-- 큰디브안에 작은 디브2 -->
         <div class="main_box1">
         <!-- 디브2-1-->
