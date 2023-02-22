@@ -9,6 +9,15 @@ public class userVO {
 	
 	
 	
+	// 로그인 0222 박영상
+	public userVO(String userId, String userPw) {
+		super();
+		this.userId = userId;
+		this.userPw = userPw;
+	}
+
+
+
 	// 회원가입 0221
 	public userVO(String userId, String userPw, String userTel, String userName) {
 		super();
