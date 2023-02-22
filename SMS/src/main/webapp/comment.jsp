@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="comText">댓글내용</div>
                                 <div class="like">
-                                    <a href="javascript:;" class="likeIcon">
+                                    <a href="javascript:;" class="likeIcon heart">
                                         <img src="img/like.png" alt="찜하기"">
                                     </a>
                                 </div>

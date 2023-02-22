@@ -61,20 +61,22 @@ a{
     color:inherit; 
     cursor: pointer;
 }
-.likeIcon {
+.like .likeIcon {
     float: right;
     margin-right: 18px;
+    
   }
   
- .likeIcon img{
+ .likeIcon.heart img{
       width: 25px;
       height: 25px;
   }
   
-  .icon.heart.fas{
+ .likeIcon.heart.fas{
     color:red
   }
-  .heart{
+  
+  .heart {
       transform-origin: center;
   }
   .heart.active img{
