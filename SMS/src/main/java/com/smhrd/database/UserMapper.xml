@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+<mapper namespace="com.smhrd.database.MemberMapper">
+
+  <!-- 회원 가입을 위한 sql문장 작성하기 -->
+  <!-- mybatis의 변수 : 바인드 변수 -> #{변수명} -->
+  
+  <insert id = "join" parameterType = "com.smhrd.model.userVO">
+  	insert into tb_member values(#{userId}, #{userPw}, #{userName}, #{userNick})
+  </insert>
+  
+  
+  <!-- 결과 타입! resultType : 결과에 대하여 어떤 타입으로 저장을 할것인지 지정! 
+  		id = "smhrd@smhrd.or.kr" pw = "123" -> 회원의 이름만 select
+  -->
+ 
+ <!-- #{} : parameter로 받아온 객체의 getter메소드 사용하겠다! -->
+  <select id="login" parameterType="com.smhrd.model.userVO"
+  	      resultType="com.smhrd.model.userVO"
+  >
+  	select mb_id, mb_pw, mb_name, mb_nick from tb_member
+  	where mb_id = #{userId}
+  	and mb_pw = #{userPw}
+  </select>
+  
+  
+  <!-- 회원정보 수정을 위한 sql문장 작성 -->
+  <!-- 여러명의 회원중 어떤 회원에 대하여 정보를 수정할 것인가?  -->
+  <update id="update" parameterType="com.smhrd.model.userVO">
+  	update tb_member set mb_pw=#{userPw}, mb_name=#{userName}, mb_nick=#{userNick} 
+  	where mb_id=#{userId} 
+  </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- 모든 회원의 정보를 조회할 수 있는 쿼리문 작성 -->
+  <!-- select구문은 반드시 resultType 잡아주기!!!!!!!!!!!!  -->
+  <select id="selectAll" resultType="userVO">
+  	select * from tb_member
+  	where email != 'admin'
+  </select>
+  
+  
+  <!-- 이메일 체크기능 -->
+  <!-- String은 기본 자료형이 아니기때문에, 반드시 parameterType과
+  	   resultType을 명시해줘야 한다!
+   -->
+  <select id="emailCheck" parameterType="java.lang.String" 
+  		  resultType="java.lang.String">
+  	select email from web_member where email = #{receive_email}
+  
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</mapper>

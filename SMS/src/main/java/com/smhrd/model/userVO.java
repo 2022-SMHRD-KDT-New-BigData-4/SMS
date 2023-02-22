@@ -4,12 +4,11 @@ public class userVO {
 	
 	private String userId;
 	private String userPw;
-	private String userTel;
 	private String userName;
+	private String userNick;
 	
 	
-	
-	// 로그인 0222 박영상
+	// 로그인 0222
 	public userVO(String userId, String userPw) {
 		super();
 		this.userId = userId;
@@ -19,62 +18,65 @@ public class userVO {
 
 
 	// 회원가입 0221
-	public userVO(String userId, String userPw, String userTel, String userName) {
+	public userVO(String userId, String userPw, String userName, String userNick) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
-		this.userTel = userTel;
 		this.userName = userName;
+		this.userNick = userNick;
 	}
 
 
 
-	private String getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
 
 
-	private void setUserId(String userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
 
 
-	private String getUserPw() {
+	public String getUserPw() {
 		return userPw;
 	}
 
 
 
-	private void setUserPw(String userPw) {
+	public void setUserPw(String userPw) {
 		this.userPw = userPw;
 	}
 
 
 
-	private String getUserTel() {
-		return userTel;
+	public String getUserNick() {
+		return userNick;
 	}
 
 
 
-	private void setUserTel(String userTel) {
-		this.userTel = userTel;
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
 	}
 
 
 
-	private String getUserName() {
+	public String getUserName() {
 		return userName;
 	}
 
 
 
-	private void setUserName(String userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
+
+
+
 	
 	
 	
