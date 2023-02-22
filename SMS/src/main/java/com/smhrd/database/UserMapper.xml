@@ -10,7 +10,7 @@
   <!-- mybatis의 변수 : 바인드 변수 -> #{변수명} -->
   
   <insert id = "join" parameterType = "com.smhrd.model.userVO">
-  	insert into tb_member values(#{userId}, #{userPw}, #{userName}, #{userNick})
+  	insert into tb_member values(#{userId}, #{userPw}, #{userName}, #{userNick}, sysdate, 'M')
   </insert>
   
   

@@ -16,8 +16,7 @@ public class userDAO {
 	// 작업을 진행할 수 있는 Connection 생성! -> 전역변수
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 		
-	
-	int result = 0;
+
 	
 	public int join(userVO vo) {
 		

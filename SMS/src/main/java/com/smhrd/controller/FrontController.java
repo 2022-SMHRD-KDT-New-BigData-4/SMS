@@ -24,6 +24,7 @@ public class FrontController extends HttpServlet {
 		map = new HashMap<>();
 		
 		map.put("LoginService.do", new LoginService());		
+		map.put("JoinService.do", new JoinService());		
 		
 	}
 
