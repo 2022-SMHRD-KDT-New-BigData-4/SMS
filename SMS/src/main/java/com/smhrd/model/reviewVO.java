@@ -1,0 +1,141 @@
+package com.smhrd.model;
+
+public class reviewVO {
+	
+	private int rv_seq;
+	private String content;
+	private int rv_ratings;
+	private int rv_cnt;
+	private int rv_likes;
+	private String mb_id;
+	private int res_seq;
+	private String rv_pic1;
+	private String rv_pic2;
+	private String rv_pic3;
+	private String rv_pic4;
+	private String rv_pic5;
+	private String rv_hashtag;
+	private String rv_date;
+	
+	public reviewVO() {
+		super();
+	}
+	
+	public reviewVO(String mb_id) {
+		super();
+		this.mb_id = mb_id;
+	}
+
+
+
+
+
+	public reviewVO(int rv_seq, String content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
+			String rv_pic1, String rv_pic2, String rv_pic3, String rv_pic4, String rv_pic5, String rv_hashtag,
+			String rv_date) {
+		super();
+		this.rv_seq = rv_seq;
+		this.content = content;
+		this.rv_ratings = rv_ratings;
+		this.rv_cnt = rv_cnt;
+		this.rv_likes = rv_likes;
+		this.mb_id = mb_id;
+		this.res_seq = res_seq;
+		this.rv_pic1 = rv_pic1;
+		this.rv_pic2 = rv_pic2;
+		this.rv_pic3 = rv_pic3;
+		this.rv_pic4 = rv_pic4;
+		this.rv_pic5 = rv_pic5;
+		this.rv_hashtag = rv_hashtag;
+		this.rv_date = rv_date;
+	}
+	public int getRv_seq() {
+		return rv_seq;
+	}
+	public void setRv_seq(int rv_seq) {
+		this.rv_seq = rv_seq;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public int getRv_ratings() {
+		return rv_ratings;
+	}
+	public void setRv_ratings(int rv_ratings) {
+		this.rv_ratings = rv_ratings;
+	}
+	public int getRv_cnt() {
+		return rv_cnt;
+	}
+	public void setRv_cnt(int rv_cnt) {
+		this.rv_cnt = rv_cnt;
+	}
+	public int getRv_likes() {
+		return rv_likes;
+	}
+	public void setRv_likes(int rv_likes) {
+		this.rv_likes = rv_likes;
+	}
+	public String getMb_id() {
+		return mb_id;
+	}
+	public void setMb_id(String mb_id) {
+		this.mb_id = mb_id;
+	}
+	public int getRes_seq() {
+		return res_seq;
+	}
+	public void setRes_seq(int res_seq) {
+		this.res_seq = res_seq;
+	}
+	public String getRv_pic1() {
+		return rv_pic1;
+	}
+	public void setRv_pic1(String rv_pic1) {
+		this.rv_pic1 = rv_pic1;
+	}
+	public String getRv_pic2() {
+		return rv_pic2;
+	}
+	public void setRv_pic2(String rv_pic2) {
+		this.rv_pic2 = rv_pic2;
+	}
+	public String getRv_pic3() {
+		return rv_pic3;
+	}
+	public void setRv_pic3(String rv_pic3) {
+		this.rv_pic3 = rv_pic3;
+	}
+	public String getRv_pic4() {
+		return rv_pic4;
+	}
+	public void setRv_pic4(String rv_pic4) {
+		this.rv_pic4 = rv_pic4;
+	}
+	public String getRv_pic5() {
+		return rv_pic5;
+	}
+	public void setRv_pic5(String rv_pic5) {
+		this.rv_pic5 = rv_pic5;
+	}
+	public String getRv_hashtag() {
+		return rv_hashtag;
+	}
+	public void setRv_hashtag(String rv_hashtag) {
+		this.rv_hashtag = rv_hashtag;
+	}
+	public String getRv_date() {
+		return rv_date;
+	}
+	public void setRv_date(String rv_date) {
+		this.rv_date = rv_date;
+	}
+	
+	
+	
+	
+	
+}

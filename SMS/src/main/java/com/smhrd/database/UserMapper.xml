@@ -35,9 +35,17 @@
   	where mb_id=#{userId} 
   </update>
 
+  <select id="search1" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.followVO"
+  >
+  	select * from tb_follow	where follower = #{follower}
+  </select>
 
-
-
+  <select id="search2" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review	where mb_id = #{mb_id}
+  </select>
 
 
 

@@ -31,7 +31,7 @@
                         <a class="icontext" href="#">보관</a>
                     </li>
                     <li>
-                        <a><img src="./img/plus.png"></a>
+                        <a><img src="./img/make.png"></a>
                         <a class="icontext" href="#">만들기</a>
                     </li>
                     <li>
@@ -61,7 +61,7 @@
             </div>
             <div class="right">
                     <div class="user">
-                        <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
+                        <a href="#"><img id="userImg" src="./img/16802_24920_49.jpg"></a>
                         <div class="userId">
                             <a href="#">사용자아이디</a>
                             <p>사용자이름</p>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="recBox">
                         <p>회원님을 위한 추천</p>
-                        <ul class="recList">
+                        <ul>
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 

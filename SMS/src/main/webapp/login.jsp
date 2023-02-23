@@ -18,13 +18,13 @@
         <div class="box1_min1">
             <p id="logo">Foodier</p>
             <div class="box1">
-                <form id="login2">
+                <form action="LoginService.do" id="login2">
                     <table>
                     <tr>
-                        <td><input type="text" placeholder="ID"></tr>
+                        <td><input type="text" name="id" placeholder="ID"></tr>
                     </tr>
                     <tr>
-                        <td><input type="text" placeholder="비밀번호"></td>
+                        <td><input type="password" name="pw" placeholder="비밀번호"></td>
                     </tr>
                     <tr>
                         <td><input id="login_bnt" type="submit" value="로그인"></td>
