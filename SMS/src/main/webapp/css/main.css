@@ -150,9 +150,6 @@
 	margin:0px;
 	margin:0px;
 }
-.rec p{
-	margin:0px;
-}
 .postTop img{
     width: 60px;
     height: 60px;
@@ -202,6 +199,9 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
+}
+.rec p{
+	margin:0px;
 }
 .rec{
     display: flex;

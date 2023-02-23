@@ -126,10 +126,13 @@ body{
     z-index: 990;
     min-width: 300px;
 }
+.name li{
+    list-style-type: none; 
+}
 .user{
     display: flex;
     flex-direction: row;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: 60px;
 }
 #userImg{
@@ -150,9 +153,15 @@ body{
     margin-top: 10px;
     
 }
+.recList{
+	padding:0px;
+}
+.rec p{
+	margin:0px;
+}
 .rec_img{
-    width: 30px;
-    height: 35px;
+    width: 42px;
+    height: 42px;
     margin-right:10px ;
 }
 .user, .recBox{
