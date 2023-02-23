@@ -39,7 +39,7 @@ public class Ex implements Command {
 
 		
 		
-		return "Ex02";
+		return "main";
 	}
 
 }

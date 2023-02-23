@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -58,7 +58,7 @@
                         <div class="postTop">
                             <a href="#"><img src="./img/ex_proflie.jpg"></a>
                             <ul class="name">
-                                <li><a href="#">dpdlclee</a></li>
+                                <li><a href="#">${review.mb_id}</a></li>
                                 <li><a href="#">#동명동</a></li>
                             </ul>
                         </div>
@@ -89,8 +89,8 @@
                     <div class="user">
                         <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
                         <div class="userId">
-                            <a href="#">사용자아이디</a>
-                            <p>사용자이름</p>
+                            <a href="#">${user.userId}</a>
+                            <p>${user.userName}</p>
                         </div>
 
                     </div>
