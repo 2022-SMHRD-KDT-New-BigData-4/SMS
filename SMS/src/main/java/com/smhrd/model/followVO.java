@@ -2,10 +2,10 @@ package com.smhrd.model;
 
 public class followVO {
 
-	private int fr_req;
-	private String follower; 
-	private String followee; 
-	private String date;
+	private int fr_req;			// 순번
+	private String follower; 	// 팔로우 하는사람
+	private String followee; 	// 팔로우 당하는 사람
+	private String date;		// 팔로우 하는 일자
 	
 	
 	public followVO() {

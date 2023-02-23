@@ -2,10 +2,10 @@ package com.smhrd.model;
 
 public class userVO {
 	
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String userNick;
+	private String userId;		// 유저id
+	private String userPw;		// 유저비밀번호
+	private String userName;	// 유저 이름
+	private String userNick;	// 유저 닉네임
 	
 	
 	// 로그인 0222

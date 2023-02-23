@@ -2,20 +2,20 @@ package com.smhrd.model;
 
 public class reviewVO {
 	
-	private int rv_seq;
-	private String rv_content;
-	private int rv_ratings;
-	private int rv_cnt;
-	private int rv_likes;
-	private String mb_id;
-	private int res_seq;
-	private String rv_pic1;
-	private String rv_pic2;
-	private String rv_pic3;
-	private String rv_pic4;
-	private String rv_pic5;
-	private String rv_hashtag;
-	private String rv_date;
+	private int rv_seq;			// 등록되는 리뷰 번호
+	private String rv_content;	// 리뷰 내용
+	private int rv_ratings;		// 리뷰 점수
+	private int rv_cnt;			// 리뷰 조회수
+	private int rv_likes;		// 좋아요 수
+	private String mb_id;		// 작성자 id
+	private int res_seq;		// 리뷰와 연동되는 가게의 번호
+	private String rv_pic1;		// 사진1
+	private String rv_pic2;		// 사진2
+	private String rv_pic3;		// 사진3
+	private String rv_pic4;		// 사진4
+	private String rv_pic5;		// 사진4
+	private String rv_hashtag;	// 해시태그
+	private String rv_date;		// 리뷰 작성일자
 	
 	public reviewVO() {
 		super();
