@@ -1,8 +1,6 @@
-<%@page import="com.smhrd.model.reviewVO"%>
-<%@page import="com.smhrd.model.followVO"%>
-<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isErrorPage="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +9,20 @@
 </head>
 <body>
 
-	<%
-		// 1. request영역에 저장되어있는 데이터 꺼내오기
-		List<followVO> list = (List<followVO>)session.getAttribute("follow");
-		// 2. 순차적으로 출력
-		for(followVO vo:list){
-			out.print("<tr>");
-			out.print("<td>"+vo.getFollowee()+"</td>");
-			out.print("</tr>");
-	}
-	
-	
-	%>
-	
-	<a href="ReviewCheck.do">리뷰 확인하기</a>
-	
-	
+<% session.setAttribute("user", "test");
+	String str = (String)session.getAttribute("user");
+%>
+
+
+<%=str %>
+	<!-- 댓글 기입하여 DB에 저장하기 -->	
+	<!-- 저장 이후 다시 게시글 페이지로 이동해서 작성한 댓글 나오는거 확인 -->	
+
+	<!-- 해당 게시글로 넘어올 때 게시글 번호 어떻게 받아올거야? -->	
+	<form action="ReplyService.do">
+		<input type="text" name="content">
+		<input type="submit" value="댓글작성">
+	</form>
 	
 </body>
 </html>

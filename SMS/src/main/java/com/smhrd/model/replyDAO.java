@@ -1,0 +1,22 @@
+package com.smhrd.model;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.smhrd.database.SqlSessionManager;
+
+public class replyDAO {
+
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();	
+	
+	public int reply(replyVO vo_rep) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int cnt = sqlSession.insert("reply", vo_rep);
+		
+		return cnt;
+		
+	}
+	
+}

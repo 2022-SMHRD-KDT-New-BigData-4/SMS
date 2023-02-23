@@ -10,7 +10,7 @@
   <!-- mybatis의 변수 : 바인드 변수 -> #{변수명} -->
   
   <insert id = "join" parameterType = "com.smhrd.model.userVO">
-  	insert into tb_member values(#{userId}, #{userPw}, #{userName}, #{userNick}, sysdate, 'M')
+  	insert into tb_member values(#{mb_id}, #{mb_pw}, #{mb_name}, #{mb_nick}, sysdate, 'M')
   </insert>
   
   
@@ -23,16 +23,16 @@
   	      resultType="com.smhrd.model.userVO"
   >
   	select mb_id, mb_pw, mb_name, mb_nick from tb_member
-  	where mb_id = #{userId}
-  	and mb_pw = #{userPw}
+  	where mb_id = #{mb_id}
+  	and mb_pw = #{mb_pw}
   </select>
   
   
   <!-- 회원정보 수정을 위한 sql문장 작성 -->
   <!-- 여러명의 회원중 어떤 회원에 대하여 정보를 수정할 것인가?  -->
   <update id="update" parameterType="com.smhrd.model.userVO">
-  	update tb_member set mb_pw=#{userPw}, mb_name=#{userName}, mb_nick=#{userNick} 
-  	where mb_id=#{userId} 
+  	update tb_member set mb_pw=#{mb_pw}, mb_name=#{mb_name}, mb_nick=#{mb_nick} 
+  	where mb_id=#{mb_id} 
   </update>
 
   <select id="search1" parameterType="com.smhrd.model.followVO"
@@ -60,7 +60,17 @@
   					  where follower = #{follower})
   </select>
 
-
+  <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
+  	insert into tb_reply(
+  		rv_seq,
+  		rp_content,
+  		mb_id
+  	) values (
+  		#{rv_seq},		<!-- 여기는 수정이 필요 -->
+  		#{rp_content},
+  		#{mb_id}
+  	)
+  </insert>
 
 
 

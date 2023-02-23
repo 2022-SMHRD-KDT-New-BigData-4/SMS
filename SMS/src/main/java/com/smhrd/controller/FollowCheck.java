@@ -22,7 +22,7 @@ public class FollowCheck implements Command {
 		// session 에서 id 가져오기
 		HttpSession session = request.getSession();
 		userVO vo_mem = (userVO)session.getAttribute("user");
-		String id = vo_mem.getUserId();
+		String id = vo_mem.getMb_id();
 		followVO vo_fol = new followVO(id);
 		
 		// DB에서 로그인한 유저의 팔로우 대상들 받아오기

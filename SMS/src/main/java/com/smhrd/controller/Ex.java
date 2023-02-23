@@ -24,7 +24,7 @@ public class Ex implements Command {
 		// 로그인한 유저의 id 가져오기
 		HttpSession session = request.getSession();
 		userVO vo_mem = (userVO)session.getAttribute("user");
-		String id = vo_mem.getUserId();
+		String id = vo_mem.getMb_id();
 
 		// followVO 객체 만들기
 		followVO vo_fol = new followVO(id);		
