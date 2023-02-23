@@ -41,7 +41,8 @@
                                     <p>사진과 동영상을 여기에 끌어다 놓으세요.</p>
                                 </div>
                                 <div class="pick">
-                                    <button class="pickBtn color"><p>폴더에서 선택</p></button>
+                                    <label for="files">폴더에서 선택</label>
+                                    <input type="file" class="pickBtn" id="files">
                                 </div>
                             </div>
                         </div>
@@ -70,6 +71,8 @@ function openPop() {
 function closePop() {
     document.getElementById("popup_layer").style.display = "none";
 }
+
+documents.getElementByClassName
 
 </script>
 

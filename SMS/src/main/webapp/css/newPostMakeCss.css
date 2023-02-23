@@ -48,24 +48,6 @@
     text-align: center;
 }
 
-.pickBtn {
-    width: 250px;
-    height: 45px;
-    margin-top: 30px;
-    border-radius: 10px;
-    border: none;
-    color: rgb(255, 255, 255);
-    background-image: linear-gradient(to right,#f8f547,#5cb270);
-    box-shadow: 0 1px 10px 0 rgba(83, 176, 57, 0.75);
-    overflow: hidden;
-    font-size: 17px;
-}
-
-.pickBtn p {
-    text-shadow: 1px 0px rgb(155, 155, 155);
-    margin-top: 10px;
-}
-
 
 .overlay {
     display: none;
@@ -76,4 +58,30 @@
     background-color: rgba(0,0,0, 0.4);
     overflow-x: hidden;
   }
+  
+  .pick label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: white;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background: linear-gradient(to right, #f4f269,#5cb270);
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.pick input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
 
