@@ -12,14 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 <body>
-    
-    <a href="javascript:openPop()">
-        <div>
-            팝업오픈!
-        </div>
-    </a>
 
-    <div class="popup_layer" id="popup_layer" style="display: none;">
+    <div class="popup_layer" id="popup_layer">
         <div class="close">
             <a href="javascript:closePop();"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
         </div>
@@ -69,6 +63,7 @@ function openPop() {
 
 //팝업 닫기
 function closePop() {
+	location.href="main.jsp";
     document.getElementById("popup_layer").style.display = "none";
 }
 
