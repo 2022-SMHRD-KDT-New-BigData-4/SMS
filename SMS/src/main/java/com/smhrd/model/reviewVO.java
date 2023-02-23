@@ -3,7 +3,7 @@ package com.smhrd.model;
 public class reviewVO {
 	
 	private int rv_seq;
-	private String content;
+	private String rv_content;
 	private int rv_ratings;
 	private int rv_cnt;
 	private int rv_likes;
@@ -30,12 +30,12 @@ public class reviewVO {
 
 
 
-	public reviewVO(int rv_seq, String content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
+	public reviewVO(int rv_seq, String rv_content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
 			String rv_pic1, String rv_pic2, String rv_pic3, String rv_pic4, String rv_pic5, String rv_hashtag,
 			String rv_date) {
 		super();
 		this.rv_seq = rv_seq;
-		this.content = content;
+		this.rv_content = rv_content;
 		this.rv_ratings = rv_ratings;
 		this.rv_cnt = rv_cnt;
 		this.rv_likes = rv_likes;
@@ -56,10 +56,10 @@ public class reviewVO {
 		this.rv_seq = rv_seq;
 	}
 	public String getContent() {
-		return content;
+		return rv_content;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setContent(String rv_content) {
+		this.rv_content = rv_content;
 	}
 	public int getRv_ratings() {
 		return rv_ratings;
