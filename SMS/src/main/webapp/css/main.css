@@ -141,14 +141,14 @@
     height: 120px;
 }
 .pBlist{
-	list-style-type: none; 
-	padding-left:5px;
-	margin-top:0px;
-	
+   list-style-type: none; 
+   padding-left:5px;
+   margin-top:0px;
+   
 }
 .two p, .four p{
-	margin:0px;
-	margin:0px;
+   margin:0px;
+   margin:0px;
 }
 .postTop img{
     width: 60px;
@@ -162,7 +162,7 @@
     list-style-type: none; 
 }
 .name{
-	padding-left:0px;
+   padding-left:0px;
 }
 #postCenter img{
     width: 700px;
@@ -201,7 +201,7 @@
     margin-left: 10px;
 }
 .rec p{
-	margin:0px;
+   margin:0px;
 }
 .rec{
     display: flex;
@@ -209,7 +209,7 @@
     margin-top: 10px;    
 }
 .recList{
-	padding:0px;
+   padding:0px;
 }
 .rec_img{
     width:42px;
