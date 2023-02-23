@@ -28,7 +28,7 @@ public class LoginService implements Command {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("user", result);		
-			return "redirect:/FollowCheck.do";
+			return "redirect:/Ex.do";
 		}else {
 			return "LoginFail";
 		}

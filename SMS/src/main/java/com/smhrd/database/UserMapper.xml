@@ -49,6 +49,17 @@
 
 
 
+  <!-- 로그인한(세션에 아이디 저장되어있는) 유저의 팔로우 유저를 검색
+  		팔로우하고 있는 유저들의 리뷰를 가져오는 쿼리문 -->
+  <select id="search3" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review	
+  	where mb_id in ( select followee
+  					   from tb_follow
+  					  where follower = #{follower})
+  </select>
+
 
 
 

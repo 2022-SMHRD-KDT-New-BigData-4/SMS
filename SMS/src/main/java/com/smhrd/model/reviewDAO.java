@@ -11,11 +11,11 @@ public class reviewDAO {
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();	
 	
-	public List<reviewVO> search(reviewVO vo_rev) {
+	public List<reviewVO> search(followVO vo_fol) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		List<reviewVO> result = sqlSession.selectList("search2", vo_rev );
+		List<reviewVO> result = sqlSession.selectList("search3", vo_fol );
 		
 		
 		return result;
