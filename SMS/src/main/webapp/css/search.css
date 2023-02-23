@@ -1,4 +1,7 @@
-
+@charset "UTF-8";
+body{
+    min-width: 1500px;
+}
 .left {
     /* border: 10px solid red; */
     box-sizing: border-box;
@@ -6,10 +9,10 @@
     top: 0;
     width: 20%;
     height: 100%;
-    z-index: 990;
-
-    
+    z-index: 990; 
+    min-width: 280px;
 }
+
 .logo{
     height: 150px;
     display: flex;
@@ -17,16 +20,15 @@
     justify-content: center;
     margin-top: 40px;
     font-size: 40px;
+   
 }
 .iconBtn{
     margin-top: 50px;
     height: 619px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     /* border: 1px solid green; */
     margin-left: 100px;
-    /* align-items: center*/
     list-style-type: none; 
 }
 
@@ -45,27 +47,7 @@
     width: 40px;
     height: 40px;
 }
-.right {
-    /* border: 10px solid red; */
-    box-sizing: border-box;
-    position: fixed;
-    width: 20%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: 990;
 
-}
-
-.gnb {
-    /* border: 10px solid yellow; */
-}
-.center {
-    width: 60%;
-    /* border: 10px solid blue; */
-    box-sizing: border-box;
-    margin: 0 auto;
-}
 .iconBtn li img{
     width: 30px;
     height: 30px;
@@ -77,6 +59,13 @@
     background: linear-gradient(to right,#f4f269,#5cb270);
     color: transparent;
     -webkit-background-clip: text;
+}
+.center {
+    width: 60%;
+    /* border: 10px solid blue; */
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-width: 900px;
 }
 .search{
     width: 60%;
@@ -90,8 +79,8 @@
     box-sizing: border-box;
     position: fixed;
     top: 0;
-
-   
+    min-width: 900px;
+    
 }
 #searchBar{
     width: 700px;
@@ -108,94 +97,46 @@
     margin-left: 10px;
 }
 .container{
+    width: 900px;
     margin-top: 200px;
     /* border: 10px solid yellow; */
     box-sizing: border-box;
-  
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: 280px 280px 280px;
+    grid-template-rows: 280px 280px 280px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.container img{
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    background-color: #5cb270;
     
 }
-.post{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    height: 600px;
-    border: 1px solid gainsboro;
-   
-}
-.postTop{
-    border-bottom: 1px solid gainsboro;
-    height: 80px;
-    display: flex;
-    
-}
-#postCenter{
-    background-color: white;
-    width: 700px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-}
-#postBottom{
-    border-top: 1px solid gainsboro;
-    height: 120px;
-}
-.pBlist{
-	list-style-type: none; 
-	padding-left:5px;
-	margin-top:0px;
-	
-}
-.two p, .four p{
-	margin:0px;
-	margin:0px;
-}
-.rec p{
-	margin:0px;
-}
-.postTop img{
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    margin: 10px;
-    object-fit: cover;
-
-}
-.name li{
-    list-style-type: none; 
-}
-.name{
-	padding-left:0px;
-}
-#postCenter img{
-    width: 700px;
-    height: 400px;
-    object-fit: cover;
-}
-.postBox{
+.right {
+    /* border: 10px solid red; */
     box-sizing: border-box;
-    margin-bottom: 40px;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 990;
+    min-width: 300px;
 }
-.one img{
-    width: 25px;
-    height: 25px;
-    margin-top: 5px;
-    margin-left: 5px;
+.user{
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
-/*.two p, .three a, .four p {
-    margin-left: 5px;
-}*/
 #userImg{
     width: 70px;
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
-}
-.user{
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
-    margin-bottom: 60px;
 }
 .userId{
     display: flex;
@@ -206,13 +147,17 @@
 .rec{
     display: flex;
     flex-direction: row;
-    margin-top: 10px;    
-}
-.recList{
-	padding:0px;
+    margin-top: 10px;
+    
 }
 .rec_img{
-    width:42px;
-    height: 42px;
+    width: 30px;
+    height: 35px;
     margin-right:10px ;
+}
+.user, .recBox{
+    min-width: 300px;
+}
+.container1{
+    min-width: 1500px;
 }
