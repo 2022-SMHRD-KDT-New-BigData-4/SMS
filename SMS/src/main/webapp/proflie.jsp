@@ -7,39 +7,41 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/proflie.css">
         <link rel="stylesheet" href="./css/reset.css">
+    	<link rel="stylesheet" href="./css/commentCss.css">
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
         <div class="container1">
+        
             <div class="left">
-                <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
+                <h1 class="logo"><a id="logoText" href="./main.jsp">FOODIER</a></h1>
                 <ul class="iconBtn">
                     <li>
-                        <a><img src="./img/home.png"></a>
-                        <a class="icontext" href="#">홈</a>
+                        <a href="./main.jsp"><img src="./img/home.png"></a>
+                        <a class="icontext" href="./main.jsp">홈</a>
                     </li>
                     <li>
-                        <a><img src="./img/rec.png"></a>
+                        <a href="#"><img src="./img/rec.png"></a>
                         <a class="icontext" href="#">추천</a>
                     </li>
                     <li>
-                        <a><img src="./img/meal.png"></a>
+                        <a href="#"><img src="./img/meal.png"></a>
                         <a class="icontext" href="#">학식</a>
                     </li>
                     <li>
-                        <a><img src="./img/save.png"></a>
-                        <a class="icontext" href="#">보관</a>
+                        <a href="./userMap.jsp"><img src="./img/save.png"></a>
+                        <a class="icontext" href="./userMap.jsp">보관</a>
                     </li>
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
                         <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
                     </li>
                     <li>
-                        <a></a><img src="#">
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="./userProflie.jsp"><img src="#"></a>
+                        <a class="icontext" href="./userProflie.jsp">프로필</a>
                     </li>
                 </ul>
                 <div class="plusBtn">
@@ -52,12 +54,41 @@
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
                 <div class="container">
-                  
+                  <div class="proflieBox">
+                  	<div><img id="setImg" src="./img/ex_post.jpg"></div>
+                    <div>
+                    	<ul class="userSetText">
+                    		<li>유저아이디<button>프로필 변경</button></li>.
+                    		<li>유저 이름</li>
+                    		<li><br>소개글</li>
+                    	</ul>
+                    </div>
+                  </div>
+                  <div><hr id="proflie_bar"></div>
+                  <div class="userReview">
+                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="#"><img src="#"></a></div>
+                  </div>
                 </div>
+                
             </div>
-            
+            <div class="right">
+                    <div class="user">
+                    </div>
+                    <div class="recListBox">
+                      
+                        
+                    </div>
+                    
+               
+            </div>
+        </div>
 
-<!-- --------------댓글,만들기----------------- -->
+<!-- ------------------------------- -->
 
     <div class="popup_layer" id="popup_layer" style="display: none;">
         <div class="close">
@@ -110,6 +141,10 @@
             <!--팝업 버튼 영역-->
         </div>
       </div>
+
+
+
+
 
     </body>
     
