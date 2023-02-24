@@ -67,6 +67,10 @@
                 <!-- 팔로워 게시물 -->
                 <div class="container">
                 
+                <%
+                String[] review = request.getParameterValues("review");
+                 
+                for(int i = 0;i<3;i++){ %>              
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">
                     <div class="post">
@@ -74,10 +78,12 @@
                         <div class="postTop">
                         	<!-- 팔로워 프로필 사진 -->
                             <a href="#"><img src="./img/ex_proflie.jpg"></a>
-                            <!-- 팔로워 아이디(게시물 작성자), 해시태그 -->
                             <ul class="name">
-                                <li><a href="#"></a></li>
-                                <li><a href="#">#동명동</a></li>
+                                <!-- 팔로워 아이디(게시물 작성자)-->                        	
+                                <li><a href="#">${review.get(i).mb_id}</a></li>
+                                <!-- 해시태그 -->                           
+                                <li><a href="#">${review.get(i).rv_hashtag}</a></li>
+                                
                             </ul>
                         </div> <!-- postTop 닫는 디브 -->
                         
@@ -86,8 +92,7 @@
                         <div id="postCenter"><img src="./img/ex_post.jpg"></div>
                         
                         <!-- 게시문 맨 밑칸 -->
-                        <div id="postBottom">
-                        	
+                        <div id="postBottom">                    	
                             <ul class="pBlist">
                                 <li class="one">
                                 	<!-- 좋아요 버튼 -->
@@ -102,18 +107,18 @@
                                     <p>좋아요 00개</p>
                                 </li>
                                 <!-- 팔로워 ID(=리뷰작성자 ID) -->
-                                <li class="three">
-                                    <a href="a">사용자ID</a>
+                                <li class="three">                                	
+                                    <a href="a">${reivew.get(i).mb_id}</a>
                                 </li>
                                 <!-- 리뷰 내용 -->
                                 <li class="four">
-                                    <p>내용 블라블라블라블라</p>
+                                    <p></p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                    </div> <!--postBox 닫는 디브-->
-                   
+                   <% } %>
                    
                 </div>
             </div>
