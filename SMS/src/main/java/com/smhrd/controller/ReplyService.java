@@ -20,7 +20,7 @@ public class ReplyService implements Command {
 //		String id = "test";
 		
 		// 폼 태그로 보내준 컨텐츠 받아주기
-		String content = request.getParameter("content");
+		String content = request.getParameter("commentText");
 		
 
 		// 보고있는 게시글 번호 어떻게 받을거야??

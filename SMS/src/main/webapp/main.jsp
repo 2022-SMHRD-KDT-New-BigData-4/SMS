@@ -19,28 +19,28 @@
                 <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
                 <ul class="iconBtn">
                     <li>
-                        <a href="./main.jsp"><img src="./img/home.png"></a>
-                        <a class="icontext" href="./main.jsp">홈</a>
+                        <a><img src="./img/home.png"></a>
+                        <a class="icontext" href="#">홈</a>
                     </li>
                     <li>
-                        <a href="#"><img src="./img/rec.png"></a>
+                        <a><img src="./img/rec.png"></a>
                         <a class="icontext" href="#">추천</a>
                     </li>
                     <li>
-                        <a href="#"><img src="./img/meal.png"></a>
+                        <a><img src="./img/meal.png"></a>
                         <a class="icontext" href="#">학식</a>
                     </li>
                     <li>
-                        <a href="./userMap.jsp"><img src="./img/save.png"></a>
-                        <a class="icontext" href="./userMap.jsp">보관</a>
+                        <a><img src="./img/save.png"></a>
+                        <a class="icontext" href="#">보관</a>
                     </li>
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
                         <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
                     </li>
                     <li>
-                        <a href="./userProflie.jsp"><img src="#"></a>
-                        <a class="icontext" href="./userProflie.jsp">프로필</a>
+                        <a></a><img src="#">
+                        <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul>
                 <div class="plusBtn">
@@ -87,25 +87,16 @@
             </div>
             <div class="right">
                     <div class="user">
-                        <a href="./userProflie.jsp"><img id="userImg" src="./img/ex_proflie.jpg"></a>
+                        <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
                         <div class="userId">
-                            <a href="./userProflie.jsp">유저아이디</a>
-                            <p>유저이름</p>
+                            <a href="#"></a>
+                            <p></p>
                         </div>
 
                     </div>
                     <div>
                         <p>회원님을 위한 추천</p>
                         <ul class="recList">
-                            <!-- 첫번째 추천 아이디 -->
-                            <li class="rec">
-                            <a><img class="rec_img" src="#"></a>
-                            <div>
-                                <a href="#">추천ID</a>
-                                <p>추천인 이름</p> 
-                            </div>
-                            </li>  
-                            <!-- 두번째 추천 아이디 -->  
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -113,8 +104,7 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li> 
-                            <!-- 세번째 추천 아이디 -->   
+                            </li>    
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -122,8 +112,7 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li>
-                            <!-- 네번째 추천 아이디 -->    
+                            </li>    
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -131,8 +120,15 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li>
-                            <!-- 다섯번째 추천 아이디 -->    
+                            </li>    
+                            <li class="rec">
+                            <a><img class="rec_img" src="#"></a>
+                                
+                            <div>
+                                <a href="#">추천ID</a>
+                                <p>추천인 이름</p> 
+                            </div>
+                            </li>    
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -166,34 +162,41 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic">프로필사진</div>
+                            <div class="profilepic"> <a href="#"></a> 프로필사진</div>
                             <div class="username">
-                                <div class="name">이름</div>
+                                <div class="name"> <a href="#"></a> 이름</div>
                                 <div class="userid">유저id</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
-                                <div class="comProfilepic">댓글프로필사진</div>
+                                <div class="comProfilepic"><a href="#"></a>댓글프로필사진</div>
                                 <div class="comments">
-                                    <div class="comName">댓글이름</div>
-                                    <div class="comnUserid">답글달기</div>
+                                    <div class="comName"><a href="#"></a>댓글이름</div>
                                 </div>
-                                <div class="comText">댓글내용</div>
+							    <div class="comText" onclick="toggleEllipsis(this)">
+							        <p class="card-description">텍스트 길이만큼 늘어나는 div</p>
+								    <input type="checkbox" class="card-content__more-btn">
+							    </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
                                         <img src="img/like.png" alt="찜하기"">
                                     </a>
                                 </div>
                             </div>
+                            <%  session.setAttribute("user", "test");
+								String str = (String)session.getAttribute("user");
+							%>
                             <div class="userComment">
-                                <div class="myProfilepic">내프로필사진</div>
+                                <div class="myProfilepic"> <a href="#"></a> 내프로필사진</div>
+                                <form action="ReplyService.do">
                                 <div class="myComment">
-                                    <input type="text" id="comInput" placeholder="댓글달기">
+                                    <input type="text" id="comInput" name="commentText" placeholder="댓글달기">
                                 </div>
                                 <div class="submit">
                                     <input type="submit" id="submit" value="게시">
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -209,7 +212,52 @@
 
     </body>
     
-<script src="./js/comment.js"></script>
+<script>
+//팝업 띄우기
+function openPop() {
+    document.getElementById("popup_layer").style.display = "block";
+
+}
+
+//팝업 닫기
+function closePop() {
+    document.getElementById("popup_layer").style.display = "none";
+}
+
+//팝업 띄우기
+function openPopPost() {
+	location.href="newPostMake.jsp";
+    document.getElementById("popup_layer").style.display = "block";
+
+}
+
+//팝업 닫기
+function closePopPost() {
+    document.getElementById("popup_layer").style.display = "none";
+}
+
+//좋아요 하트 변경
+$(function(){
+    var $likeBtn =$('.likeIcon');
+
+        $likeBtn.click(function(){
+        $likeBtn.toggleClass('active');
+
+        if($likeBtn.hasClass('active')){          
+           $(this).find('img').attr({
+              'src': 'img/hearts.png'
+                });
+          
+          
+         }else{
+            $(this).find('i').removeClass('fas').addClass('far')
+           $(this).find('img').attr({
+              'src': 'img/like.png'
+           })
+         }
+     })
+})
+</script>
     
     
     

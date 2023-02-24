@@ -20,7 +20,7 @@
 
 	<!-- 해당 게시글로 넘어올 때 게시글 번호 어떻게 받아올거야? -->	
 	<form action="ReplyService.do">
-		<input type="text" name="content">
+		<input type="text" name="commentText">
 		<input type="submit" value="댓글작성">
 	</form>
 	
