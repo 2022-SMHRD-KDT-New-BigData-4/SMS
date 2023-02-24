@@ -57,11 +57,13 @@
                             <div class="userComment">
                                 <div class="myProfilepic">내프로필사진</div>
                                 <div class="myComment">
-                                    <input type="text" id="comInput" placeholder="댓글달기">
-                                </div>
-                                <div class="submit">
+                                <form action="ReplyService.do">
+                                    <input type="text" id="comInput" placeholder="댓글달기" name="commentText">
                                     <input type="submit" id="submit" value="게시">
+                                </form>
                                 </div>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -110,6 +112,9 @@ $(function(){
          }
      })
 })
+$("#submit").click(function(){
+    alert("클릭됨1");
+});
 </script>
 
 </html>

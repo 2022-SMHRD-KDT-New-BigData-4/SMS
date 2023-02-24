@@ -19,28 +19,28 @@
                 <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
                 <ul class="iconBtn">
                     <li>
-                        <a><img src="./img/home.png"></a>
-                        <a class="icontext" href="#">홈</a>
+                        <a href="./main.jsp"><img src="./img/home.png"></a>
+                        <a class="icontext" href="./main.jsp">홈</a>
                     </li>
                     <li>
-                        <a><img src="./img/rec.png"></a>
+                        <a href="#"><img src="./img/rec.png"></a>
                         <a class="icontext" href="#">추천</a>
                     </li>
                     <li>
-                        <a><img src="./img/meal.png"></a>
+                        <a href="#"><img src="./img/meal.png"></a>
                         <a class="icontext" href="#">학식</a>
                     </li>
                     <li>
-                        <a><img src="./img/save.png"></a>
-                        <a class="icontext" href="#">보관</a>
+                        <a href="./userMap.jsp"><img src="./img/save.png"></a>
+                        <a class="icontext" href="./userMap.jsp">보관</a>
                     </li>
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
                         <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
                     </li>
                     <li>
-                        <a></a><img src="#">
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="./userProflie.jsp"><img src="#"></a>
+                        <a class="icontext" href="./userProflie.jsp">프로필</a>
                     </li>
                 </ul>
                 <div class="plusBtn">
@@ -58,7 +58,7 @@
                         <div class="postTop">
                             <a href="#"><img src="./img/ex_proflie.jpg"></a>
                             <ul class="name">
-                                <li><a href="#">${review.mb_id}</a></li>
+                                <li><a href="#"></a></li>
                                 <li><a href="#">#동명동</a></li>
                             </ul>
                         </div>
@@ -87,16 +87,25 @@
             </div>
             <div class="right">
                     <div class="user">
-                        <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
+                        <a href="./userProflie.jsp"><img id="userImg" src="./img/ex_proflie.jpg"></a>
                         <div class="userId">
-                            <a href="#">${user.userId}</a>
-                            <p>${user.userName}</p>
+                            <a href="./userProflie.jsp">유저아이디</a>
+                            <p>유저이름</p>
                         </div>
 
                     </div>
                     <div>
                         <p>회원님을 위한 추천</p>
                         <ul class="recList">
+                            <!-- 첫번째 추천 아이디 -->
+                            <li class="rec">
+                            <a><img class="rec_img" src="#"></a>
+                            <div>
+                                <a href="#">추천ID</a>
+                                <p>추천인 이름</p> 
+                            </div>
+                            </li>  
+                            <!-- 두번째 추천 아이디 -->  
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -104,7 +113,8 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li>    
+                            </li> 
+                            <!-- 세번째 추천 아이디 -->   
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -112,7 +122,8 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li>    
+                            </li>
+                            <!-- 네번째 추천 아이디 -->    
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -120,15 +131,8 @@
                                 <a href="#">추천ID</a>
                                 <p>추천인 이름</p> 
                             </div>
-                            </li>    
-                            <li class="rec">
-                            <a><img class="rec_img" src="#"></a>
-                                
-                            <div>
-                                <a href="#">추천ID</a>
-                                <p>추천인 이름</p> 
-                            </div>
-                            </li>    
+                            </li>
+                            <!-- 다섯번째 추천 아이디 -->    
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 
@@ -205,51 +209,7 @@
 
     </body>
     
-<script>
-//팝업 띄우기
-function openPop() {
-    document.getElementById("popup_layer").style.display = "block";
-
-}
-
-//팝업 닫기
-function closePop() {
-    document.getElementById("popup_layer").style.display = "none";
-}
-
-//팝업 띄우기
-function openPopPost() {
-	location.href="newPostMake.jsp";
-    document.getElementById("popup_layer").style.display = "block";
-
-}
-
-//팝업 닫기
-function closePopPost() {
-    document.getElementById("popup_layer").style.display = "none";
-}
-//좋아요 하트 변경
-$(function(){
-    var $likeBtn =$('.likeIcon');
-
-        $likeBtn.click(function(){
-        $likeBtn.toggleClass('active');
-
-        if($likeBtn.hasClass('active')){          
-           $(this).find('img').attr({
-              'src': 'img/hearts.png'
-                });
-          
-          
-         }else{
-            $(this).find('i').removeClass('fas').addClass('far')
-           $(this).find('img').attr({
-              'src': 'img/like.png'
-           })
-         }
-     })
-})
-</script>
+<script src="./js/comment.js"></script>
     
     
     

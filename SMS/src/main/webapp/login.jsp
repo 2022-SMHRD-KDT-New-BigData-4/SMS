@@ -44,7 +44,7 @@
         <!-- 디브2-2 -->
         <div class="box1_min2">
             <p id="text">계정이 없으신가요?</p>
-            <a href="#" id="join">가입하기</a>
+            <a href="./join.jsp" id="join">가입하기</a>
         </div>
 
         </div> <!--디브2 닫는-->

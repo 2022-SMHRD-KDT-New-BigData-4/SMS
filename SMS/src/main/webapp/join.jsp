@@ -20,18 +20,12 @@
             <input type="text" name="name" placeholder="사용자 이름" class="inlineToBlock">
             <input type="text" name="nick" placeholder="닉네임" class="inlineToBlock">
             <input class="inlineToBlock ordinaryLogin unactivatedLoginColor" type="submit" value="회원가입" style="font-size: 12px">
-        <a href="#" class="noneunderline">
-            <button class="inlineToBlock facebookLogin">
-                <img src="img/facebook.png" alt="" class="facebookIcon">
-            </button>
-        </a>
-    
         </div>
 	</form>
 
         <div class="haveAccount">
             <p>계정이 있으신가요?
-              <a href="#" class="noneunderline">로그인</a>
+              <a href="./login.jsp" class="noneunderline">로그인</a>
             </p>
         </div>
   </div>
