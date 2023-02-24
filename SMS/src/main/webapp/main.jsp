@@ -27,10 +27,6 @@
                         <a class="icontext" href="#">추천</a>
                     </li>
                     <li>
-                        <a><img src="./img/meal.png"></a>
-                        <a class="icontext" href="#">학식</a>
-                    </li>
-                    <li>
                         <a><img src="./img/save.png"></a>
                         <a class="icontext" href="#">보관</a>
                     </li>
@@ -66,7 +62,7 @@
                         <div id="postBottom">
                             <ul class="pBlist">
                                 <li class="one">
-                                    <a><img src="./img/like.png"></a>
+                                    <a href="javascript:;" class="likeIcon heart"><img src="./img/like.png"></a>
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <a><img src="./img/save.png"></a>
                                 </li>
@@ -162,7 +158,7 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"></a> 프로필사진</div>
+                            <div class="profilepic"> <a href="#"></a></div>
                             <div class="username">
                                 <div class="name"> <a href="#"></a> 이름</div>
                                 <div class="userid">유저id</div>
@@ -170,7 +166,7 @@
                         </div>
                         <div class="text">
                             <div class="comment">
-                                <div class="comProfilepic"><a href="#"></a>댓글프로필사진</div>
+                                <div class="comProfilepic"><a href="#"></a></div>
                                 <div class="comments">
                                     <div class="comName"><a href="#"></a>댓글이름</div>
                                 </div>
@@ -188,7 +184,7 @@
 								String str = (String)session.getAttribute("user");
 							%>
                             <div class="userComment">
-                                <div class="myProfilepic"> <a href="#"></a> 내프로필사진</div>
+                                <div class="myProfilepic"> <a href="#"></a></div>
                                 <form action="ReplyService.do">
                                 <div class="myComment">
                                     <input type="text" id="comInput" name="commentText" placeholder="댓글달기">
