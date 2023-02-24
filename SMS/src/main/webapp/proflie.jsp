@@ -66,7 +66,7 @@
                   </div>
                   <div><hr id="proflie_bar"></div>
                   <div class="userReview">
-                   <div><a href="#"><img src="#"></a></div>
+                   <div><a href="javascript:openPop()"><img src="./img/ex_post.jpg"></a></div>
                    <div><a href="#"><img src="#"></a></div>
                    <div><a href="#"><img src="#"></a></div>
                    <div><a href="#"><img src="#"></a></div>
