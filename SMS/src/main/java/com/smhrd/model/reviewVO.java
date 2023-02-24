@@ -21,12 +21,22 @@ public class reviewVO {
 		super();
 	}
 	
+	// 작성자의 아이디로 리뷰글들 가져오기
 	public reviewVO(String mb_id) {
 		super();
 		this.mb_id = mb_id;
 	}
 
-
+	// 리뷰(게시글) 등록하기
+	public reviewVO(String rv_content, int rv_ratings, String mb_id, int res_seq, String rv_hashtag) {
+		super();
+		this.rv_content = rv_content;
+		this.rv_ratings = rv_ratings;
+		this.mb_id = mb_id;
+		this.res_seq = res_seq;
+		this.rv_hashtag = rv_hashtag;
+	}
+	
 
 
 
@@ -49,6 +59,7 @@ public class reviewVO {
 		this.rv_hashtag = rv_hashtag;
 		this.rv_date = rv_date;
 	}
+
 	public int getRv_seq() {
 		return rv_seq;
 	}

@@ -82,6 +82,40 @@
   </select>
 
 
+  <!-- 가게이름으로 가게의번호를 찾아오는 쿼리문 -->
+  <select id="search5" parameterType="com.smhrd.model.restaurantVO"
+  	      resultType="com.smhrd.model.restaurantVO"
+  >
+  	select * from tb_restaurant
+  	where res_name = #{res_name}
+  </select>
+
+
+  <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
+  	insert into tb_review(
+  		rv_content,
+  		rv_ratings,
+  		mb_id,
+  		res_seq,
+  		rv_hashtag
+  	) values (
+  		#{rv_content},
+  		#{rv_ratings},
+  		#{mb_id},
+  		#{res_seq},
+  		#{rv_hashtag}
+  	)
+  </insert>
+
+
+
+
+
+
+
+
+
+
 
 
   
@@ -91,6 +125,10 @@
   	select * from tb_member
   	where email != 'admin'
   </select>
+  
+
+  
+  
   
   
   <!-- 이메일 체크기능 -->
