@@ -34,7 +34,13 @@ public class replyVO {
 		this.mb_id = mb_id;
 	}
 	
+	// 해당 게시글의 댓글들 가져오기
+	public replyVO(int rv_seq) {
+		super();
+		this.rv_seq = rv_seq;
+	}
 	
+
 
 
 

@@ -73,6 +73,13 @@
   </insert>
 
 
+  <!-- 해당 게시글에 작성되어 있는 댓글들의 데이터를 가져오는 쿼리문 -->
+  <select id="search4" parameterType="com.smhrd.model.replyVO"
+  	      resultType="com.smhrd.model.replyVO"
+  >
+  	select * from tb_reply
+  	where rv_seq = #{rv_seq}
+  </select>
 
 
 
