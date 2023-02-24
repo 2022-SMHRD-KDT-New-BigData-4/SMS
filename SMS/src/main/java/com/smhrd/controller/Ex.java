@@ -32,6 +32,9 @@ public class Ex implements Command {
 		// reviewDAO 함수 사용하기
 		reviewDAO dao_rev = new reviewDAO();
 		List<reviewVO> result = dao_rev.search(vo_fol);
+
+		
+		
 		
 		// request 영역에 담아주기
 		request.setAttribute("review", result);

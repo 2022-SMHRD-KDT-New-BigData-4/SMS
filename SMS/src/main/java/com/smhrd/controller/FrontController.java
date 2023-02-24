@@ -23,13 +23,15 @@ public class FrontController extends HttpServlet {
 		// 어떤 요청이 들어왔을 때, 해당하는 요청을 수행할 수 있는 클래스의 객체 생성!
 		map = new HashMap<>();
 		
-		map.put("LoginService.do", new LoginService());		
-		map.put("JoinService.do", new JoinService());		
-		map.put("FollowCheck.do", new FollowCheck());		
-		map.put("ReviewCheck.do", new ReviewCheck());		
 		map.put("Ex.do", new Ex());		
-		map.put("ReplyService.do", new ReplyService());		
+		map.put("FollowCheck.do", new FollowCheck());		
+		map.put("JoinService.do", new JoinService());		
+		map.put("LikeServiece.do", new LikeServiece());		
+		map.put("LoginService.do", new LoginService());		
 		map.put("ReplyCheck.do", new ReplyCheck());		
+		map.put("ReplyService.do", new ReplyService());		
+		map.put("ReviewCheck.do", new ReviewCheck());		
+		map.put("ReviewMake.do", new ReviewMake());		
 		
 	}
 

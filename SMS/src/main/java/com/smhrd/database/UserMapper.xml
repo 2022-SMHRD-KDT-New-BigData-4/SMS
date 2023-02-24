@@ -90,7 +90,7 @@
   	where res_name = #{res_name}
   </select>
 
-
+  <!-- 게시글을 작성하여 저장하는 쿼리문 -->
   <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
   	insert into tb_review(
   		rv_content,
@@ -106,6 +106,36 @@
   		#{rv_hashtag}
   	)
   </insert>
+
+
+  <!-- 좋아요를 누를때 저장이되는 쿼리문 -->
+  <insert id = "likes" parameterType = "com.smhrd.model.likesVO">
+  	insert into tb_likes (mb_id, rv_seq)
+  	 values(#{mb_id}, #{rv_seq})
+  </insert>
+
+  <!-- 좋아요를 취소할 때 행을 지우는 쿼리문 -->
+  <delete id = "dislikes" parameterType = "com.smhrd.model.likesVO">
+  	delete from tb_likes
+  	 where mb_id = #{mb_id}
+  	 and   rv_seq = #{rv_seq})
+  </delete>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
