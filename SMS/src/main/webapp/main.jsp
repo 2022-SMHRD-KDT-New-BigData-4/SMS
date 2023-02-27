@@ -62,8 +62,8 @@
             <!-- 2.center  -->
             <div class="center">
             	<!-- 검색 기능 -->
-                <form class="search" action="#">
-                    <input id="searchBar" type="text">
+                <form class="search" action="Ex00.do">
+                    <input id="searchBar" type="text" name="searchBar">
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
                 

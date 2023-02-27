@@ -20,7 +20,7 @@ public class Ex00 implements Command {
 		// 검색창에 입력을 햇을 때 검색을 하는 클래스
 		
 		// 인풋 태그를 통해 입력받은 값을 저장
-		String search = "한식";
+		String search = request.getParameter("searchBar");
 		// 검색창의 인풋태그와 연결을 해야 함!!!!!!!!!!!!!
 		
 		
@@ -56,7 +56,7 @@ public class Ex00 implements Command {
 		
 		
 		
-		return "Ex00001";
+		return "search";
 	}
 
 }
