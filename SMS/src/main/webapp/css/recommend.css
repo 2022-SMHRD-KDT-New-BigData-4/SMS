@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.moveRecBox{
+    height: 400px;
+    /* background-color: gainsboro; */
+}
+.moveRecBox_top{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+}
+.moveRecBox_top p{
+    font-size: 25px;
+}
+#moveRecBox_topMarkerImg{
+    width: 25px;
+    height: 25px;
+}
+.moveRecBox_mainRec1{
+    width: 550px;
+    height: 350px;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left:300px;
+}
+.mainRec1_img{
+    box-sizing: border-box;
+    background-color:  white;
+    border-radius: 20px 0px 0px 20px;
+}
+.mainRec1_img img{
+    width: 275px;
+    height: 350px;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+}
+.mainRec1_boxTop{
+    width: 275px;
+    height: 350px;
+}
+.mainRec1_Box{
+    width: 275px;
+    height: 350px;
+}
+.recUserInfo{
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#recUserInfo_img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.recUserInfo_info{
+    margin-left: 10px;
+}
+#mainRec1_storeName{
+    height: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+#mainRec1_content{
+    height: 180px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+#mainRec1_tag{
+    margin-top: 10px;
+    height: 60px;
+}
+#mainRec1_storeName p, #mainRec1_content p{
+    margin-left: 10px;
+}
+#mainRec1_tag p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* 반복되는 추천 - 한식 */
+.koreanFoodimg_box{
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+.koreanFood{
+    width: 85%;
+    height: 300px;
+    margin-left: 45px;
+    /*background-color: blue;*/
+    display: inline-block;
+}
+#koreanFood_ment{
+    margin-top: 10px;
+}
+.koreanFood_imgs{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    overflow: hidden;
+    width:790px
+}
+.koreanFood_img{
+    height: 250px;
+    width: 250px;
+    margin-left: 10px;
+}
+.button_icon{
+    top: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+.button_icon:last-child{
+    right: 50px;
+}
+.button_icon:first-child{
+    left: 50px;
+}
+.button_icon img{
+    width: 20px;
+    height: 20px;
+}
