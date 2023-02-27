@@ -67,18 +67,21 @@
                 
                 <!-- 팔로워 게시물 -->
                 <div class="container">
-					                    <!-- 움직이는 추천창 -->
+					<!-- 움직이는 추천창 -->
                     <div class="moveRecBox">
                         <div class="moveRecBox_top">
                             <img id="moveRecBox_topMarkerImg" src="./img/marker.png">
                             <p style="color: #5cb270;">전남대학교</p>
                         </div>
+                        <div style="display:flex; justify-content: center;">
                         <div class="moveRecBox_unTop">
+             
                             <div class="moveRecBox_main">
+                               <div class="moveRecBox_main1 fade active">
                                 <!-- 움직이는 추천리뷰1-->
                                 <div class="moveRecBox_mainRec1">
                                     <!-- 추천리뷰1-left 사진-->
-                                    <div class="mainRec1_img"><img src="./img/emcbtizsrth13n.jpg"></div>
+                                    <div class="mainRec1_img"><img src="./img/ex_post.jpg"></div>
 
                                     <!-- 추천리뷰1-right 리뷰글( top-리뷰자 아이디,이름,프로필사진) / main-리뷰 내용(글) -->
                                     <div class="mainRec1_Box">
@@ -97,15 +100,44 @@
                                         <div id="mainRec1_tag"><p>#게시물 태그 #게시물 태그 #게시물 태그</p></div>
                                     </div>
                                 </div>
+                                </div>
+                                
+                                <div class="moveRecBox_main1 fade">
+                                	<!-- 움직이는 추천리뷰1-->
+                                	<div class="moveRecBox_mainRec1">
+                                    <!-- 추천리뷰1-left 사진-->
+                                    <div class="mainRec1_img"><img src="#"></div>
+
+                                    <!-- 추천리뷰1-right 리뷰글( top-리뷰자 아이디,이름,프로필사진) / main-리뷰 내용(글) -->
+                                    <div class="mainRec1_Box">
+                                        <div class="recUserInfo">
+                                            <!-- top -->
+                                            <!-- 프로필 사진 -->
+                                            <img id="recUserInfo_img" src="#">
+                                            <!-- 아이디, 이름 -->
+                                            <ul class="recUserInfo_info">
+                                                <li><a id="recUserInfo_infoId" href="#">유저아이디</a></li>
+                                                <li style="font-size: 13px;">유저이름</li>
+                                            </ul>
+                                        </div>
+                                        <div id="mainRec1_storeName"><p>가게명</p></div>
+                                        <div id="mainRec1_content"><p>내용 블라블라~~</p></div>
+                                        <div id="mainRec1_tag"><p>#게시물 태그 #게시물 태그 #게시물 태그</p></div>
+                                    </div>
+                                	</div>
+                                </div>
                             </div>
+                            
                         </div>
+                     </div>   
+
                    </div> <!-- 닫는디브 -->
                    
-                   <!-- 반복되는 추천디브 -->
+                   <!-- 반복되는 추천디브 - 한식 -->
                    <div class="koreanFood">
                         <p id="koreanFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="koreanFoodimg_box">
-                            <button id="left" class="button_icon"></a><img class="button_icon_left" src="./img/i_left.png"></button>
+                            <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             <ul class="koreanFood_imgs">
                                 <li>
                                     <a href="#">1<img class="koreanFood_img" src="#"></a>
@@ -137,14 +169,95 @@
                                 <li>
                                     <a href="#">10<img class="koreanFood_img" src="#"></a>
                                 </li>
-                                <li>
-                                    <a href="#">11<img class="koreanFood_img" src="#"></a>
-                                </li>
+                                
                             </ul>
                             <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
                         </div>
                    </div>
                    
+                   <!-- 반복되는 추천디브 - 중식+일식 -->
+                   <div class="japanesFood">
+                        <p id="japanesFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
+                        <div class="japanesFoodimg_box">
+                            <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                            <ul class="japanesFood_imgs">
+                                <li>
+                                    <a href="#">1<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">2<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">3<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">4<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">5<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">6<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">7<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">8<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">9<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">10<img class="japanesFood_img" src="#"></a>
+                                </li>
+                                
+                            </ul>
+                            <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
+                        </div>
+                   </div>
+                   
+                   <!-- 반복되는 추천디브 - 카페 -->
+                   <div class="cafeFood">
+                        <p id="cafeFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
+                        <div class="cafeFoodimg_box">
+                            <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                            <ul class="cafeFood_imgs">
+                                <li>
+                                    <a href="#">1<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">2<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">3<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">4<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">5<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">6<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">7<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">8<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">9<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">10<img class="cafeFood_img" src="#"></a>
+                                </li>
+                                
+                            </ul>
+                            <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
+                        </div>
+                   </div>
                 </div>
             </div>
             <!-- 3. right -->
