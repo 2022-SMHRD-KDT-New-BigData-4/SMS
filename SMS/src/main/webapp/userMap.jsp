@@ -1,5 +1,7 @@
+<%@page import="com.smhrd.model.restaurantVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,8 @@
         .overlaybox li {list-style: none;}
         /* 오버레이 메인타이틀 */
         .overlaybox .boxtitle {color:#fff; font-size:16px;font-weight:bold;margin-bottom:8px;}
-        .overlaybox .first {position:relative;width:247px;height:136px;background: url('https://d12zq4w4guyljn.cloudfront.net/750_750_20200726060017037_photo_314372b42282.jpg') no-repeat;margin-bottom:8px;margin-top:8px;border-radius: 5px;}
+        /*.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://d12zq4w4guyljn.cloudfront.net/750_750_20200726060017037_photo_314372b42282.jpg') no-repeat;margin-bottom:8px;margin-top:8px;border-radius: 5px;}*/
+        .overlaybox .first {position:relative;width:247px;height:136px; no-repeat;margin-bottom:8px;margin-top:8px;border-radius: 5px;}
         .first .text {color:#fff;font-weight:bold;}
         .first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
         .first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}
@@ -45,6 +48,31 @@
     </style>
 </head>
 <body>
+<!-- 데이터 꺼내기 -->
+<div>
+123
+<%
+//List<restaurantVO> list= (List<restaurantVO>)request.getAttribute("list");
+//for(restaurantVO i : list ){	
+//}
+%>
+<c:forEach items="${list}" var="vo">
+    <c:out value="${vo.res_seq}"/><br>
+    <c:out value="${vo.res_name}"/><br>
+    <c:out value="${vo.res_addr}"/><br>
+    <c:out value="${vo.res_tel}"/><br>
+    <c:out value="${vo.open_time}"/><br>
+    <c:out value="${vo.close_time}"/><br>
+    <c:out value="${vo.rest_day}"/><br>
+    <c:out value="${vo.res_lat}"/><br>
+    <c:out value="${vo.res_lng}"/><br>
+    <c:forEach items="${vo.res_pics}" var="pic">
+        <c:out value="${pic}"/><br>
+    </c:forEach>
+    <br>
+</c:forEach>
+
+
 
 <div id="map" style="float: right;width:70%;height:600px;"></div>
 
@@ -153,7 +181,7 @@ titleClose.textContent ='닫기11111111111111111111'; // 새로운 div 엘리먼
 var title = document.createElement('span');
 title.className = 'boxtitle';
     // 임시로 데이터동적할당 테스트 0226 05:27
-title.textContent = data[0].res_name;
+title.textContent = ${vo.get().res_name}
 titleClose.appendChild(title);
 
 var closeButton = document.createElement('span');
@@ -164,8 +192,16 @@ titleClose.appendChild(closeButton);
 closeButton.addEventListener('click',()=>{
     customOverlay.setMap(null)
 });
+
+var img = document.createElement('img');
+img.setAttribute('src','https://t1.daumcdn.net/cfile/tistory/998B2C465C496B7026')
+img.setAttribute('width','100%')
+img.setAttribute('height','100%')
+
 var first = document.createElement('div');
 first.className = 'first';
+first.appendChild(img)
+
 var ul = document.createElement('ul');
 var li1 = document.createElement('li');
 li1.className = 'up';
