@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.upload {
+.uploadPost {
     position: absolute;
     margin: -500px 0px 0px -300px;
     margin-top: -11px;
@@ -10,24 +10,35 @@
     height: 600px;
 }
 
-.pic {
+.mainNewPost {
+	width: 1000px;
+    height: 600px;
+    display: flex;
+    display: inline;
+    flex-direction: row;
+}
+
+.picPost {
+	width: 500px;
+	height: 600px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile {
+.profilePost {
     width: 1000px;
     height: 65px;
     border-top-right-radius: 10px;
     border: 1px solid gainsboro;
 }
 
-.comment {
+.commentPost {
     width: 500px;
-    height: 531px;
+    height: 530px;
     border: 1px solid gainsboro;
+    display: flex;
     flex-direction: column;
 }
 
@@ -36,13 +47,14 @@
     min-width: 500px;
     width: 500px;
     height: 555px;
+	float: left;
     margin-left: 500px;
-    margin-top: -403px;
-    flex-direction: column;
+    margin-top: -408px;
 }
 
 .textAreaPic{
     height: 70px;
+    margin-top: 1.6px;
     border-top: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
     flex-direction: row;
@@ -61,7 +73,7 @@
 }
 
 .newTextProfileId{
-    width: 1000px;
+    width: 500px;
     height: 30px;
     margin-top: 37px;
 }
@@ -104,24 +116,42 @@
 }
 
 
-.name {
-    margin-top: 20px;
-    font-size: larger;
-    text-align: center;
+.username {
+    width: 360px;
+    height: 50px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 435px;
 }
 
-.pic p {
+.namePost {
+	width: 1000px;
+	height: 20px;
+    margin-top: 10px;
+    font-size: larger;
+    display: flex;
+    flex-direction: row;
+    float: left;
+}
+
+.postSubmit {
+	margin-left: 310px;
+	margin-top: -4px;
+}
+
+.picPost p {
     font-size: 20px;
     margin-top: 40px;
 }
 
 .pick {
+	margin-top: 30px;
     justify-content: center;
     text-align: center;
 }
 
 
-.overlay {
+.overlayPost {
     display: none;
     z-index: 1000;
     position: fixed;

@@ -11,15 +11,13 @@ function closePop() {
 
 //팝업 띄우기
 function openPopPost() {
-	location.href="newPostMake.jsp";
     document.getElementById("popup_layer_post").style.display = "block";
 
 }
 
 //팝업 닫기
 function closePopPost() {
-	location.href="main.jsp";
-    document.getElementById("popup_layer").style.display = "none";
+    document.getElementById("popup_layer_post").style.display = "none";
 }
 
 //좋아요 하트 변경

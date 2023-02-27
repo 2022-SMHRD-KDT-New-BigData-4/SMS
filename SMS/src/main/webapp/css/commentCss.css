@@ -69,7 +69,7 @@
     margin-left: 10px;
 }
 
-.name {
+.comname {
     margin-top: 9px;
 }
 
@@ -115,6 +115,14 @@
     margin-right: 10px;
 }
 
+.submitBtn {
+    width: 80px;
+    height: 25px;
+    border: 1px solid gainsboro;
+    background: linear-gradient(to right, #f4f269,#5cb270);
+    border-radius: 10px;
+	color: #fafafa;
+}
 
 .comProfilepic {
     width: 60px;
