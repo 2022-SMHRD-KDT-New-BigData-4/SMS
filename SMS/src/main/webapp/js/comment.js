@@ -21,7 +21,7 @@ function closePopPost() {
 }
 
 //좋아요 하트 변경
-$(function(){
+$(function heart(){
     var $likeBtn =$('.likeIcon');
 
         $likeBtn.click(function(){

@@ -96,7 +96,7 @@ $(function(){
     var $likeBtn =$('.likeIcon');
 
         $likeBtn.click(function(){
-        $likeBtn.toggleClass('active');
+        $(this).toggleClass('active');
 
         if($likeBtn.hasClass('active')){          
            $(this).find('img').attr({

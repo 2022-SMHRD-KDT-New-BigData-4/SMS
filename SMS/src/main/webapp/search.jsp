@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/search.css">
-<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/search.css">
+		<link rel="stylesheet" href="./css/reset.css">
+    	<link rel="stylesheet" href="./css/searchCommentCss.css">
+    	<link rel="stylesheet" href="./css/searchCommentPopup.css">
 
 </head>
 <body>
@@ -49,7 +51,7 @@
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
                 <div class="container">
-                   <div><a href="javascript:openPop()"><img src="./img/16802_24920_49.jpg"></a></div>
+                   <div><a href="javascript:openPop()"><img src="./img/ex_post.jpg"></a></div>
                    <div><a href="#"><img src="#"></a></div>
                    <div><a href="#"><img src="#"></a></div>
                    <div><a href="#"><img src="#"></a></div>
@@ -126,7 +128,7 @@
             <a href="javascript:closePop();"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
         </div>
         <div class="popup_box">
-            <div style="height: 10px; width: 375px; float: top;">
+            <div style="height: 900px; width: 1200px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
             <div class="upload">
@@ -151,10 +153,22 @@
                                 </div>
                                 <div class="comText">댓글내용</div>
                                 <div class="like">
-                                    <a href="javascript:;" class="likeIcon heart">
-                                        <img src="img/like.png" alt="찜하기"">
+                                    <a href="javascript:heart();" class="likeIcon heart">
+                                        <img src="img/like.png" alt="찜하기">
                                     </a>
                                 </div>
+                            </div>
+                            <div class="searchCommentIcon">
+                            <ul>
+                                <li class="searchCommentIcons">
+                                	<!-- 좋아요 버튼 -->
+                                    <a href="javascript:heart();" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <!-- 댓글 버튼 -->
+                                    <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
+                                    <!-- 보관 버튼 -->
+                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
+                                </li>
+                            </ul>
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic">내프로필사진</div>
