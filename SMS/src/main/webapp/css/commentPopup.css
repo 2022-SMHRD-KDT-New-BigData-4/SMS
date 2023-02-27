@@ -56,35 +56,37 @@
 /*popup*/
 
 /* 좋아요 하트 */
-a{
-    text-decoration:none;
-    color:inherit; 
-    cursor: pointer;
-}
-.like .likeIcon {
-    float: right;
-    margin-right: 18px;
-    
-  }
-  
- .likeIcon.heart img{
-      width: 25px;
-      height: 25px;
-  }
   
  .likeIcon.heart.fas{
     color:red
   }
   
-  .heart {
-      transform-origin: center;
-  }
   .heart.active img{
       animation: animateHeart .3s linear forwards;
+    position: relative;
+    z-index: -100;
   }
   
   @keyframes animateHeart{
       0%{transform:scale(.2);}
       40%{transform:scale(1.2);}
       100%{transform:scale(1);}
-    }
+    } 
+    
+    
+ /* 보관함 */  
+ .saveIcon.save.fas{
+    color:black
+  }
+  
+  .save.active img{
+      animation: animateSave .3s linear forwards;
+    position: relative;
+    z-index: -100;
+  }
+  
+  @keyframes animateSave{
+      0%{transform:scale(.2);}
+      40%{transform:scale(1.2);}
+      100%{transform:scale(1);}
+    } 

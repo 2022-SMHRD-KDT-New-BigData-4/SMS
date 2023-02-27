@@ -41,7 +41,7 @@
                     <!-- 게시물 만들기 버튼 -->
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
-                        <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
+                        <a href="javascript:openPopPost()" class="icontext">만들기</a>
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
@@ -100,7 +100,7 @@
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <!-- 보관 버튼 -->
-                                    <a><img src="./img/save.png"></a>
+                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">

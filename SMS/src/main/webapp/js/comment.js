@@ -25,7 +25,7 @@ $(function(){
     var $likeBtn =$('.likeIcon');
 
         $likeBtn.click(function(){
-        $likeBtn.toggleClass('active');
+        $(this).toggleClass('active');
 
         if($likeBtn.hasClass('active')){          
            $(this).find('img').attr({
@@ -37,6 +37,29 @@ $(function(){
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
               'src': 'img/like.png'
+           })
+         }
+     })
+})
+
+//보관함 변경
+$(function save(){
+    var $saveBtn =$('.saveIcon');
+
+        $saveBtn.on('click', function(e){
+		e.preventDefault();
+        $(this).toggleClass('active');
+
+        if($saveBtn.hasClass('active')){          
+           $(this).find('img').attr({
+              'src': 'img/saveBlack.png',
+                });
+          
+          
+         }else{
+            $(this).find('i').removeClass('fas').addClass('far')
+           $(this).find('img').attr({
+              'src': 'img/save.png'
            })
          }
      })

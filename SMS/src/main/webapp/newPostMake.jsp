@@ -31,6 +31,9 @@
                             <div class="comment">
                                 <div class="pic">
                                     <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
+                                    <div class="userNewImage" width="200px">
+                                    </div>
+                                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
                                     <p>사진과 동영상을 여기에 끌어다 놓으세요.</p>
                                 </div>
                                 <div class="pick">
@@ -67,29 +70,6 @@
 
 
 
-</body>
-
-<script>
-//팝업 띄우기
-function openPop() {
-    document.getElementById("popup_layer").style.display = "block";
-
-}
-
-//팝업 닫기
-function closePop() {
-	location.href="main.jsp";
-    document.getElementById("popup_layer").style.display = "none";
-}
-
-documents.getElementByClassName
-
-</script>
-
-</html>
-
-
-
 
 </body>
 
@@ -106,7 +86,27 @@ function closePop() {
     document.getElementById("popup_layer").style.display = "none";
 }
 
-documents.getElementByClassName
+function loadFile(input) {
+    var file = input.files[0];	//선택된 파일 가져오기
+
+    //미리 만들어 놓은 div에 text(파일 이름) 추가
+    var name = document.getElementById('fileName');
+    name.textContent = file.name;
+
+  	//새로운 이미지 div 추가
+    var newImage = document.createElement("img");
+    newImage.setAttribute("class", 'img');
+
+    //이미지 source 가져오기
+    newImage.src = URL.createObjectURL(file);   
+
+    newImage.style.width = 200px;
+    newImage.style.objectFit = "contain";
+
+    //이미지를 image-show div에 추가
+    var container = document.getElementById('userNewImage');
+    container.appendChild(newImage);
+};
 
 </script>
 
