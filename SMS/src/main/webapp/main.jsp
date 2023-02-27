@@ -1,5 +1,8 @@
+<%@page import="com.smhrd.model.reviewVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -68,9 +71,10 @@
                 <div class="container">
                 
                 <%
-                String[] review = request.getParameterValues("review");
+                List<reviewVO> review = (List<reviewVO>)request.getAttribute("review");
                  
-                for(int i = 0;i<3;i++){ %>              
+                %>            
+                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">
                     <div class="post">
@@ -118,7 +122,7 @@
                         </div>
                     </div>
                    </div> <!--postBox 닫는 디브-->
-                   <% } %>
+                   </c:forEach>
                    
                 </div>
             </div>
