@@ -21,11 +21,19 @@ public class reviewVO {
 		super();
 	}
 	
-	// 작성자의 아이디로 리뷰글들 가져오기
+	// 작성자의 아이디로 리뷰글들 가져오기 and 작성자아이디로 리뷰글들 검색
 	public reviewVO(String mb_id) {
 		super();
 		this.mb_id = mb_id;
 	}
+
+	// 가게이름으로 리뷰글들 검색
+	public reviewVO(int res_seq) {
+		super();
+		this.res_seq = res_seq;
+	}
+	
+	
 
 	// 리뷰(게시글) 등록하기
 	public reviewVO(String rv_content, int rv_ratings, String mb_id, int res_seq, String rv_hashtag) {
