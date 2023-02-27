@@ -50,7 +50,7 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a></a><img src="#">
+                        <a><img src="#"></a>
                         <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
