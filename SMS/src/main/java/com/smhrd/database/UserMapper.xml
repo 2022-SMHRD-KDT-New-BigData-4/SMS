@@ -134,10 +134,38 @@
   	 and   followee = #{followee})
   </delete>
 
+  <!-- 좋아요 테이블에서 좋아요가 많은 순서를 가져오는 쿼리문 -->
+  <select id="rank" resultType="com.smhrd.model.likesVO"
+  >
+ select rv_seq
+   from(select rv_seq, count(*)
+  	  	  from tb_likes
+    	 where like_date BETWEEN sysdate-5 and sysdate
+         group by rv_seq
+         order by count(*) desc)
+  </select>
 
+  <!-- 추천페이지 리뷰번호로 리뷰정보 보여주는 쿼리문 -->
+  <select id="show" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review
+  	where rv_seq = #{res_seq}
+  </select>
 
-
-
+  <!-- 좋아요 테이블에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
+  <select id="rank2" resultType="com.smhrd.model.reviewVO"
+  >
+  SELECT A.*
+    FROM TB_REVIEW A
+     , ( select rv_seq, count(*) AS CNT 
+           from tb_likes
+          where like_date BETWEEN sysdate-5 and sysdate
+          group by rv_seq
+          order by count(*) desc) B
+   WHERE A.RV_SEQ = B.RV_SEQ
+   ORDER BY B.CNT DESC
+  </select>
 
 
 

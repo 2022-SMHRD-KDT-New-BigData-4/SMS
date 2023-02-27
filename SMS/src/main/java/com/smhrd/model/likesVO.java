@@ -27,6 +27,11 @@ public class likesVO {
 		this.rv_seq = rv_seq;
 	}
 	
+	// 좋아요에서 리뷰번호만 가져올 객체
+	public likesVO(int rv_seq) {
+		super();
+		this.rv_seq = rv_seq;
+	}
 	
 	
 	

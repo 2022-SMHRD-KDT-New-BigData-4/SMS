@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -29,6 +31,17 @@ public class likesDAO {
 		
 		return cnt;
 			
-		}
+	}
+	
+	// 추천창에 좋아요 수가 많은 순서대로 보여주기
+	public List<reviewVO> rank() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("rank2");
+		
+		return result;
+	}
+	
 	
 }

@@ -33,7 +33,15 @@ public class reviewDAO {
 		
 	}
 	
-	
+	// 추천페이지에 게시글들 보여주기, 게시글 번호로 데이터 가져오기
+	public reviewVO show(reviewVO vo_rev) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		reviewVO result = sqlSession.selectOne("show", vo_rev);
+		
+		return result;
+	}
 	
 	
 }
