@@ -167,9 +167,24 @@
    ORDER BY B.CNT DESC
   </select>
 
+  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재할때) -->
+  <select id="user_search1" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review
+  	where mb_id = #{mb_id}
+  	   or res_seq = #{res_seq}
+  	   or rv_hashtag = #{rv_hashtag}
+  </select>
 
-
-
+  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재하지 않을 때) -->
+  <select id="user_search2" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review
+  	where mb_id = #{mb_id}
+  	   or rv_hashtag = #{rv_hashtag}
+  </select>
 
 
 

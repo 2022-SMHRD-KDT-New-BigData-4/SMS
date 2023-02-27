@@ -44,4 +44,27 @@ public class reviewDAO {
 	}
 	
 	
+	// 검색창에 검색을 진행 (가게가 존재할때)
+	public List<reviewVO> usersearch1(reviewVO vo_rev) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("user_search1",vo_rev);
+
+		return result;
+	}
+	
+	// 검색창에 검색을 진행 (가게가 존재할때)
+	public List<reviewVO> usersearch2(reviewVO vo_rev) {
+			
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("user_search2",vo_rev);
+
+		return result;
+	}
+	
+	
+	
+	
 }

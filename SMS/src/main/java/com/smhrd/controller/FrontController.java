@@ -24,6 +24,7 @@ public class FrontController extends HttpServlet {
 		map = new HashMap<>();
 		
 		map.put("Ex.do", new Ex());		
+		map.put("Ex00.do", new Ex00());		
 		map.put("ExEx.do", new ExEx());		
 		map.put("FollowCheck.do", new FollowCheck());		
 		map.put("FollowDelete.do", new FollowDelete());		

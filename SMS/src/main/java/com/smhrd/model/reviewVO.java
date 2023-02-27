@@ -45,7 +45,20 @@ public class reviewVO {
 		this.rv_hashtag = rv_hashtag;
 	}
 	
+	// 검색창에서 검색하기(가게이름이 존재하는 경우)
+	public reviewVO(String mb_id, int res_seq, String rv_hashtag) {
+		super();
+		this.mb_id = mb_id;
+		this.res_seq = res_seq;
+		this.rv_hashtag = rv_hashtag;
+	}
 
+	// 검색창에서 검색하기(가게이름이 존재하지 않는 경우)
+	public reviewVO(String mb_id, String rv_hashtag) {
+		super();
+		this.mb_id = mb_id;
+		this.rv_hashtag = rv_hashtag;
+	}
 
 
 	public reviewVO(int rv_seq, String rv_content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
