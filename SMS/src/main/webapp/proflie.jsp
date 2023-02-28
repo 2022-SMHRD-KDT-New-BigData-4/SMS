@@ -16,34 +16,47 @@
     <body link="black" vlink="black" alink="black">
         <div class="container1">
         
+            <!-- 1. left -->
             <div class="left">
-                <h1 class="logo"><a id="logoText" href="./main.jsp">FOODIER</a></h1>
+            <!-- 로고 -->
+                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
+                <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
+                    <!-- 홈 버튼 -->
                     <li>
-                        <a href="./main.jsp"><img src="./img/home.png"></a>
-                        <a class="icontext" href="./main.jsp">홈</a>
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
+                    <!-- 추천 버튼 -->
                     <li>
-                        <a href="#"><img src="./img/rec.png"></a>
-                        <a class="icontext" href="#">추천</a>
+                        <a href="recommendService.do"><img src="./img/rec.png"></a>
+                        <a class="icontext" href="recommendService.do">추천</a>
                     </li>
+                    <!-- 보관 버튼 -->
                     <li>
-                        <a href="./userMap.jsp"><img src="./img/save.png"></a>
-                        <a class="icontext" href="./userMap.jsp">보관</a>
+                        <a><img src="./img/save.png"></a>
+                        <a class="icontext" href="#">보관</a>
                     </li>
+                    <!-- 게시물 만들기 버튼 -->
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
-                        <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
+                        <a href="javascript:openPopPost()" class="icontext">만들기</a>
                     </li>
+                    <!-- 프로필 버튼 -->
                     <li>
-                        <a href="./userProflie.jsp"><img src="#"></a>
-                        <a class="icontext" href="./userProflie.jsp">프로필</a>
+                        <a><img src="#"></a>
+                        <a class="icontext" href="#">프로필</a>
                     </li>
-                </ul>
+                </ul> <!-- 카테고리 버튼 종료 ul태그 -->
+                
+                <!-- 로그아웃 기능이 들어있는 버튼 -->
                 <div class="plusBtn">
                     <a href="#"><img src="./img/bar.png" ></a>
                 </div>
-            </div>
+            </div> <!-- left 종료 디브 -->
+            
+            
+            
             <div class="center">
                 <form class="search" action="#">
                     <input id="searchBar" type="text">
@@ -75,12 +88,8 @@
             <div class="right">
                     <div class="user">
                     </div>
-                    <div class="recListBox">
-                      
-                        
+                    <div class="recListBox">                                             
                     </div>
-                    
-               
             </div>
         </div>
 

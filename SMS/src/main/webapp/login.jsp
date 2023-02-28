@@ -18,7 +18,7 @@
         <div class="box1_min1">
             <p id="logo">Foodier</p>
             <div class="box1">
-                <form action="LoginService.do" id="login2">
+                <form action="LoginService.do" id="login2" method="post">
                     <table>
                     <tr>
                         <td><input type="text" name="id" placeholder="ID"></tr>

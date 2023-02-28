@@ -21,18 +21,18 @@
         <!-- 1. left -->
             <div class="left">
             <!-- 로고 -->
-                <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
+                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
                 <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
                     <!-- 홈 버튼 -->
                     <li>
-                        <a><img src="./img/home.png"></a>
-                        <a class="icontext" href="#">홈</a>
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
                     <!-- 추천 버튼 -->
                     <li>
-                        <a><img src="./img/rec.png"></a>
-                        <a class="icontext" href="#">추천</a>
+                        <a href="recommendService.do"><img src="./img/rec.png"></a>
+                        <a class="icontext" href="recommendService.do">추천</a>
                     </li>
                     <!-- 보관 버튼 -->
                     <li>
@@ -42,11 +42,11 @@
                     <!-- 게시물 만들기 버튼 -->
                     <li>
                         <a href="javascript:openPopPost()"><img src="./img/plus.png"></a>
-                        <a href="javascript:openPopPost()" class="icontext" href="#">만들기</a>
+                        <a href="javascript:openPopPost()" class="icontext">만들기</a>
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a></a><img src="#">
+                        <a><img src="#"></a>
                         <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
@@ -262,15 +262,15 @@
             </div>
             <!-- 3. right -->
             <div class="right">
-            		<!-- 유저프로필 -->
+                  <!-- 유저프로필 -->
                     <div class="user">
                     <!-- 유저 프로필 사진 -->
-                        <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
+                        <a href="#"><img id="userImg" src="${user2.mb_pic}"></a>
                         <div class="userId">
                             <!-- 유저id -->
-                            <a href="#"></a>
+                            <a href="#">${user.mb_id}</a>
                             <!-- 유저 이름 -->
-                            <p></p>
+                            <p>${user.mb_name}</p>
                         </div>
 
                     </div>
@@ -281,14 +281,14 @@
                         
                             <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
                             <li class="rec">
-                            	<!-- 추천 이용자 프로필 사진 / class="rec_img" -->
-                            	<a><img class="rec_img" src="#"></a>        
-                            	<div>
-                            		<!-- 추천자 id -->
-                                	<a href="#">추천ID</a>
-                                	<!-- 추천자 이름 -->
-                                	<p>추천인 이름</p> 
-                            	</div>
+                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
+                               <a><img class="rec_img" src="#"></a>        
+                               <div>
+                                  <!-- 추천자 id -->
+                                   <a href="#">추천ID</a>
+                                   <!-- 추천자 이름 -->
+                                   <p>추천인 이름</p> 
+                               </div>
                             </li> <!-- rec클래스 닫는 태그 -->
                                    
                         </ul> 

@@ -83,7 +83,7 @@
                     <!-- 게시물 맨 위칸 -->
                         <div class="postTop">
                            <!-- 팔로워 프로필 사진 -->
-                            <a href="#"><img src="./img/ex_proflie.jpg"></a>
+                            <a href="#"><img src="${review.get(i).mb_pic}"></a>
                             <ul class="name">
                                 <!-- 팔로워 아이디(게시물 작성자)-->                           
                                 <li><a href="#">${review.get(i).mb_id}</a></li>
@@ -133,7 +133,7 @@
                   <!-- 유저프로필 -->
                     <div class="user">
                     <!-- 유저 프로필 사진 -->
-                        <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
+                        <a href="#"><img id="userImg" src="${user2.mb_pic}"></a>
                         <div class="userId">
                             <!-- 유저id -->
                             <a href="#">${user.mb_id}</a>
