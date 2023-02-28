@@ -70,6 +70,20 @@
   					  where follower = #{follower})
   </select>
 
+  <select id="search7" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.profilereviewVO"
+  >
+select *
+  from (select * from tb_profile	
+      	where mb_id in ( select followee
+        				   from tb_follow
+            			  where follower = #{follower})) A,
+       (select * from tb_review	
+     	where mb_id in ( select followee
+    					   from tb_follow
+    					  where follower = #{follower})) B
+ where A.mb_id = B.mb_id
+  </select>
 
 
   <insert id = "reply" parameterType = "com.smhrd.model.replyVO">

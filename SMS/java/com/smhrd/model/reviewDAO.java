@@ -12,11 +12,11 @@ public class reviewDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();	
 	
 	// 게시물 검색하여서 데이터 보여주기
-	public List<reviewVO> search(followVO vo_fol) {
+	public List<profilereviewVO> search(followVO vo_fol) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		List<reviewVO> result = sqlSession.selectList("search3", vo_fol );
+		List<profilereviewVO> result = sqlSession.selectList("search7", vo_fol );
 		
 		
 		return result;
