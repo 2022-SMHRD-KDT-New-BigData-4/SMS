@@ -141,9 +141,15 @@ textarea {
     float: left;
 }
 
-.postSubmit {
+.submitBtn {
 	margin-left: 310px;
 	margin-top: -4px;
+	background: linear-gradient(to right, #f4f269,#5cb270);
+	border: none;
+	color: #fbfbfb;
+	width: 75px;
+    height: 25px;
+    border-radius: 10px;
 }
 
 .picPost p {

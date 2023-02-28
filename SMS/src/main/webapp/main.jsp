@@ -50,7 +50,7 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a><img src="#"></a>
+                        <a><img src="${user2.mb_pic}" id="getUserPic"></a>
                         <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
@@ -166,7 +166,7 @@
             </div>
         </div>
 
-<!-- ----------댓글, 만들기, 하트 --------------------- -->
+<!-- ----------댓글, 하트 --------------------- -->
 
     <div class="popup_layer" id="popup_layer" style="display: none;">
         <div class="close">

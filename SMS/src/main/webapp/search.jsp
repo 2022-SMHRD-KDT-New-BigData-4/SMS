@@ -33,7 +33,7 @@
                         <a class="icontext" href="javascript:openPop()">만들기</a>
                     </li>
                     <li>
-                        <a href="#"><img src="./img/ex_profile.jpg"></a>
+                        <a href="#" ><img src="${user2.mb_pic }" id="getUserPic"></a>
                         <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul>

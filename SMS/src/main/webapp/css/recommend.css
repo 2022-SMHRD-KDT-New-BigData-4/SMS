@@ -220,6 +220,37 @@ a { text-decoration:none; }
 }
 /*   여기까지 카페    */
 
+/* 반복되는 추천 - 중식 */
+.chinaFoodimg_box{
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+.chinaFood{
+    width: 85%;
+    height: 300px;
+    margin-left: 45px;
+    /*background-color: blue;*/
+    display: inline-block;
+    margin-top:50px;
+}
+#chinaFood_ment{
+    margin-top: 10px;
+}
+.chinaFood_imgs{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    overflow: hidden;
+    width:790px
+}
+.chinaFood_img{
+    height: 250px;
+    width: 250px;
+    margin-left: 10px;
+}
+/*   여기까지 중식    */
+
 .button_icon{
     top: 50%;
     height: 30px;
