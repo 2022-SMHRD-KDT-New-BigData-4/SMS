@@ -25,10 +25,6 @@
                         <a class="icontext" href="#">추천</a>
                     </li>
                     <li>
-                        <a><img src="./img/meal.png"></a>
-                        <a class="icontext" href="#">학식</a>
-                    </li>
-                    <li>
                         <a><img src="./img/save.png"></a>
                         <a class="icontext" href="#">보관</a>
                     </li>

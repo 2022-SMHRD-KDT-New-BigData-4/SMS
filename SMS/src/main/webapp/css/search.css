@@ -23,19 +23,21 @@ body{
    
 }
 .iconBtn{
-    margin-top: 50px;
-    height: 619px;
+    margin-top: 130px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     /* border: 1px solid green; */
     margin-left: 100px;
     list-style-type: none; 
+    text-decoration: none;
 }
 
 .iconBtn li{
     display: list-item;
     justify-items: baseline;
     margin-bottom: 40px;
+    color: black;
 }
 
 .plusBtn{
