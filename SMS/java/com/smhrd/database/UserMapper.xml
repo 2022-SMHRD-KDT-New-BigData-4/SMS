@@ -81,8 +81,12 @@ select *
        (select * from tb_review	
      	where mb_id in ( select followee
     					   from tb_follow
-    					  where follower = #{follower})) B
+    					  where follower = #{follower})) B,
+    	tb_member C,
+    	tb_restaurant D
  where A.mb_id = B.mb_id
+   and A.mb_id = C.mb_id
+   and B.res_seq = D.res_seq
 
   </select>
 
