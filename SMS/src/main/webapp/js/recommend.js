@@ -174,3 +174,37 @@ const dragStop3 = () => {
 carousel3.addEventListener("mousedown",dragStart3);
 carousel3.addEventListener("mousemove",dragging3);
 carousel3.addEventListener("mouseup",dragStop3);
+
+/** 중식 */
+const carousel4 = document.querySelector(".chinaFood_imgs");
+firstImg = carousel4.querySelectorAll("img")[0];
+arrowIcons = document.querySelectorAll(".chinaFoodimg_box button");
+
+let isDragStart4 = false,prevPageX4,preveScrollLeft4;
+let firstImgWidth4 = firstImg.clientWidth + 10;
+
+arrowIcons.forEach(button => {
+    button.addEventListener("click",()=>{
+        carousel4.scrollLeft += button.id == "left" ? -firstImgWidth : firstImgWidth;
+    })
+})
+
+const dragStart4 = (e) => {
+    isDragStart = true;
+    prevPageX=e.pageX;
+    preveScrollLeft=carousel4.scrollLeft;
+}
+
+const dragging4 = (e) => {
+    if(!isDragStart) return;
+    e.preventDefault();
+    let positionDiff = e.pageX - prevPageX
+    carousel4.scrollLeft = e.preveScrollLeft-positionDiff;
+}
+
+const dragStop4 = () => {
+    isDragStart = false;
+}
+carousel4.addEventListener("mousedown",dragStart4);
+carousel4.addEventListener("mousemove",dragging4);
+carousel4.addEventListener("mouseup",dragStop4);
