@@ -319,8 +319,13 @@ select *
    and A.mb_id = #{mb_id}
   </select>
 
-
-
+  <!-- 프로필페이지 로그인유저의 리뷰정보 보여주는 쿼리문 -->
+  <select id="myreview" parameterType="com.smhrd.model.userVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review
+  	where mb_id = #{mb_id}
+  </select>
 
 
 

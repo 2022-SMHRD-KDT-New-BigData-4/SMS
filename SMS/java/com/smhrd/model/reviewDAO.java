@@ -134,7 +134,18 @@ public class reviewDAO {
 		return result;
 	}
 	
-	
+	// 로그인한 유저의 리뷰데이터 가져오기
+	public List<reviewVO> myreview(userVO vo_mem) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("myreview", vo_mem);
+		
+		sqlSession.close();
+		
+		return result;
+
+	}
 	
 	
 }
