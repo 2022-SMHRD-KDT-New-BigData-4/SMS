@@ -140,11 +140,11 @@
                         <div class="koreanFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                            
-                            <form name="kr_food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="이동할 주소" method="POST">
                             <ul class="koreanFood_imgs">
                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['kr_food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
                                     <img class="japanesFood_img" src="${result_kr.get(i).rv_pic}"></a>
                                 </li>
                                 </c:forEach>                            
@@ -154,17 +154,17 @@
                         </div>
                    </div>
                    
-                   <!-- 반복되는 추천디브 - 중식+일식 -->
+                   <!-- 반복되는 추천디브 - 일식 -->
                    <div class="japanesFood">
                         <p id="japanesFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="japanesFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
-                            <form name="jp_food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="이동할 주소" method="POST">
                             <ul class="japanesFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['jp_food_rec'].submit()" value="${result_jp.get(i).rv_seq}">
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_jp.get(i).rv_seq}">
                                     <img class="japanesFood_img" src="${result_jp.get(i).rv_pic}"></a>
                                 </li>
                                 </c:forEach>    
@@ -174,17 +174,17 @@
                         </div>
                    </div>
                    
-                   <!-- 반복되는 추천디브 - 중식+일식 -->
+                   <!-- 반복되는 추천디브 - 중식 -->
                    <div class="chinaFood">
                         <p id="chinaFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="chinaFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
-                            <form name="ch_food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="이동할 주소" method="POST">
                             <ul class="chinaFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['ch_food_rec'].submit()" value="${result_ch.get(i).rv_seq}">
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_ch.get(i).rv_seq}">
                                     <img class="japanesFood_img" src="${result_ch.get(i).rv_pic}"></a>
                                 </li>
                                 </c:forEach>    
@@ -193,18 +193,18 @@
                             <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>                           
                         </div>
                    </div>
-                   
-                   
+                  
                    <!-- 반복되는 추천디브 - 카페 -->
                    <div class="cafeFood">
                         <p id="cafeFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="cafeFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
-                            <form name="cf_food_rec" action="이동할 주소" method="POST">
+                            
+                            <form name="food_rec" action="이동할 주소" method="POST">
                             <ul class="cafeFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['cf_food_rec'].submit()" value="${result_cf.get(i).rv_seq}">
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_cf.get(i).rv_seq}">
                                     <img class="cafeFood_img" src="${result_cf.get(i).rv_pic}"></a>
                                 </li>
                                 </c:forEach>    
@@ -215,6 +215,7 @@
                    </div>
                 </div>
             </div>
+            
             <!-- 3. right -->
             <div class="right">
                   <!-- 유저프로필 -->
