@@ -49,28 +49,26 @@
 </head>
 <body>
 <!-- 데이터 꺼내기 -->
-<div>
-123
 <%
-//List<restaurantVO> list= (List<restaurantVO>)request.getAttribute("list");
+List<restaurantVO> list= (List<restaurantVO>)request.getAttribute("list");
 //for(restaurantVO i : list ){	
 //}
+
+System.out.println("check지도맵 : "+ list.get(0).getRes_seq());
+System.out.println("check지도맵 : "+ list.get(0).getRes_name());
+System.out.println("check지도맵 : "+ list.get(0).getRes_addr());
+System.out.println("check지도맵 : "+ list.get(0).getRes_tel());
+System.out.println("check지도맵 : "+ list.get(0).getOpen_time());
+System.out.println("check지도맵 : "+ list.get(0).getClose_time());
+System.out.println("check지도맵 : "+ list.get(0).getRest_day());
+System.out.println("check지도맵 : "+ list.get(0).getRes_pic1());
+System.out.println("check지도맵 : "+ list.get(0).getRes_pic2());
+System.out.println("check지도맵 : "+ list.get(0).getRes_pic3());
+System.out.println("check지도맵 : "+ list.get(0).getRes_lat());
+System.out.println("check지도맵 : "+ list.get(0).getRes_lng());
+
 %>
-<c:forEach items="${list}" var="vo">
-    <c:out value="${vo.res_seq}"/><br>
-    <c:out value="${vo.res_name}"/><br>
-    <c:out value="${vo.res_addr}"/><br>
-    <c:out value="${vo.res_tel}"/><br>
-    <c:out value="${vo.open_time}"/><br>
-    <c:out value="${vo.close_time}"/><br>
-    <c:out value="${vo.rest_day}"/><br>
-    <c:out value="${vo.res_lat}"/><br>
-    <c:out value="${vo.res_lng}"/><br>
-    <c:forEach items="${vo.res_pics}" var="pic">
-        <c:out value="${pic}"/><br>
-    </c:forEach>
-    <br>
-</c:forEach>
+
 
 
 
@@ -78,7 +76,9 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>
 <script>
-// 지도를 표시할 div 
+
+// 지도를 표시할 div ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 var mapContainer = document.getElementById('map'),
 mapOption = { 
     // 북구청
@@ -96,30 +96,37 @@ var zoomControl = new kakao.maps.ZoomControl();
 // 2-1. 지도의 우측에 확대 축소 컨트롤을 추가한다
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+// 전역변수들 생성
+let positions=[];
+var marker;
+var imageSrc;
+var markers=[];
+var clickedOverlay;
 var data= [{
     res_seq : '1' ,// 가게번호
-    res_name :   '전남대 스타벅스 용봉DT점',// 가게이름
-    res_addr : '광주북구서방로9번길30'   ,// 가게주소
-    res_tel :   '010-0000-0000',// 가게 전화번호
-    open_time : '09:00',// 오픈시간
-    close_time : '17:00'   // 마감시간
+	 res_name :	'전대1',// 가게이름
+	 res_addr : '광주북구서방로9번길30'	,// 가게주소
+	 res_tel :	'010-0000-0000',// 가게 전화번호
+	 open_time : '09:00',// 오픈시간
+	 close_time : '17:00'	// 마감시간
 },{
     res_seq : '2' ,// 가게번호
-    res_name :   '전대2',// 가게이름
-    res_addr : '광주 북구 용봉로77용봉문화관1층스위티움'   ,// 가게주소
-    res_tel :   '010-1111-1111',// 가게 전화번호
-    open_time : '10:00',// 오픈시간
-    close_time : '18:00'   // 마감시간
+	 res_name :	'전대2',// 가게이름
+	 res_addr : '광주 북구 용봉로77용봉문화관1층스위티움'	,// 가게주소
+	 res_tel :	'010-1111-1111',// 가게 전화번호
+	 open_time : '10:00',// 오픈시간
+	 close_time : '18:00'	// 마감시간
 }]
-// 3. 주소-좌표 변환 객체를 생성합니다
-let positions=[];
 
+// 3. 주소-좌표 변환 객체를 생성합니다
+// 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 for (let i = 0; i < data.length; i++) {
+	// list 첫번째 객체의 첫번째 주소 넣어주기
     positions.push(data[i].res_addr);
 }
 var geocoder = new kakao.maps.services.Geocoder();
-//let positions = ['광주북구서방로9번길30','광주 북구 용봉로77용봉문화관1층스위티움','광주 북구 용봉택지로 81','광주 북구 용봉택지로 94 1층','광주 북구 서방로 1-8 1층 소바키','광주 북구 동문대로97번길 81'];
-// 주소로 좌표를 검색합니다
 
 // 호버시 가져올 이미지--------------------------------
 var hoverMarkerImage = new kakao.maps.MarkerImage(
@@ -130,15 +137,23 @@ var hoverMarkerImage = new kakao.maps.MarkerImage(
 );
 //---------------------------------------------------------
 
-//imageOption=null;
-//var newMarkerImage = new kakao.maps.MarkerImage('https://cdn-icons-png.flaticon.com/512/735/735757.png');
-var marker;
-var imageSrc;
-var markers=[];
-var clickedOverlay;
-
+// 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 //for 문 시작-------------------------
 for (var i = 0; i < positions.length; i ++){
+	// 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+//let data = a.map(item => {
+//	  return {
+//	    res_seq: item.res_seq,
+//	    res_name: item.res_name,
+//	    res_addr: item.res_addr,
+//	    res_tel: item.res_tel,
+//	    open_time: item.open_time,
+//	    close_time: item.close_time,
+//	    rest_day: item.rest_day,
+//	    res_lat: item.res_lat,
+//	    res_lng: item.res_lng
+//	  };
+//	});
 
 geocoder.addressSearch(positions[i], function(result, status) {
 
@@ -166,11 +181,12 @@ geocoder.addressSearch(positions[i], function(result, status) {
        addMarker(new kakao.maps.LatLng(result[0].y, result[0].x));
        //markers[i].setMap(map) 
     }
-
+// 마커 끝 -------------------------------------------------------------------------------------------------------------------------------------
       //marker.setMap(map);
       //markers[i].setMap(map) 
       
-// ------------------------------오버레이 시작 ---------------------
+// 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작 오버레이 시작
+
      // 커스텀 오버레이에 표시할 내용입니다     
      // HTML 문자열 또는 Dom Element 입니다 
 var content = document.createElement('div');
@@ -180,8 +196,8 @@ titleClose.textContent ='닫기11111111111111111111'; // 새로운 div 엘리먼
 
 var title = document.createElement('span');
 title.className = 'boxtitle';
-    // 임시로 데이터동적할당 테스트 0226 05:27
-title.textContent = ${vo.get().res_name}
+    // 임시로 데이터동적할당 테스트 0226 05:27            오버레이 제목
+title.textContent = '<%=list.get(0).getRes_name()%>' //${vo.get().res_name}
 titleClose.appendChild(title);
 
 var closeButton = document.createElement('span');
@@ -194,7 +210,7 @@ closeButton.addEventListener('click',()=>{
 });
 
 var img = document.createElement('img');
-img.setAttribute('src','https://t1.daumcdn.net/cfile/tistory/998B2C465C496B7026')
+img.setAttribute('src','<%=list.get(0).getRes_pic1()%>')
 img.setAttribute('width','100%')
 img.setAttribute('height','100%')
 
@@ -210,7 +226,7 @@ span1.className = 'number';
 span1.textContent = '오픈시간';
 var span2 = document.createElement('span');
 span2.className = 'title';
-span2.textContent = data[0].open_time;
+span2.textContent = '<%=list.get(0).getOpen_time()%>'
 li1.appendChild(span1);
 li1.appendChild(span2);
 var li2 = document.createElement('li');
@@ -219,7 +235,7 @@ span3.className = 'number';
 span3.textContent = '마감시간';
 var span4 = document.createElement('span');
 span4.className = 'title';
-span4.textContent = data[0].close_time;
+span4.textContent = '<%=list.get(0).getClose_time()%>'
 li2.appendChild(span3);
 li2.appendChild(span4);
 var li3 = document.createElement('li');
@@ -228,7 +244,7 @@ span5.className = 'number';
 span5.textContent = '위치';
 var span6 = document.createElement('span');
 span6.className = 'title';
-span6.textContent = data[0].res_addr;
+span6.textContent = '<%=list.get(0).getRes_addr()%>'
 li3.appendChild(span5);
 li3.appendChild(span6);
 var li4 = document.createElement('li');
@@ -237,7 +253,7 @@ span7.className = 'number';
 span7.textContent = '전화번호';
 var span8 = document.createElement('span');
 span8.className = 'title';
-span8.textContent = data[0].res_tel;
+span8.textContent = '<%=list.get(0).getRes_tel()%>'
 li4.appendChild(span7);
 li4.appendChild(span8);
 ul.appendChild(li1);
