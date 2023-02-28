@@ -25,18 +25,18 @@
         <!-- 1. left -->
             <div class="left">
             <!-- 로고 -->
-                <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
+                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
                 <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
                     <!-- 홈 버튼 -->
                     <li>
-                        <a><img src="./img/home.png"></a>
-                        <a class="icontext" href="#">홈</a>
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
                     <!-- 추천 버튼 -->
                     <li>
-                        <a><img src="./img/rec.png"></a>
-                        <a class="icontext" href="#">추천</a>
+                        <a href="recommendService.do"><img src="./img/rec.png"></a>
+                        <a class="icontext" href="recommendService.do">추천</a>
                     </li>
                     <!-- 보관 버튼 -->
                     <li>
@@ -64,7 +64,7 @@
             <!-- 2.center  -->
             <div class="center">
                <!-- 검색 기능 -->
-                <form class="search" action="search.jsp">
+                <form class="search" action="searchService.do">
                     <input id="searchBar" type="text">
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
@@ -88,7 +88,7 @@
                                 <!-- 팔로워 아이디(게시물 작성자)-->                           
                                 <li><a href="#">${review.get(i).mb_id}</a></li>
                                 <!-- 해시태그 -->                           
-                                <li><a href="#">${review.get(i).rv_hashtag}</a></li>
+                                <li><a href="searchService.do">${review.get(i).rv_hashtag}</a></li>
                                 
                             </ul>
                         </div> <!-- postTop 닫는 디브 -->
@@ -114,11 +114,11 @@
                                 </li>
                                 <!-- 팔로워 ID(=리뷰작성자 ID) -->
                                 <li class="three">                                   
-                                    <a href="a">${reivew.get(i).mb_id}</a>
+                                    <a href="#">${reivew.get(i).mb_id}</a>
                                 </li>
                                 <!-- 리뷰 내용 -->
                                 <li class="four">
-                                    <p></p>
+                                    <p>${reivew.get(i).rv_content}</p>
                                 </li>
                             </ul>
                         </div>
@@ -136,9 +136,9 @@
                         <a href="#"><img id="userImg" src="./img/ex_proflie.jpg"></a>
                         <div class="userId">
                             <!-- 유저id -->
-                            <a href="#"></a>
+                            <a href="#">${user.mb_id}</a>
                             <!-- 유저 이름 -->
-                            <p></p>
+                            <p>${user.mb_name}</p>
                         </div>
 
                     </div>
@@ -205,9 +205,6 @@
                                     </a>
                                 </div>
                             </div>
-                            <%  session.setAttribute("user", "test");
-                        String str = (String)session.getAttribute("user");
-                     %>
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>
                                 <form action="ReplyService.do">
@@ -251,6 +248,7 @@
                                 
                             </div>
                         </div>
+                        <form action="#">
                             <div class="commentPost">
                                 <div class="picPost">
                                     <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
@@ -273,7 +271,7 @@
                                     </div>
                                     <div class="textAreaMain">
                                         <div class="textAreaMainPost">
-                                            문구 입력...
+                                        	<textarea placeholder="내용을 입력해주세요."></textarea>
                                         </div>
                                     </div>
                                     <div class="textAreaStar">평점</div>
@@ -281,6 +279,7 @@
                                     <div class="textAreaH">해시태그</div>
                                 </div>
                         </div>
+                        </form>
                             </div>
                     </div>
             </div>
