@@ -64,7 +64,7 @@
             <!-- 2.center  -->
             <div class="center">
                <!-- 검색 기능 -->
-                <form class="search" action="#">
+                <form class="search" action="search.jsp">
                     <input id="searchBar" type="text">
                     <input id="searchBtn" type="submit" value="검색">
                 </form>

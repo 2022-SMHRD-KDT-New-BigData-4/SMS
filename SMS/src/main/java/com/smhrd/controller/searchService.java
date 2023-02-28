@@ -12,7 +12,7 @@ import com.smhrd.model.restaurantVO;
 import com.smhrd.model.reviewDAO;
 import com.smhrd.model.reviewVO;
 
-public class Ex00 implements Command {
+public class searchService implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

@@ -16,7 +16,7 @@ import com.smhrd.model.reviewDAO;
 import com.smhrd.model.reviewVO;
 import com.smhrd.model.userVO;
 
-public class Ex implements Command {
+public class loginSuccess implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
