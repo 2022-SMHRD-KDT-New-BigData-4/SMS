@@ -61,4 +61,22 @@ public class userDAO {
 	}
 	
 	
+	
+	// 프로필페이지 이동할때 데이터 가져오는 메소드
+	public userinfoVO profile(userVO vo_mem) {
+		
+		SqlSession sqlsession = sqlSessionFactory.openSession(true);
+
+		userinfoVO result = sqlsession.selectOne("profilepage");
+		
+		sqlsession.close();
+
+		return result;
+		
+	}
+	
+	
+	
+	
+	
 }

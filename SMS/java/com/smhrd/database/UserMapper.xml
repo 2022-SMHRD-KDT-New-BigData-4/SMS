@@ -306,7 +306,16 @@ select *
   	where rv_seq = #{rv_seq}
   </select>
 
-
+  <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
+  <select id="profilepage" parameterType="com.smhrd.model.userVO"
+  	      resultType="com.smhrd.model.userinfoVO"
+  >
+ select *
+ from tb_member A
+    , tb_profile B
+ where A.mb_id = B.mb_id
+   and A.mb_id = #{mb_id}
+  </select>
 
 
 
