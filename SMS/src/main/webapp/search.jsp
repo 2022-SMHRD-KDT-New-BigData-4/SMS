@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,8 +34,8 @@
                         <a class="icontext" href="javascript:openPop()">만들기</a>
                     </li>
                     <li>
-                        <a href="#" ><img src="${user2.mb_pic }" id="getUserPic"></a>
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="proflieService.do" ><img src="${user2.mb_pic}" id="getUserPic"></a>
+                        <a class="icontext" href="proflieService.do">프로필</a>
                     </li>
                 </ul>
                 <div class="plusBtn">
@@ -42,21 +43,24 @@
                 </div>
             </div>
             <div class="center">
-                <form class="search" action="#">
-                    <input id="searchBar" type="text">
+            
+                <form class="search" action="searchService.do">
+                    <input id="searchBar" type="text" name="searchBar">
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
+                
+                <!-- 검색해온 자료 반복 -->
                 <div class="container">
-                   <div><a href="javascript:openPop()"><img src="./img/ex_post.jpg"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   
+                  <c:forEach var="i" begin="0" end="${searchresult.size()-1}">
+                   		<div>
+                   		<a type="hidden" onclick="document.forms['searchPic'].submit()" value="${searchresult.get(i).res_seq}" href="javascript:openPop()">
+                   		<img class="container_img" src="${searchresult.get(i).res_pic1}">
+                   		</a>
+                   		</div>
+                  </c:forEach>                  
                 </div>
             </div>
+            
             <div class="right">
                     <div class="user">
                         <a href="#"><img id="userImg" src="./img/16802_24920_49.jpg"></a>

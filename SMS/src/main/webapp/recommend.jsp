@@ -148,7 +148,7 @@
                             <ul class="koreanFood_imgs">
                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
+                                    <a type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
                                     <img class="japanesFood_img" src="${result_kr.get(i).rv_pic}"></a>
                                 </li>
                                 </c:forEach>                            

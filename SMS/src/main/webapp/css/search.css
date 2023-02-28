@@ -113,7 +113,6 @@ a { text-decoration:none; }
 .container{
     width: 900px;
     margin-top: 200px;
-    /* border: 10px solid yellow; */
     box-sizing: border-box;
     margin-left: 100px;
     display: grid;
@@ -122,11 +121,10 @@ a { text-decoration:none; }
     column-gap: 15px;
     row-gap: 15px;
 }
-.container img{
+.container_img{
     width: 280px;
     height: 280px;
-    object-fit: cover;
-    
+    object-fit: cover;   
 }
 .right {
     /* border: 10px solid red; */
