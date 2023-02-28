@@ -14,7 +14,7 @@
 <body link="black" vlink="black" alink="black">
 	 <div class="container1">
             <div class="left">
-                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
+                <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <ul class="iconBtn">
                     <li>
                         <a href="loginSuccess.do"><img src="./img/home.png"></a>

@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
 a { text-decoration:none; }
-
+.box1_min1 img{
+	width:200px;
+	margin:17px;
+	margin-left:55px;
+	margin-bottom: 30px;
+	margin-top:30px;
+}
 #main{
     display: flex;
     width: 680px;

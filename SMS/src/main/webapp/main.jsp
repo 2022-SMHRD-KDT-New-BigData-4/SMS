@@ -25,7 +25,7 @@
         <!-- 1. left -->
             <div class="left">
             <!-- 로고 -->
-                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
+                <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
                     <!-- 홈 버튼 -->
@@ -65,7 +65,7 @@
             <div class="center">
                <!-- 검색 기능 -->
                 <form class="search" action="searchService.do">
-                    <input id="searchBar" type="text">
+                    <input id="searchBar" type="text" name="searchBar">
                     <input id="searchBtn" type="submit" value="검색">
                 </form>
                 
@@ -95,7 +95,7 @@
                         
                         <!-- 게시물 중간 칸 -->
                         <!-- 리뷰 사진 -->
-                        <div id="postCenter"><img src="./img/ex_post.jpg"></div>
+                        <div id="postCenter"><img src="${review.get(i).rv_pic1}"></div>
                         
                         <!-- 게시문 맨 밑칸 -->
                         <div id="postBottom">                       

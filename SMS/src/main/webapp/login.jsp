@@ -16,7 +16,7 @@
         <div class="main_box1">
         <!-- 디브2-1-->
         <div class="box1_min1">
-            <p id="logo">Foodier</p>
+            <img src="./img/logo.png">
             <div class="box1">
                 <form action="LoginService.do" id="login2" method="post">
                     <table>
