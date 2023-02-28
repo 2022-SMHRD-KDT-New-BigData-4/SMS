@@ -37,7 +37,7 @@
 
 .comment {
     width: 444px;
-    height: 508px;
+    height: 568px;
     border: 1px solid gainsboro;
     flex-direction: column;
     box-sizing: border-box;
@@ -46,14 +46,14 @@
 .userComment {
     width: 442px;
     height: 76px;
-    border: 1px solid gainsboro;
+    border: 0px 1px 1px 1px solid gainsboro;
     border-bottom-right-radius: 10px;
 }
 
 .searchCommentIcon{
 	width: 442px;
-    height: 129px;
-    border: 1px solid gainsboro;
+    height: 69px;
+    border: 1px 1px 1px 0px solid gainsboro;
 }
 
 .searchCommentIcons img {

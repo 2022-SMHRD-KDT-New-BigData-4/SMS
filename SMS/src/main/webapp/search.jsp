@@ -159,8 +159,6 @@
                                 <li class="searchCommentIcons">
                                 	<!-- 좋아요 버튼 -->
                                     <a href="javascript:heart();" class="likeIcon heart"><img src="./img/like.png"></a>
-                                    <!-- 댓글 버튼 -->
-                                    <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <!-- 보관 버튼 -->
                                     <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
                                 </li>
