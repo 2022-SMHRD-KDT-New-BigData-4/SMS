@@ -60,6 +60,18 @@
   					  where follower = #{follower})
   </select>
 
+
+  <select id="search6" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.profileVO"
+  >
+  	select * from tb_profile	
+  	where mb_id in ( select followee
+  					   from tb_follow
+  					  where follower = #{follower})
+  </select>
+
+
+
   <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
   	insert into tb_reply(
   		rv_seq,
@@ -186,8 +198,13 @@
   	   or rv_hashtag = #{rv_hashtag}
   </select>
 
-
-
+  <!-- 유저의 프로필사진을 가져오는 쿼리문 -->
+  <select id="profilepic" parameterType="com.smhrd.model.profileVO"
+  	      resultType="com.smhrd.model.profileVO"
+  >
+  	select * from tb_profile
+  	where mb_id = #{mb_id}
+  </select>
 
 
 
