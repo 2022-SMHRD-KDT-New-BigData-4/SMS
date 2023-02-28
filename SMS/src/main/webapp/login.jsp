@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/login.css"/>
 </head>
-<body>
+<body link="black" vlink="black" alink="black">
 	<!-- 큰디브 -->
     <div id="main">
         <!-- 큰디브안에 작은 디브1 -->

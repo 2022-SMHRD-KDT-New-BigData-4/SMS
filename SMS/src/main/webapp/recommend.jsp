@@ -14,7 +14,7 @@
     	<link rel="stylesheet" href="./css/recommend.css">
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
-    <body>
+    <body link="black" vlink="black" alink="black">
         <div class="container1">
         <!-- 화면 레이아웃은 left, center, right로 나눠져있음 -->
         

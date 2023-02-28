@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+a { text-decoration:none; }
+
 .moveRecBox_main{
   /*position: relative;*/
 }

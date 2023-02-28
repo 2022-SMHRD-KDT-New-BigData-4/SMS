@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+a { text-decoration:none; }
+
 #main{
     display: flex;
     width: 680px;
@@ -7,6 +10,7 @@
     margin-right: auto;
     margin-top: 150px;
 }
+
 
 .main_box1{
     flex: 70%;

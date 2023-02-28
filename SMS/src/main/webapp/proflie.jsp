@@ -13,7 +13,7 @@
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
-    <body>
+    <body link="black" vlink="black" alink="black">
         <div class="container1">
         
             <div class="left">
@@ -26,10 +26,6 @@
                     <li>
                         <a href="#"><img src="./img/rec.png"></a>
                         <a class="icontext" href="#">추천</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="./img/meal.png"></a>
-                        <a class="icontext" href="#">학식</a>
                     </li>
                     <li>
                         <a href="./userMap.jsp"><img src="./img/save.png"></a>

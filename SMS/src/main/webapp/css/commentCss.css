@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+a { text-decoration:none; }
+
 .upload {
     position: absolute;
     margin: -500px 0px 0px -300px;

@@ -63,7 +63,6 @@
   
   .heart.active img{
       animation: animateHeart .3s linear forwards;
-    position: relative;
 
   }
   
@@ -81,7 +80,6 @@
   
   .save.active img{
       animation: animateSave .3s linear forwards;
-    position: relative;
     z-index: -100;
   }
   

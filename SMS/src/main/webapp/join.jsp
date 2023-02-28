@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/join.css" />
 </head>
-<body>
+<body link="black" vlink="black" alink="black">
 	 <div class="contentsWrap">
         
 	<form action="JoinService.do" method="post">

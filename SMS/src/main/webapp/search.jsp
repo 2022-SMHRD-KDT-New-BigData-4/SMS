@@ -11,29 +11,29 @@
     	<link rel="stylesheet" href="./css/searchCommentPopup.css">
 
 </head>
-<body>
+<body link="black" vlink="black" alink="black">
 	 <div class="container1">
             <div class="left">
-                <h1 class="logo"><a id="logoText" href="#">FOODIER</a></h1>
+                <h1 class="logo"><a id="logoText" href="loginSuccess.do">FOODIER</a></h1>
                 <ul class="iconBtn">
                     <li>
-                        <a><img src="./img/home.png"></a>
-                        <a class="icontext" href="#">홈</a>
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
                     <li>
-                        <a><img src="./img/rec.png"></a>
-                        <a class="icontext" href="#">추천</a>
+                        <a href="recommend.do"><img src="./img/rec.png"></a>
+                        <a class="icontext" href="recommend.do">추천</a>
                     </li>
                     <li>
                         <a><img src="./img/save.png"></a>
                         <a class="icontext" href="#">보관</a>
                     </li>
                     <li>
-                        <a><img src="./img/plus.png"></a>
-                        <a class="icontext" href="#">만들기</a>
+                        <a href="javascript:openPop()"><img src="./img/plus.png"></a>
+                        <a class="icontext" href="javascript:openPop()">만들기</a>
                     </li>
                     <li>
-                        <a href="./profile.jsp"><img src="./img/ex_profile.jpg"></a>
+                        <a href="#"><img src="./img/ex_profile.jpg"></a>
                         <a class="icontext" href="#">프로필</a>
                     </li>
                 </ul>
@@ -163,6 +163,9 @@
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <!-- 보관 버튼 -->
                                     <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
+                                </li>
+                                <li class="likesSum">
+                                	좋아요 n개
                                 </li>
                             </ul>
                             </div>

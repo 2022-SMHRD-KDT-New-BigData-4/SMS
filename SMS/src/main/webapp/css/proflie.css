@@ -19,8 +19,8 @@
     font-size: 40px;
 }
 .iconBtn{
-    margin-top: 50px;
-    height: 619px;
+    margin-top: 130px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -35,6 +35,8 @@
     justify-items: baseline;
     margin-bottom: 40px;
 }
+
+a { text-decoration:none; }
 
 .plusBtn{
     height: 150px;

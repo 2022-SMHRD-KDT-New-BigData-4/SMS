@@ -18,7 +18,7 @@
        <link rel="stylesheet" href="./css/newPostMakeCss.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
-    <body>
+    <body link="black" vlink="black" alink="black">
         <div class="container1">
         <!-- 화면 레이아웃은 left, center, right로 나눠져있음 -->
         
@@ -102,7 +102,7 @@
                             <ul class="pBlist">
                                 <li class="one">
                                    <!-- 좋아요 버튼 -->
-                                    <a href="javascript:;" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <a href="javascript:heart;" class="likeIcon heart"><img src="./img/like.png"></a>
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <!-- 보관 버튼 -->
