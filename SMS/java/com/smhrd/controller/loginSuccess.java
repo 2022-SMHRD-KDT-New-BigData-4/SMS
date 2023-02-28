@@ -26,7 +26,7 @@ public class loginSuccess implements Command {
 		
 		// 로그인한 유저의 id 가져오기
 		HttpSession session = request.getSession();
-		userVO vo_mem = (userVO)session.getAttribute("user");
+		userVO vo_mem = (userVO) session.getAttribute("user");
 		String id = vo_mem.getMb_id();
 
 

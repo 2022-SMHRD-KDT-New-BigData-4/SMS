@@ -79,6 +79,7 @@ public class FrontController extends HttpServlet {
 		} else {
 			// 페이지 결과 응답하기!
 			RequestDispatcher rd = request.getRequestDispatcher(/*"WEB-INF/" +*/ finalpath + ".jsp");
+			
 			rd.forward(request, response);
 		}
 		

@@ -95,6 +95,18 @@ public class reviewDAO {
 	
 	
 	
+	// 해당 게시물의 데이터만 가져오는 메소드
+	public reviewVO reviewOpen(reviewVO vo_rev) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		reviewVO result = sqlSession.selectOne("reviewOpen", vo_rev);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
 	
 	
 	

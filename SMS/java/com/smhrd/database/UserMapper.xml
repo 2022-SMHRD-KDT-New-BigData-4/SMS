@@ -290,7 +290,13 @@ select *
   	where mb_id = #{mb_id}
   </select>
 
-
+  <!-- 한개의 게시물의 데이터만 가져오는 쿼리문 -->
+  <select id="reviewOpen" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_reivew
+  	where rv_seq = #{rv_seq}
+  </select>
 
 
 
