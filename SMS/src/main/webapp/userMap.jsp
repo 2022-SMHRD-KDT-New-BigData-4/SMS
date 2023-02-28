@@ -2,7 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,27 +105,45 @@ var marker;
 var imageSrc;
 var markers=[];
 var clickedOverlay;
-var data= [{
-    res_seq : '1' ,// 가게번호
-	 res_name :	'전대1',// 가게이름
-	 res_addr : '광주북구서방로9번길30'	,// 가게주소
-	 res_tel :	'010-0000-0000',// 가게 전화번호
-	 open_time : '09:00',// 오픈시간
-	 close_time : '17:00'	// 마감시간
-},{
-    res_seq : '2' ,// 가게번호
-	 res_name :	'전대2',// 가게이름
-	 res_addr : '광주 북구 용봉로77용봉문화관1층스위티움'	,// 가게주소
-	 res_tel :	'010-1111-1111',// 가게 전화번호
-	 open_time : '10:00',// 오픈시간
-	 close_time : '18:00'	// 마감시간
-}]
+var title;
+
+//var data= [{
+//    res_seq : '1' ,// 가게번호
+//	 res_name :	'전대1',// 가게이름
+//	 res_addr : '광주북구서방로9번길30'	,// 가게주소
+//	 res_tel :	'010-0000-0000',// 가게 전화번호
+//	 open_time : '09:00',// 오픈시간
+//	 close_time : '17:00'	// 마감시간
+//},{
+ //   res_seq : '2' ,// 가게번호
+//	 res_name :	'전대2',// 가게이름
+//	 res_addr : '광주 북구 용봉로77용봉문화관1층스위티움'	,// 가게주소
+//	 res_tel :	'010-1111-1111',// 가게 전화번호
+//	 open_time : '10:00',// 오픈시간
+//	 close_time : '18:00'	// 마감시간
+//}]
+// 데이터 꺼내오기
+let data1 = []
+let data2 = []
+let data3 = []
+let data4 = []
+let data5 = []
+let data6 = []
+<%for(int i=0;i<list.size();i++){%>
+	
+	data1.push('<%=list.get(i).getRes_name()%>')
+	data2.push('<%=list.get(i).getRes_pic1()%>')
+	data3.push('<%=list.get(i).getOpen_time()%>')
+	data4.push('<%=list.get(i).getClose_time()%>')
+	data5.push('<%=list.get(i).getRes_addr()%>')
+	data6.push('<%=list.get(i).getRes_tel()%>')
+<%}%>
 
 // 3. 주소-좌표 변환 객체를 생성합니다
 // 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-for (let i = 0; i < data.length; i++) {
+for (let i = 0; i < data1.length; i++) {
 	// list 첫번째 객체의 첫번째 주소 넣어주기
-    positions.push(data[i].res_addr);
+    positions.push(data5[i]);
 }
 var geocoder = new kakao.maps.services.Geocoder();
 
@@ -139,21 +158,7 @@ var hoverMarkerImage = new kakao.maps.MarkerImage(
 
 // 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 //for 문 시작-------------------------
-for (var i = 0; i < positions.length; i ++){
-	// 수정 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-//let data = a.map(item => {
-//	  return {
-//	    res_seq: item.res_seq,
-//	    res_name: item.res_name,
-//	    res_addr: item.res_addr,
-//	    res_tel: item.res_tel,
-//	    open_time: item.open_time,
-//	    close_time: item.close_time,
-//	    rest_day: item.rest_day,
-//	    res_lat: item.res_lat,
-//	    res_lng: item.res_lng
-//	  };
-//	});
+for (let i = 0; i < data1.length; i ++){
 
 geocoder.addressSearch(positions[i], function(result, status) {
 
@@ -177,7 +182,7 @@ geocoder.addressSearch(positions[i], function(result, status) {
         });
         markers.push(marker);
         }
-        for(var i = 0; i < positions.length; i ++){
+        for(let j = 0; j < positions.length; j ++){
        addMarker(new kakao.maps.LatLng(result[0].y, result[0].x));
        //markers[i].setMap(map) 
     }
@@ -194,10 +199,10 @@ content.className = 'overlaybox';
 var titleClose= document.createElement('div');
 titleClose.textContent ='닫기11111111111111111111'; // 새로운 div 엘리먼트 생성
 
-var title = document.createElement('span');
+title = document.createElement('span');
 title.className = 'boxtitle';
     // 임시로 데이터동적할당 테스트 0226 05:27            오버레이 제목
-title.textContent = '<%=list.get(0).getRes_name()%>' //${vo.get().res_name}
+title.textContent = data1[i]//                          제목
 titleClose.appendChild(title);
 
 var closeButton = document.createElement('span');
@@ -210,7 +215,7 @@ closeButton.addEventListener('click',()=>{
 });
 
 var img = document.createElement('img');
-img.setAttribute('src','<%=list.get(0).getRes_pic1()%>')
+img.setAttribute('src',data2[i]) //                          이미지
 img.setAttribute('width','100%')
 img.setAttribute('height','100%')
 
@@ -226,7 +231,7 @@ span1.className = 'number';
 span1.textContent = '오픈시간';
 var span2 = document.createElement('span');
 span2.className = 'title';
-span2.textContent = '<%=list.get(0).getOpen_time()%>'
+span2.textContent = data3[i] //                          오픈시간
 li1.appendChild(span1);
 li1.appendChild(span2);
 var li2 = document.createElement('li');
@@ -235,7 +240,7 @@ span3.className = 'number';
 span3.textContent = '마감시간';
 var span4 = document.createElement('span');
 span4.className = 'title';
-span4.textContent = '<%=list.get(0).getClose_time()%>'
+span4.textContent = data4[i] //                          마감시간
 li2.appendChild(span3);
 li2.appendChild(span4);
 var li3 = document.createElement('li');
@@ -244,7 +249,7 @@ span5.className = 'number';
 span5.textContent = '위치';
 var span6 = document.createElement('span');
 span6.className = 'title';
-span6.textContent = '<%=list.get(0).getRes_addr()%>'
+span6.textContent = data5[i] //                          주소
 li3.appendChild(span5);
 li3.appendChild(span6);
 var li4 = document.createElement('li');
@@ -253,7 +258,7 @@ span7.className = 'number';
 span7.textContent = '전화번호';
 var span8 = document.createElement('span');
 span8.className = 'title';
-span8.textContent = '<%=list.get(0).getRes_tel()%>'
+span8.textContent = data6[i] //                          전화번호
 li4.appendChild(span7);
 li4.appendChild(span8);
 ul.appendChild(li1);
@@ -269,7 +274,7 @@ content.appendChild(ul);
 // 클로저 사용하여 각각의 마커에 이벤트 추가
 //클로저(Closure)
 //클로저를 이용하면 함수 내부에서 외부 변수를 참조할 수 있습니다.
-for (var i = 0; i < markers.length; i++) {
+for (let k = 0; k < markers.length; k++) {
     // 마커 mouseover 이벤트 핸들러 등록
     (function(marker) {
 kakao.maps.event.addListener(marker, 'mouseover', function() {
@@ -283,18 +288,18 @@ kakao.maps.event.addListener(marker, 'mouseover', function() {
             marker.setMap(map);
     console.log("마우스 오버")
 });
-})(markers[i]);
+})(markers[k]);
 }
 
-for (var i = 0; i < markers.length; i++) {
+for (var q = 0; q < markers.length; q++) {
 // 마커 mouseout 이벤트 핸들러 등록
     (function(marker) {
-kakao.maps.event.addListener(markers[i], 'mouseout', function() {
+kakao.maps.event.addListener(markers[q], 'mouseout', function() {
   // 마커 이미지를 원래 이미지로 변경
   marker.setImage(markerImage);
     console.log("마우스 아웃")
 });
-})(markers[i]);
+})(markers[q]);
 }
 
     // 커스텀 오버레이를 생성합니다
