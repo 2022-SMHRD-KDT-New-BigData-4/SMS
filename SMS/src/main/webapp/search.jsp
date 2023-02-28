@@ -18,8 +18,8 @@
                 <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <ul class="iconBtn">
                     <li>
-                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
-                        <a class="icontext" href="loginSuccess.do">홈</a>
+                        <a href="loginSuccess.do"><img src="./img/home.png">홈</a>
+                       <!--  <a class="icontext" href="loginSuccess.do">홈</a>  -->
                     </li>
                     <li>
                         <a href="recommend.do"><img src="./img/rec.png"></a>
@@ -53,7 +53,7 @@
                 <div class="container">
                   <c:forEach var="i" begin="0" end="${searchresult.size()-1}">
                    		<div>
-                   		<a type="hidden" onclick="document.forms['searchPic'].submit()" value="${searchresult.get(i).res_seq}" href="javascript:openPop()">
+                   		<a type="hidden" onclick="document.forms['ReplyCheck.do'].submit()" value="${searchresult.get(i).res_seq}" href="javascript:openPop()">
                    		<img class="container_img" src="${searchresult.get(i).res_pic1}">
                    		</a>
                    		</div>
@@ -138,9 +138,9 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic">프로필사진</div>
+                            <div class="profilepic">${searchresult.mb_pic}</div>
                             <div class="username">
-                                <div class="name">이름</div>
+                                <div class="name">유저이름</div>
                                 <div class="userid">유저id</div>
                             </div>
                         </div>

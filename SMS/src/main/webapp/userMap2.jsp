@@ -16,6 +16,7 @@
        <link rel="stylesheet" href="./css/commentPopup.css">
        <link rel="stylesheet" href="./css/newPostMakePopup.css">
        <link rel="stylesheet" href="./css/newPostMakeCss.css">
+       <link rel="stylesheet" href="./css/userMap2.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -24,14 +25,14 @@
         
         <!-- 1. left -->
             <div class="left">
-            <!-- 로고 어진바보 -->
+            <!-- 로고 -->
                 <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
                     <!-- 홈 버튼 -->
                     <li>
-                        <a href="loginSuccess.do"><img src="./img/home.png">홈</a>
-                     <!-- <a class="icontext" href="loginSuccess.do">홈</a>  -->
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
                     <!-- 추천 버튼 -->
                     <li>
@@ -40,7 +41,7 @@
                     </li>
                     <!-- 보관 버튼 -->
                     <li>
-                        <a><img src="./img/save.png"></a>
+                        <a href="userMapService.do"><img src="./img/save.png"></a>
                         <a class="icontext" href="userMapService.do">보관</a>
                     </li>
                     <!-- 게시물 만들기 버튼 -->
@@ -51,7 +52,7 @@
                     <!-- 프로필 버튼 -->
                     <li>
                         <a><img src="${user2.mb_pic}" id="getUserPic"></a>
-                        <a class="icontext" href="#">프로필</a>
+                        <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
                 
@@ -62,108 +63,10 @@
             </div> <!-- left 종료 디브 -->
             
             <!-- 2.center  -->
-            <div class="center">
-               <!-- 검색 기능 -->
-                <form class="search" action="searchService.do">
-                    <input id="searchBar" type="text" name="searchBar">
-                    <input id="searchBtn" type="submit" value="검색">
-                </form>
-                
-                <!-- 팔로워 게시물 -->
-                <div class="container">
-                
-                <%
-                List<reviewVO> review = (List<reviewVO>)request.getAttribute("review");
-                 
-                %>            
-                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
-                <!-- postBox클래스 반복 -->
-                   <div class="postBox">
-                    <div class="post">
-                    <!-- 게시물 맨 위칸 -->
-                        <div class="postTop">
-                           <!-- 팔로워 프로필 사진 -->
-                            <a href="#"><img src="${review.get(i).mb_pic}"></a>
-                            <ul class="name">
-                                <!-- 팔로워 아이디(게시물 작성자)-->                           
-                                <li><a href="#">${review.get(i).mb_id}</a></li>
-                                <!-- 해시태그 -->                           
-                                <li><a href="searchService.do">${review.get(i).rv_hashtag}</a></li>
-                                
-                            </ul>
-                        </div> <!-- postTop 닫는 디브 -->
-                        
-                        <!-- 게시물 중간 칸 -->
-                        <!-- 리뷰 사진 -->
-                        <div id="postCenter"><img src="${review.get(i).rv_pic1}"></div>
-                        
-                        <!-- 게시문 맨 밑칸 -->
-                        <div id="postBottom">                       
-                            <ul class="pBlist">
-                                <li class="one">
-                                   <!-- 좋아요 버튼 -->
-                                    <a href="javascript:heart;" class="likeIcon heart"><img src="./img/like.png"></a>
-                                    <!-- 댓글 버튼 -->
-                                    <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
-                                    <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
-                                </li>
-                                <!-- 좋아요 누적수 -->
-                                <li class="two">
-                                    <p>좋아요 00개</p>
-                                </li>
-                                <!-- 팔로워 ID(=리뷰작성자 ID) -->
-                                <li class="three">                                   
-                                    <a href="#">${reivew.get(i).mb_id}</a>
-                                </li>
-                                <!-- 리뷰 내용 -->
-                                <li class="four">
-                                    <p>${reivew.get(i).rv_content}</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                   </div> <!--postBox 닫는 디브-->
-                   </c:forEach>
-                   
-                </div>
+            <div class="center2">
+			<!-- 지도가 들어가는 부분 -->
             </div>
-            <!-- 3. right -->
-            <div class="right">
-                  <!-- 유저프로필 -->
-                    <div class="user">
-                    <!-- 유저 프로필 사진 -->
-                        <a href="#"><img id="userImg" src="${user2.mb_pic}"></a>
-                        <div class="userId">
-                            <!-- 유저id -->
-                            <a href="#">${user.mb_id}</a>
-                            <!-- 유저 이름 -->
-                            <p>${user.mb_name}</p>
-                        </div>
 
-                    </div>
-                    <!-- 팔로워 수가 많은 이용자 추천 -->
-                    <div>
-                        <p>회원님을 위한 추천</p>
-                        <ul class="recList">
-                        
-                            <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
-                            <li class="rec">
-                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
-                               <a><img class="rec_img" src="#"></a>        
-                               <div>
-                                  <!-- 추천자 id -->
-                                   <a href="#">추천ID</a>
-                                   <!-- 추천자 이름 -->
-                                   <p>추천인 이름</p> 
-                               </div>
-                            </li> <!-- rec클래스 닫는 태그 -->
-                                   
-                        </ul> 
-                        
-                    </div>
-
-            </div>
         </div>
 
 <!-- ----------댓글, 하트 --------------------- -->
