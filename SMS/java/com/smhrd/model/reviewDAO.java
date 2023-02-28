@@ -33,7 +33,7 @@ public class reviewDAO {
 		
 	}
 	
-	// 추천페이지에 게시글들 보여주기, 게시글 번호로 데이터 가져오기
+	// 추천페이지에 게시글들 보여주기, 좋아요 많은 순서로 데이터 가져오기
 	public reviewVO show(reviewVO vo_rev) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -42,6 +42,47 @@ public class reviewDAO {
 		
 		return result;
 	}
+	
+	// 추천페이지에 게시글들 카테고리별로 랜덤으로 데이터 가져오기
+	public List<reviewVO> show_ct1() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("show1");
+		
+		return result;
+	}
+	
+	public List<reviewVO> show_ct2() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("show2");
+		
+		return result;
+	}
+	
+	public List<reviewVO> show_ct3() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("show3");
+		
+		return result;
+	}
+	
+	public List<reviewVO> show_ct4() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		List<reviewVO> result = sqlSession.selectList("show4");
+		
+		return result;
+	}
+	
+	
+	
+	
 	
 	
 	// 검색창에 검색을 진행 (가게가 존재할때)

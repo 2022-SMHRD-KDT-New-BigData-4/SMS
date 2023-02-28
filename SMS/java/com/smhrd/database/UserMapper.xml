@@ -160,7 +160,7 @@ select *
   	 and   followee = #{followee})
   </delete>
 
-  <!-- 좋아요 테이블에서 좋아요가 많은 순서를 가져오는 쿼리문 -->
+  <!-- 추천페이지에서 좋아요가 많은 순서를 가져오는 쿼리문 -->
   <select id="rank" resultType="com.smhrd.model.likesVO"
   >
  select rv_seq
@@ -179,7 +179,7 @@ select *
   	where rv_seq = #{res_seq}
   </select>
 
-  <!-- 좋아요 테이블에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
+  <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
   <select id="rank2" resultType="com.smhrd.model.reviewVO"
   >
   SELECT A.*
@@ -192,6 +192,76 @@ select *
    WHERE A.RV_SEQ = B.RV_SEQ
    ORDER BY B.CNT DESC
   </select>
+
+  <!-- 추천페이지에서 카테고리별 게시물을 가져오는 쿼리문 -->
+  <select id="show1" resultType="com.smhrd.model.reviewVO"
+  >
+select *
+  from tb_review
+ where res_seq = (select *
+                    from (select *
+                            from (select distinct res_seq
+                                    from tb_review
+                                   where rv_hashtag = '한식'
+                                   order by dbms_random.value)
+                           order by rownum)
+                   where rownum = 1 )
+ order by dbms_random.value
+  </select>
+
+  <select id="show2" resultType="com.smhrd.model.reviewVO"
+  >
+select *
+  from tb_review
+ where res_seq = (select *
+                    from (select *
+                            from (select distinct res_seq
+                                    from tb_review
+                                   where rv_hashtag = '중식'
+                                   order by dbms_random.value)
+                           order by rownum)
+                   where rownum = 1 )
+ order by dbms_random.value
+  </select>
+
+  <select id="show3" resultType="com.smhrd.model.reviewVO"
+  >
+select *
+  from tb_review
+ where res_seq = (select *
+                    from (select *
+                            from (select distinct res_seq
+                                    from tb_review
+                                   where rv_hashtag = '이자카야'
+                                   order by dbms_random.value)
+                           order by rownum)
+                   where rownum = 1 )
+ order by dbms_random.value
+  </select>
+
+  <select id="show4" resultType="com.smhrd.model.reviewVO"
+  >
+select *
+  from tb_review
+ where res_seq = (select *
+                    from (select *
+                            from (select distinct res_seq
+                                    from tb_review
+                                   where rv_hashtag = '카페'
+                                   order by dbms_random.value)
+                           order by rownum)
+                   where rownum = 1 )
+ order by dbms_random.value
+  </select>
+
+
+
+
+
+
+
+
+
 
   <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재할때) -->
   <select id="user_search1" parameterType="com.smhrd.model.reviewVO"
