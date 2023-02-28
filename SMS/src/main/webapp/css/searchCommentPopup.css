@@ -64,7 +64,7 @@
   .heart.active img{
       animation: animateHeart .3s linear forwards;
     position: relative;
-    z-index: -100;
+
   }
   
   @keyframes animateHeart{
