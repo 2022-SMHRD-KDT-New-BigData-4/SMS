@@ -87,7 +87,6 @@ select *
  where A.mb_id = B.mb_id
    and A.mb_id = C.mb_id
    and B.res_seq = D.res_seq
-
   </select>
 
 
@@ -185,7 +184,7 @@ select *
   </select>
 
   <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
-  <select id="rank2" resultType="com.smhrd.model.reviewVO"
+  <select id="rank2" resultType="com.smhrd.model.recommendVO"
   >
   SELECT A.*
     FROM TB_REVIEW A
@@ -194,7 +193,11 @@ select *
           where like_date BETWEEN sysdate-5 and sysdate
           group by rv_seq
           order by count(*) desc) B
+     , tb_profile C
+     , tb_restaurant D
    WHERE A.RV_SEQ = B.RV_SEQ
+     and A.mb_id = C.mb_id
+     and A.res_seq = D.res_seq
    ORDER BY B.CNT DESC
   </select>
 
