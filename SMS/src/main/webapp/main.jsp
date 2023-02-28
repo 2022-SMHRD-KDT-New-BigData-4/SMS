@@ -41,7 +41,7 @@
                     <!-- 보관 버튼 -->
                     <li>
                         <a><img src="./img/save.png"></a>
-                        <a class="icontext" href="#">보관</a>
+                        <a class="icontext" href="userMapService.do">보관</a>
                     </li>
                     <!-- 게시물 만들기 버튼 -->
                     <li>

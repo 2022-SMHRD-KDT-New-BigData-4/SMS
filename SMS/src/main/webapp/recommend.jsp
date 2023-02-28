@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -138,39 +139,17 @@
                         <p id="koreanFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="koreanFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                           
+                            <form name="kr_food_rec" action="이동할 주소" method="POST">
                             <ul class="koreanFood_imgs">
+                               <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#">1<img class="koreanFood_img" src="#"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['kr_food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
+                                    <img class="japanesFood_img" src="${result_kr.get(i).rv_pic}"></a>
                                 </li>
-                                <li>
-                                    <a href="#">2<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">3<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">4<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">5<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">6<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">7<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">8<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">9<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">10<img class="koreanFood_img" src="#"></a>
-                                </li>
-                                
+                                </c:forEach>                            
                             </ul>
+                            </form>
                             <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
                         </div>
                    </div>
@@ -180,81 +159,57 @@
                         <p id="japanesFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="japanesFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                            
+                            <form name="jp_food_rec" action="이동할 주소" method="POST">
                             <ul class="japanesFood_imgs">
+                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#">1<img class="japanesFood_img" src="#"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['jp_food_rec'].submit()" value="${result_jp.get(i).rv_seq}">
+                                    <img class="japanesFood_img" src="${result_jp.get(i).rv_pic}"></a>
                                 </li>
-                                <li>
-                                    <a href="#">2<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">3<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">4<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">5<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">6<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">7<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">8<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">9<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">10<img class="japanesFood_img" src="#"></a>
-                                </li>
-                                
+                                </c:forEach>    
                             </ul>
-                            <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
+                            </form>
+                            <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>                           
                         </div>
                    </div>
+                   
+                   <!-- 반복되는 추천디브 - 중식+일식 -->
+                   <div class="chinaFood">
+                        <p id="chinaFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
+                        <div class="chinaFoodimg_box">
+                            <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                            
+                            <form name="ch_food_rec" action="이동할 주소" method="POST">
+                            <ul class="chinaFood_imgs">
+                                <c:forEach var="i" begin="0" end="9" >
+                                <li>
+                                    <a href="#" type="hidden" onclick="document.forms['ch_food_rec'].submit()" value="${result_ch.get(i).rv_seq}">
+                                    <img class="japanesFood_img" src="${result_ch.get(i).rv_pic}"></a>
+                                </li>
+                                </c:forEach>    
+                            </ul>
+                            </form>
+                            <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>                           
+                        </div>
+                   </div>
+                   
                    
                    <!-- 반복되는 추천디브 - 카페 -->
                    <div class="cafeFood">
                         <p id="cafeFood_ment">한국인은 밥심! 든든한 한식 맛집 추천</p>
                         <div class="cafeFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
+                            <form name="cf_food_rec" action="이동할 주소" method="POST">
                             <ul class="cafeFood_imgs">
+                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#">1<img class="cafeFood_img" src="#"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['cf_food_rec'].submit()" value="${result_cf.get(i).rv_seq}">
+                                    <img class="cafeFood_img" src="${result_cf.get(i).rv_pic}"></a>
                                 </li>
-                                <li>
-                                    <a href="#">2<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">3<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">4<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">5<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">6<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">7<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">8<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">9<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#">10<img class="cafeFood_img" src="#"></a>
-                                </li>
-                                
+                                </c:forEach>    
                             </ul>
+                            </form>
                             <button id="right" class="button_icon"><img class="button_icon_right" src="./img/i_right.png"></button>
                         </div>
                    </div>
@@ -337,9 +292,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <%  session.setAttribute("user", "test");
-								String str = (String)session.getAttribute("user");
-							%>
+
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>
                                 <form action="ReplyService.do">
