@@ -84,19 +84,16 @@ geocoder.addressSearch(positions[i], function(result, status) {
      // HTML 문자열 또는 Dom Element 입니다 
 var content = document.createElement('div');
 content.className = 'overlaybox';
-var titleClose= document.createElement('div');
-titleClose.textContent ='닫기11111111111111111111'; // 새로운 div 엘리먼트 생성
 
 title = document.createElement('span');
 title.className = 'boxtitle';
-    // 임시로 데이터동적할당 테스트 0226 05:27            오버레이 제목
+    //            오버레이 제목
 title.textContent = data1[i]//                          제목
-titleClose.appendChild(title);
 
 var closeButton = document.createElement('span');
 closeButton.className = 'close';
 closeButton.textContent = '';// 수정
-titleClose.appendChild(closeButton);
+
 // closeButton 클릭시 커스텀오버레이 삭제
 closeButton.addEventListener('click',()=>{
     customOverlay.setMap(null)

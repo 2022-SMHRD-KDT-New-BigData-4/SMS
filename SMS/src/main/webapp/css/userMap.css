@@ -1,5 +1,5 @@
 @charset "UTF-8";
-    /* 오버레이 전체 틀 */
+    /* 오버레이 전체 박스 */
     .overlaybox {position:relative;width:250px;height:280px;background-color:gray;padding:8px;border-radius: 5px;
         box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
               0 2px 2px rgba(0,0,0,0.11), 
@@ -9,23 +9,21 @@
               0 32px 32px rgba(0,0,0,0.11);}
         .overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
         .overlaybox li {list-style: none;}
-        /* 오버레이 메인타이틀 */
+        /* 오버레이 가게 이름 */
         .overlaybox .boxtitle {color:#fff; font-size:16px;font-weight:bold;margin-bottom:8px;}
-        /*.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://d12zq4w4guyljn.cloudfront.net/750_750_20200726060017037_photo_314372b42282.jpg') no-repeat;margin-bottom:8px;margin-top:8px;border-radius: 5px;}*/
-        .overlaybox .first {position:relative;width:247px;height:136px; no-repeat;margin-bottom:8px;margin-top:8px;border-radius: 5px;}
-        .first .text {color:#fff;font-weight:bold;}
-        .first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
-        .first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}
+        /* 오버레이 이미지 */
+        .overlaybox .first {position:relative;width:247px;height:136px;margin-bottom:8px;margin-top:8px;border-radius: 5px;}
+        /* 오버레이  오픈시간 마감시간 위치 전화번호 4개 칸 담는 박스*/
         .overlaybox ul {width:247px;}
         /* 오버레이 서브타이틀 */
         .overlaybox li {position:relative;margin-bottom:2px;background:green;padding:5px 10px;color:#aaabaf;line-height: 1;border-radius: 3px;}
+        /* 오버레이 안의  spen들( .number, .title)*/
         .overlaybox li span {display:inline-block;}
+        /* 오버레이 오픈 시간 ,마감시간,위치, 전화번호의 글자*/
         .overlaybox li .number {color:#fff; font-size:16px;font-weight:bold;}
+        /* 오버레이 아래쪽 오픈시간,마감시간 옆 들어가는 데이터*/
         .overlaybox li .title {font-size:15px;margin-left: 10px;}
-        .overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
-        .overlaybox li .up {background-position:0 -40px;}
-        .overlaybox li .down {background-position:0 -60px;}
-        .overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
+        /* 오버레이 X자 닫기  */
         .close {
             background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
             float: right;
