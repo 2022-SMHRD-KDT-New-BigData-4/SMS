@@ -36,7 +36,7 @@ public class searchService implements Command {
 			// 위의 결과가 있다면 (즉, 가게 이름이 존재한다면)
 			int num = result.getRes_seq();
 			
-			// 리뷰테이블에서 데이터 가져오기
+			// 리뷰테이블에서 데이터 가져오기(mb_id, 가게번호 , 해시태그)
 			reviewVO vo_rev = new reviewVO(search,num,search);
 			reviewDAO dao_rev = new reviewDAO();
 			List<reviewVO> list1 = dao_rev.usersearch1(vo_rev);
