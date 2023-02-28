@@ -18,6 +18,8 @@ public class likesDAO {
 
 		int cnt = sqlSession.insert("likes", vo_lik);
 		
+		sqlSession.close();
+		
 		return cnt;
 		
 	}
@@ -29,6 +31,8 @@ public class likesDAO {
 
 		int cnt = sqlSession.insert("dislikes", vo_lik);
 		
+		sqlSession.close();
+		
 		return cnt;
 			
 	}
@@ -39,6 +43,8 @@ public class likesDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		List<reviewVO> result = sqlSession.selectList("rank2");
+		
+		sqlSession.close();
 		
 		return result;
 	}

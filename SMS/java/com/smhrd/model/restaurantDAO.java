@@ -16,6 +16,8 @@ public class restaurantDAO {
 		
 		restaurantVO result = sqlSession.selectOne("search5", vo_res);
 		
+		sqlSession.close();
+		
 		return result;
 		
 	}

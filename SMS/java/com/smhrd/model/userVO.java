@@ -39,7 +39,9 @@ public class userVO {
 		this.mb_pw = mb_pw;
 	}
 
-
+	public userVO(String mb_id) {
+		this.mb_id = mb_id;
+	}
 
 
 

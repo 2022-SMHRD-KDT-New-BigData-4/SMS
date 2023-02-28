@@ -18,6 +18,7 @@ public class followDAO {
 		
 		List<followVO> result = sqlSession.selectList("search1", vo_fol );
 		
+		sqlSession.close();
 		
 		return result;
 	}
@@ -29,6 +30,8 @@ public class followDAO {
 
 		int cnt = sqlSession.insert("insert_follow", vo_fol);
 		
+		sqlSession.close();
+		
 		return cnt;
 	}
 	
@@ -38,6 +41,8 @@ public class followDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		int cnt = sqlSession.insert("", vo_fol);
+		
+		sqlSession.close();
 		
 		return cnt;
 	}

@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.command.Command;
+import com.smhrd.model.profileDAO;
+import com.smhrd.model.profileVO;
 import com.smhrd.model.userDAO;
 import com.smhrd.model.userVO;
 
@@ -26,6 +28,13 @@ public class LoginService implements Command {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("user", result);
+			
+			// 로그인한 유저의 프로필테이블에서 프로필사진 가져오기
+			profileVO vo_pro = new profileVO(id);
+			profileDAO dao_pro = new profileDAO();
+			profileVO user_pro = dao_pro.pic(vo_pro);
+			// session에 담아주기
+			session.setAttribute("user2", user_pro);
 			
 			return "redirect:/loginSuccess.do";
 		} else {

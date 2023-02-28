@@ -18,6 +18,7 @@ public class reviewDAO {
 		
 		List<profilereviewVO> result = sqlSession.selectList("search7", vo_fol );
 		
+		sqlSession.close();
 		
 		return result;
 	}
@@ -28,6 +29,8 @@ public class reviewDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		int cnt = sqlSession.insert("make", vo_rev);
+		
+		sqlSession.close();
 		
 		return cnt;
 		
@@ -40,6 +43,8 @@ public class reviewDAO {
 
 		reviewVO result = sqlSession.selectOne("show", vo_rev);
 		
+		sqlSession.close();
+		
 		return result;
 	}
 	
@@ -50,6 +55,8 @@ public class reviewDAO {
 
 		List<reviewVO> result = sqlSession.selectList("show1");
 		
+		sqlSession.close();
+		
 		return result;
 	}
 	
@@ -58,6 +65,8 @@ public class reviewDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		List<reviewVO> result = sqlSession.selectList("show2");
+		
+		sqlSession.close();
 		
 		return result;
 	}
@@ -68,6 +77,8 @@ public class reviewDAO {
 
 		List<reviewVO> result = sqlSession.selectList("show3");
 		
+		sqlSession.close();
+		
 		return result;
 	}
 	
@@ -76,6 +87,8 @@ public class reviewDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		List<reviewVO> result = sqlSession.selectList("show4");
+		
+		sqlSession.close();
 		
 		return result;
 	}
@@ -92,6 +105,8 @@ public class reviewDAO {
 
 		List<reviewVO> result = sqlSession.selectList("user_search1",vo_rev);
 
+		sqlSession.close();
+		
 		return result;
 	}
 	
@@ -102,6 +117,8 @@ public class reviewDAO {
 
 		List<reviewVO> result = sqlSession.selectList("user_search2",vo_rev);
 
+		sqlSession.close();
+		
 		return result;
 	}
 	

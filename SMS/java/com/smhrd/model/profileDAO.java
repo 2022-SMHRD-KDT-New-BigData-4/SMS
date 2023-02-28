@@ -19,6 +19,8 @@ public class profileDAO {
 
 		profileVO result = sqlSession.selectOne("profilepic", vo_pro);
 		
+		sqlSession.close();
+		
 		return result;
 	}
 	
@@ -30,6 +32,8 @@ public class profileDAO {
 
 		List<profileVO> result = sqlSession.selectList("search6", vo_fol);
 	
+		sqlSession.close();
+		
 		return result;
 	
 	}

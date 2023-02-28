@@ -29,12 +29,7 @@ public class loginSuccess implements Command {
 		userVO vo_mem = (userVO)session.getAttribute("user");
 		String id = vo_mem.getMb_id();
 
-		// 로그인한 유저의 프로필테이블에서 프로필사진 가져오기
-		profileVO vo_pro = new profileVO(id);
-		profileDAO dao_pro = new profileDAO();
-		profileVO user_pro = dao_pro.pic(vo_pro);
-		// session에 담아주기
-		session.setAttribute("user2", user_pro);
+
 		
 		
 		

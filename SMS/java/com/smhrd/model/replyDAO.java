@@ -18,6 +18,8 @@ public class replyDAO {
 		
 		int cnt = sqlSession.insert("reply", vo_rep);
 		
+		sqlSession.close();
+		
 		return cnt;
 		
 	}
@@ -28,6 +30,8 @@ public class replyDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		List<replyVO> result = sqlSession.selectList("search4", vo_rep);
+		
+		sqlSession.close();
 		
 		return result;
 		
