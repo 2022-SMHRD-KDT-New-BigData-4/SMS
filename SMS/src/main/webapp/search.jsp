@@ -34,8 +34,8 @@
                         <a class="icontext" href="javascript:openPop()">만들기</a>
                     </li>
                     <li>
-                        <a href="proflieService.do" ><img src="${user2.mb_pic}" id="getUserPic"></a>
-                        <a class="icontext" href="proflieService.do">프로필</a>
+                        <a href="profileService.do" ><img src="${user2.mb_pic}" id="getUserPic"></a>
+                        <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul>
                 <div class="plusBtn">
@@ -131,6 +131,7 @@
             <div style="height: 900px; width: 1200px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
+        <form action="#">
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
@@ -183,7 +184,7 @@
                         </div>
                     </div>
             </div>
-        
+        </form>
             <!--팝업 버튼 영역-->
         </div>
       </div>

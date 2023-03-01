@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="./css/reset.css">
     	<link rel="stylesheet" href="./css/commentCss.css">
     	<link rel="stylesheet" href="./css/commentPopup.css">
+    	<link rel="stylesheet" href="./css/newPostMakeCss.css">
+    	<link rel="stylesheet" href="./css/newPostMakePopup.css">
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -93,7 +95,7 @@
             </div>
         </div>
 
-<!-- ------------------------------- -->
+<!-- ----------댓글, 하트 --------------------- -->
 
     <div class="popup_layer" id="popup_layer" style="display: none;">
         <div class="close">
@@ -103,6 +105,7 @@
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
+            <form action="#">
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
@@ -110,43 +113,116 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic">프로필사진</div>
-                            <div class="username">
-                                <div class="name">이름</div>
+                            <div class="profilepic"> <a href="#"></a></div>
+                            <div class=comusername">
+                                <div class="comname"> <a href="#"></a> 이름</div>
                                 <div class="userid">유저id</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
-                                <div class="comProfilepic">댓글프로필사진</div>
+                                <div class="comProfilepic"><a href="#"></a></div>
                                 <div class="comments">
-                                    <div class="comName">댓글이름</div>
-                                    <div class="comnUserid">답글달기</div>
+                                    <div class="comName"><a href="#"></a>댓글이름</div>
                                 </div>
-                                <div class="comText">댓글내용</div>
+                         <div class="comText" onclick="toggleEllipsis(this)">
+                             <p class="card-description">텍스트 길이만큼 늘어나는 div</p>
+                            <input type="checkbox" class="card-content__more-btn">
+                         </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
-                                        <img src="img/like.png" alt="찜하기"">
+                                        <img src="img/like.png" alt="찜하기" width="20px">
                                     </a>
                                 </div>
                             </div>
                             <div class="userComment">
-                                <div class="myProfilepic">내프로필사진</div>
+                                <div class="myProfilepic"> <a href="#"></a></div>
+                                <form action="ReplyService.do">
                                 <div class="myComment">
-                                    <input type="text" id="comInput" placeholder="댓글달기">
+                                    <input type="text" id="comInput" name="commentText" placeholder="댓글달기">
                                 </div>
                                 <div class="submit">
                                     <input type="submit" id="submit" value="게시">
                                 </div>
+                                </form>
                             </div>
                         </div>
+                    </div>
+            </div>
+        </form>
+            <!--팝업 버튼 영역-->
+        </div>
+      </div>
+
+<!-- ---------------새 게시글 만들기 팝업----------------------- -->
+
+
+    <div class="popup_layer_post" id="popup_layer_post" style="display: none;">
+        <div class="close">
+            <a href="javascript:closePopPost()"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
+        </div>
+        <div class="popup_box_post">
+            <div style="height: 10px; width: 375px; float: top;">
+            </div>
+            <!--팝업 컨텐츠 영역-->
+            <div class="uploadPost">
+                <div class="overlayPost"></div>
+                    <div class="mainNewPost">
+                        <div class="profilePost">
+                            <div class="username">
+                                <div class="namePost">새 게시물 만들기
+                                <div class="postSubmit">
+                                   <input type="submit" class="submitBtn" value="게시하기">
+                                </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <form action="#">
+                            <div class="commentPost">
+                                <div class="picPost">
+                                    <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
+                                    <div class="userNewImage" width="200px">
+                                    </div>
+                                    
+                                    <p>사진과 동영상을 여기에 끌어다 놓으세요.</p>
+                                   <div class="pick">
+                                       <label for="files">폴더에서 선택</label>
+                                       <input type="file" class="pickBtn" id="files">
+                                   </div>
+                                </div>
+                                <div class="textArea">
+                                    <div class="textAreaPic">
+                                        <div class="newTextProfilePic">
+                                        </div>
+                                        <div class="newTextProfileId">
+                                            id
+                                        </div>
+                                    </div>
+                                    <div class="textAreaMain">
+                                        <div class="textAreaMainPost">
+                                        	<textarea placeholder="내용을 입력해주세요."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="textAreaStar">
+                                    	<input type="text" name="userStar" placeholder="평점">
+                                    </div>
+                                    <div class="textAreaRoc">
+                                    	<input type="text" name="userAddress" placeholder="위치">
+                                    </div>
+                                    <div class="textAreaH">
+                                    	<input type="text" name="userHashtag" placeholder="해시태그">
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                            </div>
                     </div>
             </div>
         
             <!--팝업 버튼 영역-->
         </div>
       </div>
-
 
 
 

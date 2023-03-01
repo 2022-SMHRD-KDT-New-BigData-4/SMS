@@ -119,9 +119,28 @@ textarea {
     min-width: 500px;
     height: 55px;
     border: 1px solid gainsboro;
-
 }
 
+.textArea input {
+	max-width: 490px;
+    min-width: 490px;
+	border: none;
+}
+
+.textAreaStar input {
+    height: 20px;
+    padding-bottom: 22px;
+}
+
+.textAreaRoc input {
+    height: 20px;
+    padding-bottom: 31px;
+}
+
+.textAreaH input {
+    height: 20px;
+    padding-bottom: 31px;
+}
 
 .username {
     width: 360px;

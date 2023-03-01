@@ -50,8 +50,8 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a><img src="${user2.mb_pic}" id="getUserPic"></a>
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="profileService.do"><img src="${user2.mb_pic}" id="getUserPic"></a>
+                        <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
                 
@@ -176,6 +176,7 @@
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
+        <form action="#">
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
@@ -184,7 +185,7 @@
                     <div class="main">
                         <div class="profile">
                             <div class="profilepic"> <a href="#"></a></div>
-                            <div class="username">
+                            <div class=comusername">
                                 <div class="comname"> <a href="#"></a> 이름</div>
                                 <div class="userid">유저id</div>
                             </div>
@@ -219,7 +220,7 @@
                         </div>
                     </div>
             </div>
-        
+        </form>
             <!--팝업 버튼 영역-->
         </div>
       </div>
@@ -235,6 +236,7 @@
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
+            <form action="#">
             <div class="uploadPost">
                 <div class="overlayPost"></div>
                     <div class="mainNewPost">
@@ -274,16 +276,22 @@
                                         	<textarea placeholder="내용을 입력해주세요."></textarea>
                                         </div>
                                     </div>
-                                    <div class="textAreaStar">평점</div>
-                                    <div class="textAreaRoc">위치</div>
-                                    <div class="textAreaH">해시태그</div>
+                                    <div class="textAreaStar">
+                                    	<input type="text" name="userStar" placeholder="평점">
+                                    </div>
+                                    <div class="textAreaRoc">
+                                    	<input type="text" name="userAddress" placeholder="위치">
+                                    </div>
+                                    <div class="textAreaH">
+                                    	<input type="text" name="userHashtag" placeholder="해시태그">
+                                    </div>
                                 </div>
                         </div>
                         </form>
                             </div>
                     </div>
             </div>
-        
+        </form>
             <!--팝업 버튼 영역-->
         </div>
       </div>

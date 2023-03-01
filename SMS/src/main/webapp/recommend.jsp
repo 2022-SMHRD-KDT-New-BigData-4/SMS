@@ -47,8 +47,8 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a><img src="${user2.mb_pic }" id="getUserPic"></a>
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="profileService.do"><img src="${user2.mb_pic }" id="getUserPic"></a>
+                        <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
                 
@@ -308,9 +308,15 @@
                                         	<textarea placeholder="내용을 입력해주세요."></textarea>
                                         </div>
                                     </div>
-                                    <div class="textAreaStar">평점</div>
-                                    <div class="textAreaRoc">위치</div>
-                                    <div class="textAreaH">해시태그</div>
+                                    <div class="textAreaStar">
+                                    	<input type="text" name="userStar" placeholder="평점">
+                                    </div>
+                                    <div class="textAreaRoc">
+                                    	<input type="text" name="userAddress" placeholder="위치">
+                                    </div>
+                                    <div class="textAreaH">
+                                    	<input type="text" name="userHashtag" placeholder="해시태그">
+                                    </div>
                                 </div>
                         </div>
                         </form>

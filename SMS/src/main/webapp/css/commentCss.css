@@ -63,16 +63,21 @@ a { text-decoration:none; }
     border: 1px solid gainsboro;
 }
 
-.username {
+.comusername {
     width: 360px;
     height: 50px;
     float: left;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 25px;
+    margin-left: 15px;
 }
 
 .comname {
-    margin-top: 9px;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+.userid {
+    margin-left: 50px;
 }
 
 .myProfilepic {
@@ -145,9 +150,6 @@ a { text-decoration:none; }
     margin-left: 10px;
 }
 
-.comName {
-    margin-top: 20px;
-}
 
 .comText {
     min-width: 260px;
