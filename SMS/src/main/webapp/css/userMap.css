@@ -1,4 +1,80 @@
 @charset "UTF-8";
+
+.saveBar{
+	width:30%;
+	/*border : 10px solid red;*/
+	margin-left:300px;
+	position: absolute;
+	box-sizing: border-box;
+	display:flex;
+	flex-direction:column;
+}
+.saveReview{
+	width:450px;
+	height:500px;
+	margin-top:50px;
+	margin-left:40px;
+	border:1px solid black;
+}
+.saveReviewBox{
+	display:flex;
+	flex-direction:column;
+	margin:10px;
+}
+.saveReviewBox_1{
+	height:110px;
+	flex-basis : 20%;
+	display:flex;
+	flex-direction:row;
+}
+.saveReviewBox_1 img{
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+}
+.saveReviewBox_2{
+	flex-basis : 10%;
+	height:55px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.saveReviewBox_3{
+	height:220px;
+	flex-basis : 40%;
+}
+.saveReviewBox_3 img{
+	width:100%;
+	height:265px;
+}
+.saveReviewBox_4{
+	height:27px;
+	flex-basis : 15%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.saveReviewBox_4 img{
+	width:25px;
+	height:25px;
+	margin-right:5px;
+}
+.likeId{
+	display:flex;
+	flex-direction:column;
+}
+.saveReviewBox_5{
+	height:28px;
+	flex-basis : 15%;
+}
+.mapBox{
+	width:53%;
+	/*border : 10px solid black;*/
+    right: 0;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+
+
     /* 오버레이 전체 박스 */
     .overlaybox {position:relative;width:250px;height:280px;background-color:gray;padding:8px;border-radius: 5px;
         box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
@@ -25,11 +101,9 @@
         .overlaybox li .title {font-size:15px;margin-left: 10px;}
         /* 오버레이 X자 닫기  */
         .close {
-            background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
-            float: right;
-           
+           background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+           float: right;
            width:17px;
            height:17px;
-    
            }
         .close:hover {cursor: pointer;}
