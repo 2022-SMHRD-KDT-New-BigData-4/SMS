@@ -151,23 +151,70 @@
 
   <!-- 보관페이지(지도)에서 필요한 쿼리문들 -->
   
+  <!-- 유저 개인 보관함리뷰 데이터  -->
+  <select id="userReview" parameterType="com.smhrd.model.userMapVO"
+  	      resultType="com.smhrd.model.reviewVO">
+	SELECT * FROM TB_REVIEW
+  	WHERE RV_SEQ IN (SELECT RV_SEQ
+  					   FROM TB_USERPICK
+  					  WHERE MB_ID = #{MB_ID})
+  </select>
+  
+  <!-- 유저 개인 보관함 데이터  -->
+  <select id="userMap" parameterType="com.smhrd.model.userMapVO"
+  	      resultType="com.smhrd.model.restaurantVO">
+	SELECT * FROM TB_RESTAURANT
+  	WHERE RES_SEQ IN (SELECT RES_SEQ
+  					   FROM TB_USERPICK
+  					  WHERE MB_ID = #{MB_ID})
+  </select>
+  
+
+
+
+
+
+
+
+
+
+
+  <!-- 게시글을 작성한는데 필요한 쿼리문들 -->
   
   
   
   
+  
+  
+  
+    <!-- 게시글을 키웠을때(or 작성을 작성하기위한 페이지를 열때) 필요한 쿼리문들 -->
 
+  <!-- 해당 게시글의 리뷰데이터들 가져오는 쿼리문 -->
+  <select id="reviewpage" parameterType="com.smhrd.model.replyVO"
+  	      resultType="com.smhrd.model.reviewpageVO">
+	select A.*, B.res_seq, C.mb_name, C.mb_nick, D.mb_profile, D.mb_pic
+	  from tb_review A
+	     , tb_restaurant B
+	     , tb_member C
+	     , tb_profile D
+	 where A.res_seq = B.res_seq
+	   and A.mb_id = C.mb_id
+	   and A.mb_id = D.mb_id
+	   and A.rv_seq = #{rv_seq}
+  </select>
 
-
-
-
-
-
-
-
-
-  <!-- 게시글을 작서한느데 필요한 쿼리문들 -->
-
-
+  <!-- 해당 게시글의 댓글데이터들 가져오는 쿼리문 -->
+  <select id="replypage" parameterType="com.smhrd.model.replyVO"
+  	      resultType="com.smhrd.model.reviewpageVO">
+	select A.*, B.mb_name, B.mb_nick, C.mb_pic
+	  from tb_reply A
+	     , tb_member B
+	     , tb_profile C
+	 where A.mb_id = B.mb_id
+	   and A.mb_id = C.mb_id
+	   and A.rv_seq = #{rv_seq}
+	 order by rp_date
+  </select>
 
 
 
@@ -416,25 +463,9 @@
   	select email from web_member where email = #{receive_email}
   
   </select>
-   <!-- 유저 개인 보관함 데이터  -->
-  <select id="userMap" parameterType="com.smhrd.model.userMapVO"
-  	      resultType="com.smhrd.model.restaurantVO"
-  >
-	SELECT * FROM TB_RESTAURANT
-  	WHERE RES_SEQ IN (SELECT RES_SEQ
-  					   FROM TB_USERPICK
-  					  WHERE MB_ID = #{MB_ID})
-  </select>
+
   
-     <!-- 유저 개인 보관함리뷰 데이터  -->
-  <select id="userReview" parameterType="com.smhrd.model.userMapVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-	SELECT * FROM TB_REVIEW
-  	WHERE RV_SEQ IN (SELECT RV_SEQ
-  					   FROM TB_USERPICK
-  					  WHERE MB_ID = #{MB_ID})
-  </select>
+
   
   
    <!-- 회원정보수정 쿼리문 -->  
