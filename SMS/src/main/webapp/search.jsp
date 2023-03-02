@@ -65,22 +65,25 @@
                     <div class="user">
                         <a href="#"><img id="userImg" src="./img/16802_24920_49.jpg"></a>
                         <div class="userId">
-                            <a href="#">사용자아이디</a>
-                            <p>사용자이름</p>
+                            <a href="#">${user2.mb_id}</a>
+                            <p>${user2.mb_name}</p>
                         </div>
 
                     </div>
                     <div class="recBox">
                         <p>회원님을 위한 추천</p>
                         <ul>
-                            <li class="rec">
-                            <a><img class="rec_img" src="#"></a>
-                                
-                            <div>
-                                <a href="#">추천ID</a>
-                                <p>추천인 이름</p> 
-                            </div>
-                            </li>    
+                       		<c:forEach var="i" begin="0" end="3">
+	                            <li class="rec">
+	                            <a><img class="rec_img" src="${recommend.get(i).rv_pic1}"></a>
+	                                
+	                            <div>
+	                                <a href="#">${recommend.get(i).mb_id}</a>
+	                                <p>${recommend.get(i).mb_name}</p> 
+	                            </div>
+	                            </li>   
+                            </c:forEach> 
+                            
                             <li class="rec">
                             <a><img class="rec_img" src="#"></a>
                                 

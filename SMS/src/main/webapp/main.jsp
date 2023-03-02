@@ -73,8 +73,7 @@
                 
                 <!-- 팔로워 게시물 -->
                 <div class="container">
-                
-               
+                         
                 <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">
@@ -228,7 +227,7 @@
 
 
     <div class="popup_layer_post" id="popup_layer_post" style="display: none;">
-        <div class="close">
+        <div class="closePost">
             <a href="javascript:closePopPost()"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
         </div>
         <div class="popup_box_post">
@@ -252,12 +251,12 @@
 	                            <div class="commentPost">
 	                                <div class="picPost">
 	                                    <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
-	                                    <div class="userNewImage" width="200px">
-	                                    </div>
+	                                    <div class="userNewImage">
 	                                    
-	                                    <p>사진과 동영상을 여기에 끌어다 놓으세요.</p>
+	                                    <p id="pickPicArea">사진과 동영상을 여기에 끌어다 놓으세요.</p>
+	                                    </div>
 	                                   <div class="pick">
-	                                       <label for="files">폴더에서 선택</label>
+	                                       <label for="files" id="label">폴더에서 선택</label>
 	                                       <input type="file" class="pickBtn" id="files" accept='image/*'>
 	                                   </div>
 	                                </div>
@@ -275,7 +274,19 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="textAreaStar">
-	                                    	<input type="text" name="userStar" placeholder="평점">
+	                                    	<div class="star-rating space-x-4 mx-auto">
+	                                    		평점
+												<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+												<label for="5-stars" class="star pr-4">★</label>
+												<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+												<label for="4-stars" class="star">★</label>
+												<input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+												<label for="3-stars" class="star">★</label>
+												<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+												<label for="2-stars" class="star">★</label>
+												<input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+												<label for="1-star" class="star">★</label>
+											</div>
 	                                    </div>
 	                                    <div class="textAreaRoc">
 	                                    	<input type="text" name="userAddress" placeholder="위치">

@@ -19,12 +19,15 @@
 }
 
 .picPost {
-	width: 500px;
-	height: 600px;
+	max-width: 400px;
+	max-height: 500px;
+    width: 500px;
+    height: 600px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 65px;
 }
 
 .profilePost {
@@ -36,10 +39,10 @@
 
 .commentPost {
     width: 500px;
-    height: 530px;
+    height: 531px;
     border: 1px solid gainsboro;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .textArea {
@@ -47,9 +50,9 @@
     min-width: 500px;
     width: 500px;
     height: 555px;
-	float: left;
-    margin-left: 500px;
-    margin-top: -408px;
+    float: left;
+    margin-left: 62px;
+    margin-top: -2px;
 }
 
 .textAreaPic{
@@ -70,6 +73,12 @@
     margin-right: 20px;
     float: left;
 
+}
+
+#album {
+	max-width: 400px;
+	max-height: 500px;
+	position: absolute;
 }
 
 .newTextProfileId{
@@ -174,6 +183,8 @@ textarea {
 .picPost p {
     font-size: 20px;
     margin-top: 40px;
+    margin-top: 215px;
+    width: 373px;
 }
 
 .pick {
@@ -217,4 +228,36 @@ textarea {
   overflow: hidden;
   clip:rect(0,0,0,0);
   border: 0;
+}
+
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+}
+ 
+.star-rating input {
+  display: none;
+}
+ 
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+}
+ 
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold;
+}
+ 
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c;
 }

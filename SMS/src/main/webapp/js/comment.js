@@ -81,7 +81,7 @@ $(function save(){
 
 
 //뭐냐파일변경
-const fileInput = document.getElementById("file");
+const fileInput = document.getElementById("files");
 
 const handleFiles = (e) => {
   const selectedFile = [...fileInput.files];
@@ -91,6 +91,14 @@ const handleFiles = (e) => {
 
   fileReader.onload = function () {
     document.getElementById("album").src = fileReader.result;
+    const text = document.getElementById("pickPicArea");
+    text.innerText = "";
+    
+    element.parentNode.removeChild(fileInput);
+    
+    const label = document.getElementById("label");
+    element.parentNode.removeChild(label);
+    
   };
 };
 

@@ -100,10 +100,10 @@
         /* 오버레이 아래쪽 오픈시간,마감시간 옆 들어가는 데이터*/
         .overlaybox li .title {font-size:15px;margin-left: 10px;}
         /* 오버레이 X자 닫기  */
-        .close {
+        .closeMap {
            background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
            float: right;
            width:17px;
            height:17px;
            }
-        .close:hover {cursor: pointer;}
+        .closeMap:hover {cursor: pointer;}

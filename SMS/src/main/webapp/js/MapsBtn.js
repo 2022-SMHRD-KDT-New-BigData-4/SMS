@@ -79,7 +79,7 @@ $(function saveMap(){
 
         if($saveBtn.hasClass('active')){          
            $(this).find('img').attr({
-              'src': './img/saveWhite.png',
+              'src': './img/saveWhite.png'
                 });
           
           

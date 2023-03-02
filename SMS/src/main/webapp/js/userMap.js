@@ -91,7 +91,7 @@ title.className = 'boxtitle';
 title.textContent = data1[i]//                          제목
 
 var closeButton = document.createElement('span');
-closeButton.className = 'close';
+closeButton.className = 'closeMap';
 closeButton.textContent = '';// 수정
 
 // closeButton 클릭시 커스텀오버레이 삭제

@@ -69,39 +69,43 @@
             <!-- 2.saveBar -->
             <div class="saveBar">
             	<!-- 반복-->
-            	<div class="saveReview">
-            		<ul class="saveReviewBox">
-            			<li class="saveReviewBox_1">
-            			<img src="#">
-            			<div>
-            				<a>id</a>
-            				<p>이름</p>
-            			</div>
-            			</li>
-            			
-            			<li class="saveReviewBox_2">
-            				<a href="#">가게명</a>
-            			</li>
-            			<li class="saveReviewBox_3">	
-            				<img src="#">
-            			</li>
-            			
-            			<li class="saveReviewBox_4">
-            				<a><img src="./img/like.png"></a>
-            				<a href="javascript:openPop()"><img src="./img/comment.png"></a>
-            				<a href="javascript:saveMap()"><img src="./img/saveBlack.png"></a>
-							<div class="likeId">
-            				<P>좋아요 누적</P>
-            				<a>id</a>
-            				</div>
-            			</li>
-            			
-            			<li class="saveReviewBox_5">
-            				<p>리뷰내용</p>
-            			</li>
-            		</ul>
-            	</div> <!-- 닫히는 디브-->
-
+            	<c:forEach var="i" begin="${searchresult.size()-1}" end="3">
+	            	<div class="saveReview">
+	            		<ul class="saveReviewBox">
+	            			<li class="saveReviewBox_1">
+	            			<form action="#" name="reviewPicData">
+	            				<input type="hidden" name="reviewNum" value="${searchresult.mb_id}">
+	            			</form>
+	            				<a href="#" onclick="document.forms['reviewPicData'].submit()"><img src="${searchresult.get(i).res_pic1}"></a>
+			            			<div>
+			            				<a href="#" onclick="document.forms['reviewPicData'].submit()">id</a>
+			            				<p>이름</p>
+			            			</div>
+	            			</li>
+	            			
+	            			<li class="saveReviewBox_2">
+	            				<a href="#">가게명</a>
+	            			</li>
+	            			<li class="saveReviewBox_3">	
+	            				<img src="#">
+	            			</li>
+	            			
+	            			<li class="saveReviewBox_4">
+	            				<a href="javascript:heart()" class="likeIcon heart"><img src="./img/like.png"></a>
+	            				<a href="javascript:openPop()"><img src="./img/comment.png"></a>
+	            				<a href="javascript:saveMap()" class="saveIcon save"><img src="./img/saveBlack.png"></a>
+								<div class="likeId">
+	            				<P>좋아요 누적</P>
+	            				<a>id</a>
+	            				</div>
+	            			</li>
+	            			
+	            			<li class="saveReviewBox_5">
+	            				<p>리뷰내용</p>
+	            			</li>
+	            		</ul>
+	            	</div> <!-- 닫히는 디브-->
+				</c:forEach>
             </div>
             <!-- 3.map  -->
             <div class="mapBox">
