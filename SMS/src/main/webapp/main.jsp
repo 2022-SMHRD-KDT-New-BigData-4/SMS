@@ -153,16 +153,19 @@
                         <ul class="recList">
                         
                             <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
-                            <li class="rec">
-                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
-                               <a><img class="rec_img" src="#"></a>        
-                               <div>
-                                  <!-- 추천자 id -->
-                                   <a href="#">추천ID</a>
-                                   <!-- 추천자 이름 -->
-                                   <p>추천인 이름</p> 
-                               </div>
-                            </li> <!-- rec클래스 닫는 태그 -->
+                            <c:forEach var="i" begin="0" end="4">
+	                            <li class="rec">
+	                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
+	                               <a><img class="rec_img" src="${rank.get(i).mb_pic }"></a>        
+	                               <div>
+	                                  <!-- 추천자 id -->
+	                                   <a href="#">${rank.get(i).mb_id }</a>
+	                                   <!-- 추천자 이름 -->
+	                                   <p>${rank.get(i).mb_name }</p> 
+	                               </div>
+	                            </li> 
+                            </c:forEach>
+                            <!-- rec클래스 닫는 태그 -->
                                    
                         </ul> 
                         

@@ -13,6 +13,8 @@
     	<link rel="stylesheet" href="./css/newPostMakeCss.css">
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
     	<link rel="stylesheet" href="./css/recommend.css">
+       <link rel="stylesheet" href="./css/logoutCss.css">
+       <link rel="stylesheet" href="./css/logoutPopupCss.css">    	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -54,7 +56,7 @@
                 
                 <!-- 로그아웃 기능이 들어있는 버튼 -->
                 <div class="plusBtn">
-                    <a href="#"><img src="./img/bar.png" ></a>
+                    <a href="#" onclick="openPoplogout()"><img src="./img/bar.png" ></a>
                 </div>
             </div> <!-- left 종료 디브 -->
                    
@@ -82,23 +84,23 @@
                                 <!-- 움직이는 추천리뷰1-->
                                 <div class="moveRecBox_mainRec1">
                                     <!-- 추천리뷰1-left 사진-->
-                                    <div class="mainRec1_img"><img src="${dao_rev.get(0).rv_pic1}"></div>
+                                    <div class="mainRec1_img"><img src="${rank.get(0).rv_pic1}"></div>
 
                                     <!-- 추천리뷰1-right 리뷰글( top-리뷰자 아이디,이름,프로필사진) / main-리뷰 내용(글) -->
                                     <div class="mainRec1_Box">
                                         <div class="recUserInfo">
                                             <!-- top -->
                                             <!-- 프로필 사진 -->
-                                            <img id="recUserInfo_img" src="${review.get(0).mb_pic}">
+                                            <img id="recUserInfo_img" src="${rank.get(0).mb_pic}">
                                             <!-- 아이디, 이름 -->
                                             <ul class="recUserInfo_info">
-                                                <li><a id="recUserInfo_infoId" href="#">${dao_rev.get(0).mb_id}</a></li>
-                                                <li style="font-size: 13px;">유저이름</li>
+                                                <li><a id="recUserInfo_infoId" href="#">${rank.get(0).mb_id}</a></li>
+                                                <li style="font-size: 13px;">${rank.get(0).mb_name }</li>
                                             </ul>
                                         </div>
-                                        <div id="mainRec1_storeName"><p>${dao_rev.get(0).res_name}</p></div>
-                                        <div id="mainRec1_content"><p>${dao_rev.get(0).rv_content}</p></div>
-                                        <div id="mainRec1_tag"><p>${dao_rev.get(0).rv_hashtag}</p></div>
+                                        <div id="mainRec1_storeName"><p>${rank.get(0).res_name}</p></div>
+                                        <div id="mainRec1_content"><p>${rank.get(0).rv_content}</p></div>
+                                        <div id="mainRec1_tag"><p>${rank.get(0).rv_hashtag}</p></div>
                                     </div>
                                 </div>
                                 </div>
@@ -108,23 +110,23 @@
                                 	<!-- 움직이는 추천리뷰1-->
                                 	<div class="moveRecBox_mainRec1">
                                     <!-- 추천리뷰1-left 사진-->
-                                    <div class="mainRec1_img"><img src="${dao_rev.get(i).rv_pic1}"></div>
+                                    <div class="mainRec1_img"><img src="${rank.get(i).rv_pic1}"></div>
 
                                     <!-- 추천리뷰1-right 리뷰글( top-리뷰자 아이디,이름,프로필사진) / main-리뷰 내용(글) -->
                                     <div class="mainRec1_Box">
                                         <div class="recUserInfo">
                                             <!-- top -->
                                             <!-- 프로필 사진 -->
-                                            <img id="recUserInfo_img" src="${dao_rev.get(i).mb_pic}">
+                                            <img id="recUserInfo_img" src="${rank.get(i).mb_pic}">
                                             <!-- 아이디, 이름 -->
                                             <ul class="recUserInfo_info">
-                                                <li><a id="recUserInfo_infoId" href="#">${dao_rev.get(i).md_id}</a></li>
-                                                <li style="font-size: 13px;">유저이름</li>
+                                                <li><a id="recUserInfo_infoId" href="#">${rank.get(i).mb_id}</a></li>
+                                                <li style="font-size: 13px;">${rank.get(i).mb_name}</li>
                                             </ul>
                                         </div>
-                                        <div id="mainRec1_storeName"><p>${dao_rev.get(i).res_name}</p></div>
-                                        <div id="mainRec1_content"><p>${dao_rev.get(i).rv_content}</p></div>
-                                        <div id="mainRec1_tag"><p>${dao_rev.get(i).rv_hashtag}</p></div>
+                                        <div id="mainRec1_storeName"><p>${rank.get(i).res_name}</p></div>
+                                        <div id="mainRec1_content"><p>${rank.get(i).rv_content}</p></div>
+                                        <div id="mainRec1_tag"><p>${rank.get(i).rv_hashtag}</p></div>
                                     </div>
                                 	</div>
                                 </div>
@@ -139,17 +141,17 @@
                    
                    <!-- 반복되는 추천디브 - 한식 -->
                    <div class="koreanFood">
-                        <p id="koreanFood_ment">한국인은 밥심! 든든한 한식 맛집 추천 : ${dao_rev.get(0).res_name}
+                        <p id="koreanFood_ment">한국인은 밥심! 든든한 한식 맛집 추천 : 
                         </p>
                         <div class="koreanFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                            
-                            <form name="food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="profileService.do" method="POST">
                             <ul class="koreanFood_imgs">
                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_kr.get(i).rv_seq}">
-                                    <img class="japanesFood_img" src="${result_kr.get(i).rv_pic}"></a>
+                                    <a type="hidden" onclick="document.forms['food_rec'].submit()" value="">
+                                    <img class="japanesFood_img" src="${show1.get(i).rv_pic1}"></a>
                                 </li>
                                 </c:forEach>                            
                             </ul>
@@ -164,12 +166,12 @@
                         <div class="japanesFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
-                            <form name="food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="profileService.do" method="POST">
                             <ul class="japanesFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_jp.get(i).rv_seq}">
-                                    <img class="japanesFood_img" src="${result_jp.get(i).rv_pic}"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
+                                    <img class="japanesFood_img" src="#"></a>
                                 </li>
                                 </c:forEach>    
                             </ul>
@@ -184,12 +186,12 @@
                         <div class="chinaFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
-                            <form name="food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="profileService.do" method="POST">
                             <ul class="chinaFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_ch.get(i).rv_seq}">
-                                    <img class="chinaFood_img" src="${result_ch.get(i).rv_pic}"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
+                                    <img class="chinaFood_img" src="${show2.get(i).rv_pic1}"></a>
                                 </li>
                                 </c:forEach>    
                             </ul>
@@ -204,12 +206,12 @@
                         <div class="cafeFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
-                            <form name="food_rec" action="이동할 주소" method="POST">
+                            <form name="food_rec" action="profileService.do" method="POST">
                             <ul class="cafeFood_imgs">
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="${result_cf.get(i).rv_seq}">
-                                    <img class="cafeFood_img" src="${result_cf.get(i).rv_pic}"></a>
+                                    <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
+                                    <img class="cafeFood_img" src="#"></a>
                                 </li>
                                 </c:forEach>    
                             </ul>
@@ -240,16 +242,19 @@
                         <ul class="recList">
                         
                             <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
-                            <li class="rec">
-                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
-                               <a><img class="rec_img" src="#"></a>        
-                               <div>
-                                  <!-- 추천자 id -->
-                                   <a href="#">추천ID</a>
-                                   <!-- 추천자 이름 -->
-                                   <p>추천인 이름</p> 
-                               </div>
-                            </li> <!-- rec클래스 닫는 태그 -->
+                            <c:forEach var="i" begin="0" end="4">
+	                            <li class="rec">
+	                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
+	                               <a><img class="rec_img" src="${rank.get(i).mb_pic }"></a>        
+	                               <div>
+	                                  <!-- 추천자 id -->
+	                                   <a href="#">${rank.get(i).mb_id }</a>
+	                                   <!-- 추천자 이름 -->
+	                                   <p>${rank.get(i).mb_name }</p> 
+	                               </div>
+	                            </li> 
+                            </c:forEach>
+                            <!-- rec클래스 닫는 태그 -->
                                    
                         </ul> 
                         
@@ -338,6 +343,22 @@
             <!--팝업 버튼 영역-->
         </div>
       </div>
+
+<!-- ---------------로그아웃 팝업----------------------- -->
+
+
+<div class="popup_layer_logout" id="popup_layer_logout" style="display: none;">
+  <div class="popup_box_logout">
+    <div style="height: 10px; width: 375px; float: top;"></div>
+    <!--팝업 컨텐츠 영역-->
+    <form action="#">
+      <div><a href="login.jsp">로그아웃</a></div>
+    </form>
+  </div>
+<div class="popup_overlay_logout" onclick="closePopuplogout()"></div>s
+</div>
+
+
 
 
 

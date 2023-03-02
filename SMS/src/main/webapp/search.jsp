@@ -10,7 +10,8 @@
 		<link rel="stylesheet" href="./css/reset.css">
     	<link rel="stylesheet" href="./css/searchCommentCss.css">
     	<link rel="stylesheet" href="./css/searchCommentPopup.css">
-
+       <link rel="stylesheet" href="./css/logoutCss.css">
+       <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
 </head>
 <body link="black" vlink="black" alink="black">
 	 <div class="container1">
@@ -39,7 +40,7 @@
                     </li>
                 </ul>
                 <div class="plusBtn">
-                    <a href="#"><img src="./img/bar.png" ></a>
+                    <a href="#" onclick="openPoplogout()"><img src="./img/bar.png" ></a>
                 </div>
             </div>
             <div class="center">
@@ -191,6 +192,23 @@
             <!--팝업 버튼 영역-->
         </div>
       </div>
+
+<!-- ---------------로그아웃 팝업----------------------- -->
+
+
+<div class="popup_layer_logout" id="popup_layer_logout" style="display: none;">
+  <div class="popup_box_logout">
+    <div style="height: 10px; width: 375px; float: top;"></div>
+    <!--팝업 컨텐츠 영역-->
+    <form action="#">
+      <div><a href="login.jsp">로그아웃</a></div>
+    </form>
+  </div>
+<div class="popup_overlay_logout" onclick="closePopuplogout()"></div>s
+</div>
+
+
+
 
 </body>
 

@@ -13,6 +13,8 @@
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<link rel="stylesheet" href="./css/newPostMakeCss.css">
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
+       <link rel="stylesheet" href="./css/logoutCss.css">
+       <link rel="stylesheet" href="./css/logoutPopupCss.css">    	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -53,7 +55,7 @@
                 
                 <!-- 로그아웃 기능이 들어있는 버튼 -->
                 <div class="plusBtn">
-                    <a href="#"><img src="./img/bar.png" ></a>
+                    <a href="#" onclick="openPoplogout()"><img src="./img/bar.png" ></a>
                 </div>
             </div> <!-- left 종료 디브 -->
             
@@ -69,6 +71,8 @@
                   	<div><img id="setImg" src="./img/ex_post.jpg"></div>
                     <div>
                     	<ul class="userSetText">
+                    		<li class="userSetText_sums"><a href="#">게시물</a><a href="#">팔로우00<a href="#">팔로잉00</a></a></li>
+							<li>유저아이디<button style="margin-left:10px;">프로필 변경</button></li>
                     		<li>유저아이디<button>프로필 변경</button></li>.
                     		<li>유저 이름</li>
                     		<li><br>소개글</li>
@@ -77,12 +81,11 @@
                   </div>
                   <div><hr id="proflie_bar"></div>
                   <div class="userReview">
-                   <div><a href="javascript:openPop()"><img src="./img/ex_post.jpg"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
-                   <div><a href="#"><img src="#"></a></div>
+                   <c:forEach var="i" begin="0" end="userinfo.size()-1">
+                    <div>
+                         <a href="javascript:openPop()"><img src="${user }"></a>
+                      </div>
+                  </c:forEach>
                   </div>
                 </div>
                 
@@ -205,7 +208,18 @@
                                         </div>
                                     </div>
                                     <div class="textAreaStar">
-                                    	<input type="text" name="userStar" placeholder="평점">
+		                                    	<div class="star-rating space-x-4 mx-auto">
+													<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+													<label for="5-stars" class="star pr-4">★</label>
+													<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+													<label for="4-stars" class="star">★</label>
+													<input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+													<label for="3-stars" class="star">★</label>
+													<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+													<label for="2-stars" class="star">★</label>
+													<input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+													<label for="1-star" class="star">★</label>
+												</div>
                                     </div>
                                     <div class="textAreaRoc">
                                     	<input type="text" name="userAddress" placeholder="위치">
@@ -223,6 +237,21 @@
             <!--팝업 버튼 영역-->
         </div>
       </div>
+
+<!-- ---------------로그아웃 팝업----------------------- -->
+
+
+<div class="popup_layer_logout" id="popup_layer_logout" style="display: none;">
+  <div class="popup_box_logout">
+    <div style="height: 10px; width: 375px; float: top;"></div>
+    <!--팝업 컨텐츠 영역-->
+    <form action="#">
+      <div><a href="login.jsp">로그아웃</a></div>
+    </form>
+  </div>
+<div class="popup_overlay_logout" onclick="closePopuplogout()"></div>s
+</div>
+
 
 
 
