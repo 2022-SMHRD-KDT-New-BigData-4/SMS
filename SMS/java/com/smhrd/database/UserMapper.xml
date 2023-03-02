@@ -81,64 +81,60 @@ select A.*, B.mb_pic, C.res_name, D.mb_name
   </select>
 
   <!-- 추천페이지에서 카테고리별 게시물을 가져오는 쿼리문 -->
-  <select id="show1" resultType="com.smhrd.model.reviewVO"
-  >
-select *
-  from tb_review
- where res_seq = (select *
-                    from (select *
-                            from (select distinct res_seq
-                                    from tb_review
-                                   where rv_hashtag = '한식'
-                                   order by dbms_random.value)
-                           order by rownum)
-                   where rownum = 1 )
- order by dbms_random.value
+  <select id="show1" resultType="com.smhrd.model.reviewVO">
+	select *
+	  from tb_review
+	 where res_seq = (select *
+	                    from (select *
+	                            from (select distinct res_seq
+	                                    from tb_review
+	                                   where rv_hashtag = '한식'
+	                                   order by dbms_random.value)
+	                           order by rownum)
+	                   where rownum = 1 )
+	 order by dbms_random.value
   </select>
 
-  <select id="show2" resultType="com.smhrd.model.reviewVO"
-  >
-select *
-  from tb_review
- where res_seq = (select *
-                    from (select *
-                            from (select distinct res_seq
-                                    from tb_review
-                                   where rv_hashtag = '중식'
-                                   order by dbms_random.value)
-                           order by rownum)
-                   where rownum = 1 )
- order by dbms_random.value
+  <select id="show2" resultType="com.smhrd.model.reviewVO">
+	select *
+	  from tb_review
+	 where res_seq = (select *
+	                    from (select *
+	                            from (select distinct res_seq
+	                                    from tb_review
+	                                   where rv_hashtag = '중식'
+	                                   order by dbms_random.value)
+	                           order by rownum)
+	                   where rownum = 1 )
+	 order by dbms_random.value
   </select>
 
-  <select id="show3" resultType="com.smhrd.model.reviewVO"
-  >
-select *
-  from tb_review
- where res_seq = (select *
-                    from (select *
-                            from (select distinct res_seq
-                                    from tb_review
-                                   where rv_hashtag = '이자카야'
-                                   order by dbms_random.value)
-                           order by rownum)
-                   where rownum = 1 )
- order by dbms_random.value
+  <select id="show3" resultType="com.smhrd.model.reviewVO">
+	select *
+	  from tb_review
+	 where res_seq = (select *
+	                    from (select *
+	                            from (select distinct res_seq
+	                                    from tb_review
+	                                   where rv_hashtag = '이자카야'
+	                                   order by dbms_random.value)
+	                           order by rownum)
+	                   where rownum = 1 )
+	 order by dbms_random.value
   </select>
 
-  <select id="show4" resultType="com.smhrd.model.reviewVO"
-  >
-select *
-  from tb_review
- where res_seq = (select *
-                    from (select *
-                            from (select distinct res_seq
-                                    from tb_review
-                                   where rv_hashtag = '카페'
-                                   order by dbms_random.value)
-                           order by rownum)
-                   where rownum = 1 )
- order by dbms_random.value
+  <select id="show4" resultType="com.smhrd.model.reviewVO">
+	select *
+	  from tb_review
+	 where res_seq = (select *
+	                    from (select *
+	                            from (select distinct res_seq
+	                                    from tb_review
+	                                   where rv_hashtag = '카페'
+	                                   order by dbms_random.value)
+	                           order by rownum)
+	                   where rownum = 1 )
+	 order by dbms_random.value
   </select>
 
 
@@ -191,8 +187,7 @@ select *
 
   <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
   <select id="profilepage" parameterType="com.smhrd.model.userVO"
-  	      resultType="com.smhrd.model.userinfoVO"
-  >
+  	      resultType="com.smhrd.model.userinfoVO">
 	select A.rv_seq, B.mb_profile, B.mb_pic, C.*
 	  from tb_review A
 	     , tb_profile B

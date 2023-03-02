@@ -21,11 +21,12 @@ public class profileService implements Command {
 		// 프로필페이지에 나오는 데이터들 가져오기
 		
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("user");
+		userVO vo = (userVO)session.getAttribute("user");
+		String id = vo.getMb_id();
 		
 		userVO vo_mem = new userVO(id);
 		userDAO dao_mem = new userDAO();
-		userinfoVO result = dao_mem.profile(vo_mem);
+		List<userinfoVO> result = dao_mem.profile(vo_mem);
 		
 		request.setAttribute("userinfo", result);
 		

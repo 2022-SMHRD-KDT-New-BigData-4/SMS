@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -63,11 +64,11 @@ public class userDAO {
 	
 	
 	// 프로필페이지 이동할때 데이터 가져오는 메소드
-	public userinfoVO profile(userVO vo_mem) {
+	public List<userinfoVO> profile(userVO vo_mem) {
 		
 		SqlSession sqlsession = sqlSessionFactory.openSession(true);
 
-		userinfoVO result = sqlsession.selectOne("profilepage");
+		List<userinfoVO> result = sqlsession.selectList("profilepage", vo_mem);
 		
 		sqlsession.close();
 

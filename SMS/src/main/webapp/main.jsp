@@ -74,10 +74,7 @@
                 <!-- 팔로워 게시물 -->
                 <div class="container">
                 
-                <%
-                List<reviewVO> review = (List<reviewVO>)request.getAttribute("review");
-                 
-                %>            
+               
                 <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">

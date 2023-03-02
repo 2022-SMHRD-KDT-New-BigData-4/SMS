@@ -40,6 +40,7 @@ public class userVO {
 	}
 
 	public userVO(String mb_id) {
+		super();
 		this.mb_id = mb_id;
 	}
 
