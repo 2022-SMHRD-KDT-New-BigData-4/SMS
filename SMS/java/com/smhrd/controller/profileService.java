@@ -29,11 +29,6 @@ public class profileService implements Command {
 		
 		request.setAttribute("userinfo", result);
 		
-		// 해당 유저의 리뷰데이터 가져오기
-		reviewDAO dao_rev = new reviewDAO();
-		List<reviewVO> result_rev = dao_rev.myreview(vo_mem);
-		
-		request.setAttribute("myreview", result_rev);
 		
 		
 		

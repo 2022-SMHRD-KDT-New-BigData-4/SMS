@@ -59,7 +59,8 @@ select A.*, B.mb_pic, C.res_name, D.mb_name
 
 
 
-  <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
+  <!-- 추천페이지에서 필요한 쿼리문들 -->
+  
   <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
   <select id="ranking" resultType="com.smhrd.model.mainVO">
 	select A.*, B.mb_pic, C.res_name, D.mb_name, D.mb_nick
@@ -142,6 +143,64 @@ select *
 
 
 
+
+
+
+
+
+
+
+
+
+  <!-- 보관페이지(지도)에서 필요한 쿼리문들 -->
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+  <!-- 게시글을 작서한느데 필요한 쿼리문들 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 프로필페이지에서 필요한 쿼리문들 -->
+
+  <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
+  <select id="profilepage" parameterType="com.smhrd.model.userVO"
+  	      resultType="com.smhrd.model.userinfoVO"
+  >
+	select A.rv_seq, B.mb_profile, B.mb_pic, C.*
+	  from tb_review A
+	     , tb_profile B
+	     , tb_member C
+	 where C.mb_id = B.mb_id
+	   and C.mb_id = A.mb_id
+	   and C.mb_id = #{mb_id}
+  </select>
 
 
 
@@ -322,16 +381,7 @@ select *
   	where rv_seq = #{rv_seq}
   </select>
 
-  <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
-  <select id="profilepage" parameterType="com.smhrd.model.userVO"
-  	      resultType="com.smhrd.model.userinfoVO"
-  >
- select *
- from tb_member A
-    , tb_profile B
- where A.mb_id = B.mb_id
-   and A.mb_id = #{mb_id}
-  </select>
+
 
   <!-- 프로필페이지 로그인유저의 리뷰정보 보여주는 쿼리문 -->
   <select id="myreview" parameterType="com.smhrd.model.userVO"
