@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.reviewVO"%>
 <%@page import="com.smhrd.model.restaurantVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -23,6 +24,8 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>   
 </head>
 <body link="black" vlink="black" alink="black">
+<% List<reviewVO> list1= (List<reviewVO>)request.getAttribute("list1");%>
+<%= list1.get(0).getRv_seq()%> 
 		
 		<div class="container1">
         <!-- 화면 레이아웃은 left, center, right로 나눠져있음 -->
