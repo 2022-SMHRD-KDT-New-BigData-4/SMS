@@ -34,9 +34,11 @@ a { text-decoration:none; }
 }
 
 .iconBtn li{
-    display: list-item;
-    justify-items: baseline;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
 }
 
 #getUserPic {
@@ -75,7 +77,11 @@ a { text-decoration:none; }
 .iconBtn li img{
     width: 30px;
     height: 30px;
+    margin-right: 10px;
 }
+
+
+
 .box {
     height: 100px;
 }
@@ -164,6 +170,7 @@ a { text-decoration:none; }
 }
 .name{
    padding-left:0px;
+   margin-top: 20px;
 }
 #postCenter img{
     width: 700px;

@@ -21,6 +21,18 @@ function closePopPost() {
     document.getElementById("popup_layer_post").style.display = "none";
 }
 
+//팝업 띄우기
+function openPoplogout() {
+  document.getElementById("popup_layer_logout").style.display = "block";
+  document.getElementsByClassName("popup_overlay_logout")[0].style.display = "block";
+  console.log("성공");
+}
+
+function closePopuplogout() {
+  document.getElementById("popup_layer_logout").style.display = "none";
+  document.getElementsByClassName("popup_overlay_logout")[0].style.display = "none";
+}
+
 //좋아요 하트 변경
 $(function heart(){
     var $likeBtn =$('.likeIcon');
@@ -65,3 +77,21 @@ $(function save(){
          }
      })
 })
+
+
+
+//뭐냐파일변경
+const fileInput = document.getElementById("file");
+
+const handleFiles = (e) => {
+  const selectedFile = [...fileInput.files];
+  const fileReader = new FileReader();
+
+  fileReader.readAsDataURL(selectedFile[0]);
+
+  fileReader.onload = function () {
+    document.getElementById("album").src = fileReader.result;
+  };
+};
+
+fileInput.addEventListener("change", handleFiles);
