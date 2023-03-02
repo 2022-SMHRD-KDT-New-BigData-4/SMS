@@ -24,12 +24,14 @@ public class replyDAO {
 		
 	}
 	
-	// 댓글 가져오는 메소드
-	public List<replyVO> search(replyVO vo_rep) {
+	// 게시글을 키웠을때(or 작성을 작성하기위한 페이지를 열때)
+	
+	// 게시물 데이터 가져오는 메소드
+	public List<reviewpageVO> reviewer(replyVO vo_rep) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		List<replyVO> result = sqlSession.selectList("search4", vo_rep);
+		List<reviewpageVO> result = sqlSession.selectList("reviewpage", vo_rep);
 		
 		sqlSession.close();
 		
@@ -37,4 +39,16 @@ public class replyDAO {
 		
 	}
 	
+	// 게시물의 댓글데이터 가져오는 메소드
+	public List<reviewpageVO> replyer(replyVO vo_rep) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		List<reviewpageVO> result = sqlSession.selectList("replypage", vo_rep);
+		
+		sqlSession.close();
+		
+		return result;
+		
+	}
 }
