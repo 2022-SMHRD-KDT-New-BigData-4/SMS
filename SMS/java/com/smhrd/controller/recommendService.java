@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.command.Command;
 import com.smhrd.model.likesDAO;
 import com.smhrd.model.likesVO;
+import com.smhrd.model.mainVO;
 import com.smhrd.model.reviewDAO;
 import com.smhrd.model.reviewVO;
 
@@ -22,7 +23,7 @@ public class recommendService implements Command {
 		
 		// 함수 사용하기
 		likesDAO dao_lik = new likesDAO();
-		List<reviewVO> result = dao_lik.rank();
+		List<mainVO> result = dao_lik.rank();
 	
 		
 		// 카테고리별 랜덤

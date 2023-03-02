@@ -5,137 +5,39 @@
   
   
 <mapper namespace="com.smhrd.database.MemberMapper">
-
-  <!-- 회원 가입을 위한 sql문장 작성하기 -->
-  <!-- mybatis의 변수 : 바인드 변수 -> #{변수명} -->
-  
+  <!-- 회원가입 쿼리문 -->
   <insert id = "join" parameterType = "com.smhrd.model.userVO">
-  	insert into tb_member values(#{mb_id}, #{mb_pw}, #{mb_name}, #{mb_nick}, sysdate, 'M')
+  	insert into tb_member (mb_id, mb_pw, mb_name, mb_nick)
+  	values(#{mb_id}, #{mb_pw}, #{mb_name}, #{mb_nick})
   </insert>
   
-  
-  <!-- 결과 타입! resultType : 결과에 대하여 어떤 타입으로 저장을 할것인지 지정! 
-  		id = "smhrd@smhrd.or.kr" pw = "123" -> 회원의 이름만 select
-  -->
- 
- <!-- #{} : parameter로 받아온 객체의 getter메소드 사용하겠다! -->
+  <!-- 로그인 쿼리문 -->
   <select id="login" parameterType="com.smhrd.model.userVO"
-  	      resultType="com.smhrd.model.userVO"
-  >
+  	      resultType="com.smhrd.model.userVO">
   	select mb_id, mb_pw, mb_name, mb_nick from tb_member
   	where mb_id = #{mb_id}
   	and mb_pw = #{mb_pw}
   </select>
   
-  
-  <!-- 회원정보 수정을 위한 sql문장 작성 -->
-  <!-- 여러명의 회원중 어떤 회원에 대하여 정보를 수정할 것인가?  -->
-  <update id="update" parameterType="com.smhrd.model.userVO">
-  	update tb_member set mb_pw=#{mb_pw}, mb_name=#{mb_name}, mb_nick=#{mb_nick} 
-  	where mb_id=#{mb_id} 
-  </update>
-
-  <select id="search1" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.followVO"
-  >
-  	select * from tb_follow	where follower = #{follower}
-  </select>
-
-  <select id="search2" parameterType="com.smhrd.model.reviewVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review	where mb_id = #{mb_id}
-  </select>
 
 
 
-  <!-- 로그인한(세션에 아이디 저장되어있는) 유저의 팔로우 유저를 검색
-  		팔로우하고 있는 유저들의 리뷰를 가져오는 쿼리문 -->
-  <select id="search3" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review	
-  	where mb_id in ( select followee
-  					   from tb_follow
-  					  where follower = #{follower})
-  </select>
-
-
-  <select id="search6" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.profileVO"
-  >
-  	select * from tb_profile	
-  	where mb_id in ( select followee
-  					   from tb_follow
-  					  where follower = #{follower})
-  </select>
-
-  <select id="search7" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.profilereviewVO"
-  >
-select *
-  from (select * from tb_profile	
-      	where mb_id in ( select followee
-        				   from tb_follow
-            			  where follower = #{follower})) A,
-       (select * from tb_review	
-     	where mb_id in ( select followee
-    					   from tb_follow
-    					  where follower = #{follower})) B,
-    	tb_member C,
-    	tb_restaurant D
+  <!-- 메인화면으로 이동할때마다 실행되어야 하는 쿼리문 -->
+  <select id="main" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.profilereviewVO">
+select A.*, B.mb_pic, C.res_name, D.mb_name
+  from tb_review A
+     , tb_profile B
+     , tb_restaurant C
+     , tb_member D
  where A.mb_id = B.mb_id
-   and A.mb_id = C.mb_id
-   and B.res_seq = D.res_seq
+   and A.res_seq = C.res_seq
+   and A.mb_id = D.mb_id
+   and A.rv_seq in (select rv_seq from tb_review	
+                 	where mb_id in ( select followee
+                    				   from tb_follow
+                        			  where follower = #{follower}))
   </select>
-
-
-  <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
-  	insert into tb_reply(
-  		rv_seq,
-  		rp_content,
-  		mb_id
-  	) values (
-  		#{rv_seq},		<!-- 여기는 수정이 필요 -->
-  		#{rp_content},
-  		#{mb_id}
-  	)
-  </insert>
-
-
-  <!-- 해당 게시글에 작성되어 있는 댓글들의 데이터를 가져오는 쿼리문 -->
-  <select id="search4" parameterType="com.smhrd.model.replyVO"
-  	      resultType="com.smhrd.model.replyVO"
-  >
-  	select * from tb_reply
-  	where rv_seq = #{rv_seq}
-  </select>
-
-
-  <!-- 가게이름으로 가게의번호를 찾아오는 쿼리문 -->
-  <select id="search5" parameterType="com.smhrd.model.restaurantVO"
-  	      resultType="com.smhrd.model.restaurantVO"
-  >
-  	select * from tb_restaurant
-  	where res_name = #{res_name}
-  </select>
-
-  <!-- 게시글을 작성하여 저장하는 쿼리문 -->
-  <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
-  	insert into tb_review(
-  		rv_content,
-  		rv_ratings,
-  		mb_id,
-  		res_seq,
-  		rv_hashtag
-  	) values (
-  		#{rv_content},
-  		#{rv_ratings},
-  		#{mb_id},
-  		#{res_seq},
-  		#{rv_hashtag}
-  	)
-  </insert>
 
 
   <!-- 좋아요를 누를때 저장이되는 쿼리문 -->
@@ -151,56 +53,30 @@ select *
   	 and   rv_seq = #{rv_seq})
   </delete>
 
-  <!-- 해당 게시물의 유저를 팔로우하는 쿼리문 -->
-  <insert id = "follow_insert" parameterType = "com.smhrd.model.followVO">
-  	insert into tb_follow (follower, followee)
-  	 values(#{follower}, #{followee})
-  </insert>
 
-  <!-- 해당 게시물의 유저의 팔로우를 해제하는 쿼리문 -->
-  <delete id = "follow_delete" parameterType = "com.smhrd.model.followVO">
-  	delete from tb_follow
-  	 where follower = #{follower}
-  	 and   followee = #{followee})
-  </delete>
 
-  <!-- 추천페이지에서 좋아요가 많은 순서를 가져오는 쿼리문 -->
-  <select id="rank" resultType="com.smhrd.model.likesVO"
-  >
- select rv_seq
-   from(select rv_seq, count(*)
-  	  	  from tb_likes
-    	 where like_date BETWEEN sysdate-5 and sysdate
-         group by rv_seq
-         order by count(*) desc)
-  </select>
 
-  <!-- 추천페이지 리뷰번호로 리뷰정보 보여주는 쿼리문 -->
-  <select id="show" parameterType="com.smhrd.model.reviewVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review
-  	where rv_seq = #{res_seq}
-  </select>
+
+
 
   <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
-  <select id="rank2" resultType="com.smhrd.model.recommendVO"
-  >
-  SELECT A.*
-    FROM TB_REVIEW A
-     , ( select rv_seq, count(*) AS CNT 
-           from tb_likes
-          where like_date BETWEEN sysdate-5 and sysdate
-          group by rv_seq
-          order by count(*) desc) B
-     , tb_profile C
-     , tb_restaurant D
-     , tb_member E
-   WHERE A.RV_SEQ = B.RV_SEQ
-     and A.mb_id = C.mb_id
-     and A.res_seq = D.res_seq
-     and A.mb_id = E.mb_id
-   ORDER BY B.CNT DESC
+  <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
+  <select id="ranking" resultType="com.smhrd.model.mainVO">
+	select A.*, B.mb_pic, C.res_name, D.mb_name, D.mb_nick
+	  from tb_review A
+	     , tb_profile B
+	     , tb_restaurant C
+	     , tb_member D
+	     , ( select rv_seq, count(*) AS CNT 
+	           from tb_likes
+	          where like_date BETWEEN sysdate-10 and sysdate
+	          group by rv_seq
+	          order by count(*) desc) E
+	 where A.mb_id = B.mb_id
+	   and A.res_seq = C.res_seq
+	   and A.mb_id = D.mb_id
+	   and A.rv_seq = E.rv_seq
+	 order by E.CNT desc
   </select>
 
   <!-- 추천페이지에서 카테고리별 게시물을 가져오는 쿼리문 -->
@@ -263,6 +139,144 @@ select *
                    where rownum = 1 )
  order by dbms_random.value
   </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <select id="search1" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.followVO"
+  >
+  	select * from tb_follow	where follower = #{follower}
+  </select>
+
+  <select id="search2" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review	where mb_id = #{mb_id}
+  </select>
+
+
+
+  <!-- 로그인한(세션에 아이디 저장되어있는) 유저의 팔로우 유저를 검색
+  		팔로우하고 있는 유저들의 리뷰를 가져오는 쿼리문 -->
+  <select id="search3" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review	
+  	where mb_id in ( select followee
+  					   from tb_follow
+  					  where follower = #{follower})
+  </select>
+
+
+  <select id="search6" parameterType="com.smhrd.model.followVO"
+  	      resultType="com.smhrd.model.profileVO"
+  >
+  	select * from tb_profile	
+  	where mb_id in ( select followee
+  					   from tb_follow
+  					  where follower = #{follower})
+  </select>
+
+
+
+
+  <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
+  	insert into tb_reply(
+  		rv_seq,
+  		rp_content,
+  		mb_id
+  	) values (
+  		#{rv_seq},		<!-- 여기는 수정이 필요 -->
+  		#{rp_content},
+  		#{mb_id}
+  	)
+  </insert>
+
+
+  <!-- 해당 게시글에 작성되어 있는 댓글들의 데이터를 가져오는 쿼리문 -->
+  <select id="search4" parameterType="com.smhrd.model.replyVO"
+  	      resultType="com.smhrd.model.replyVO"
+  >
+  	select * from tb_reply
+  	where rv_seq = #{rv_seq}
+  </select>
+
+
+  <!-- 가게이름으로 가게의번호를 찾아오는 쿼리문 -->
+  <select id="search5" parameterType="com.smhrd.model.restaurantVO"
+  	      resultType="com.smhrd.model.restaurantVO"
+  >
+  	select * from tb_restaurant
+  	where res_name = #{res_name}
+  </select>
+
+  <!-- 게시글을 작성하여 저장하는 쿼리문 -->
+  <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
+  	insert into tb_review(
+  		rv_content,
+  		rv_ratings,
+  		mb_id,
+  		res_seq,
+  		rv_hashtag
+  	) values (
+  		#{rv_content},
+  		#{rv_ratings},
+  		#{mb_id},
+  		#{res_seq},
+  		#{rv_hashtag}
+  	)
+  </insert>
+
+
+
+  <!-- 해당 게시물의 유저를 팔로우하는 쿼리문 -->
+  <insert id = "follow_insert" parameterType = "com.smhrd.model.followVO">
+  	insert into tb_follow (follower, followee)
+  	 values(#{follower}, #{followee})
+  </insert>
+
+  <!-- 해당 게시물의 유저의 팔로우를 해제하는 쿼리문 -->
+  <delete id = "follow_delete" parameterType = "com.smhrd.model.followVO">
+  	delete from tb_follow
+  	 where follower = #{follower}
+  	 and   followee = #{followee})
+  </delete>
+
+  <!-- 추천페이지에서 좋아요가 많은 순서를 가져오는 쿼리문 -->
+  <select id="rank" resultType="com.smhrd.model.likesVO"
+  >
+ select rv_seq
+   from(select rv_seq, count(*)
+  	  	  from tb_likes
+    	 where like_date BETWEEN sysdate-5 and sysdate
+         group by rv_seq
+         order by count(*) desc)
+  </select>
+
+  <!-- 추천페이지 리뷰번호로 리뷰정보 보여주는 쿼리문 -->
+  <select id="show" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO"
+  >
+  	select * from tb_review
+  	where rv_seq = #{res_seq}
+  </select>
+
+
 
 
 
@@ -366,8 +380,19 @@ select *
   </select>
   
   
+
+
+
+
+
+
+
   
-  
+   <!-- 회원정보수정 쿼리문 -->  
+  <update id="update" parameterType="com.smhrd.model.userVO">
+  	update tb_member set mb_pw=#{mb_pw}, mb_name=#{mb_name}, mb_nick=#{mb_nick} 
+  	where mb_id=#{mb_id} 
+  </update>
   
   
   

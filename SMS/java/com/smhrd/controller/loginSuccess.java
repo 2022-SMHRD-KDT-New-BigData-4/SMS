@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.command.Command;
 import com.smhrd.model.followVO;
+import com.smhrd.model.mainVO;
 import com.smhrd.model.profileDAO;
 import com.smhrd.model.profileVO;
 import com.smhrd.model.profilereviewVO;
@@ -38,7 +39,7 @@ public class loginSuccess implements Command {
 
 		// reviewDAO 함수 사용하기
 		reviewDAO dao_rev = new reviewDAO();
-		List<profilereviewVO> result = dao_rev.search(vo_fol);
+		List<mainVO> result = dao_rev.search(vo_fol);
 		
 
 		

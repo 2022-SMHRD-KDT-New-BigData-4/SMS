@@ -2,9 +2,9 @@ package com.smhrd.model;
 
 public class profileVO {
 
-	private String mb_id;
-	private String mb_profile;
-	private String mb_pic;
+	private String mb_id;		// 유저 아이디
+	private String mb_profile;	// 프로필글
+	private String mb_pic;		// 유저 사진
 	
 	public profileVO() {
 		super();
