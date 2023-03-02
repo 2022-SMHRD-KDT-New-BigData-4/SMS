@@ -99,12 +99,19 @@
                         <div id="postBottom">                       
                             <ul class="pBlist">
                                 <li class="one">
+                                   <form name="likesSum" action="LikeService.do" method="post">
                                    <!-- 좋아요 버튼 -->
-                                    <a href="javascript:heart;" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <a href="javascript:heart;" onclick="document.forms['likesSum'].submit()" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <input type="hidden" name="likes" value="javascript:heart()">
+                                    </form>
+                                    
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
+                                    
+                                    <form name="saveSum" action="userMapService.do" method="post">
                                     <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
+                                    <a href="javascript:save()" onclick="document.forms['saveSum'].submit()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
+                                    </form>
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">

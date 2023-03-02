@@ -24,9 +24,6 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>   
 </head>
 <body link="black" vlink="black" alink="black">
-<% List<reviewVO> list1= (List<reviewVO>)request.getAttribute("list1");%>
-<%= list1.get(0).getRv_seq()%> 
-		
 		<div class="container1">
         <!-- 화면 레이아웃은 left, center, right로 나눠져있음 -->
         
@@ -72,7 +69,7 @@
             <!-- 2.saveBar -->
             <div class="saveBar">
             	<!-- 반복-->
-            	<c:forEach var="i" begin="${searchresult.size()-1}" end="3">
+            	<c:forEach var="i" begin="0" end="${searchresult.size()-1}">
 	            	<div class="saveReview">
 	            		<ul class="saveReviewBox">
 	            			<li class="saveReviewBox_1">

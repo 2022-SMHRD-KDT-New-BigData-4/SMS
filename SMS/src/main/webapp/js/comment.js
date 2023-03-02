@@ -41,12 +41,11 @@ $(function heart(){
         $likeBtn.click(function(){
         $(this).toggleClass('active');
 
-        if($likeBtn.hasClass('active')==(cnt=0)){          
+        if($likeBtn.hasClass('active')){          
            $(this).find('img').attr({
               'src': 'img/hearts.png',
                 });
               cnt= 1;
-          
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
@@ -54,7 +53,7 @@ $(function heart(){
            })
            cnt= 0;
          }
-     console.log(cnt); 
+          	return cnt;
      })
 })
 
