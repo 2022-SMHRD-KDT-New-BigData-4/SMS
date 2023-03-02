@@ -21,7 +21,7 @@
         
         <!-- 1. left -->
             <div class="left">
-            <!-- 로고 어진바보 -->
+            <!-- 로고 어진바보 아니다... -->
                 <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <!-- 카테고리 버튼(리스트) -->
                 <ul class="iconBtn">
