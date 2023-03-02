@@ -38,7 +38,7 @@ public class profileService implements Command {
 		
 		
 		
-		return "proflie";
+		return "profile";
 	}
 
 	

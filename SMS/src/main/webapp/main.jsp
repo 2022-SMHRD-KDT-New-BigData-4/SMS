@@ -106,7 +106,7 @@
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
                                     <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
+                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">

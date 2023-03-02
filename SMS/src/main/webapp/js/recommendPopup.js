@@ -60,7 +60,7 @@ $(function save(){
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
-              'src': 'img/save.png'
+              'src': 'img/savewhite.png'
            })
          }
      })

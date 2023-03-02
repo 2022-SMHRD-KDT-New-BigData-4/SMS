@@ -65,3 +65,29 @@ $(function save(){
          }
      })
 })
+
+
+
+
+//보관함 변경
+$(function saveMap(){
+    var $saveBtn =$('.saveIcon');
+
+        $saveBtn.on('click', function(e){
+		e.preventDefault();
+        $(this).toggleClass('active');
+
+        if($saveBtn.hasClass('active')){          
+           $(this).find('img').attr({
+              'src': './img/saveWhite.png',
+                });
+          
+          
+         }else{
+            $(this).find('i').removeClass('fas').addClass('far')
+           $(this).find('img').attr({
+              'src': './img/saveBlack.png'
+           })
+         }
+     })
+})
