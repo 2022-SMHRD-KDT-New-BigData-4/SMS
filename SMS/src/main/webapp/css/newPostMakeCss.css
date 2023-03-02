@@ -240,6 +240,8 @@ textarea {
   padding: 0 0.2em;
   text-align: center;
   width: 5em;
+  margin-left: 10px;
+  margin-top: 2px;
 }
  
 .star-rating input {
@@ -261,3 +263,4 @@ textarea {
 .star-rating label:hover ~ label {
   -webkit-text-fill-color: #fff58c;
 }
+

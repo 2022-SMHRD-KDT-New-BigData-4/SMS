@@ -227,14 +227,13 @@
 
 
     <div class="popup_layer_post" id="popup_layer_post" style="display: none;">
-        <div class="closePost">
+        <div class="close">
             <a href="javascript:closePopPost()"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
         </div>
         <div class="popup_box_post">
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
-	       <form action="#">
 	            <div class="uploadPost">
 	                <div class="overlayPost"></div>
 	                    <div class="mainNewPost">
@@ -248,6 +247,7 @@
 	                                
 	                            </div>
 	                        </div>
+	                        <form>
 	                            <div class="commentPost">
 	                                <div class="picPost">
 	                                    <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
@@ -273,33 +273,32 @@
 	                                        	<textarea placeholder="내용을 입력해주세요."></textarea>
 	                                        </div>
 	                                    </div>
-	                                    <div class="textAreaStar">
-	                                    	<div class="star-rating space-x-4 mx-auto">
-	                                    		평점
-												<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
-												<label for="5-stars" class="star pr-4">★</label>
-												<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
-												<label for="4-stars" class="star">★</label>
-												<input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
-												<label for="3-stars" class="star">★</label>
-												<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
-												<label for="2-stars" class="star">★</label>
-												<input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
-												<label for="1-star" class="star">★</label>
-											</div>
-	                                    </div>
-	                                    <div class="textAreaRoc">
-	                                    	<input type="text" name="userAddress" placeholder="위치">
-	                                    </div>
-	                                    <div class="textAreaH">
-	                                    	<input type="text" name="userHashtag" placeholder="해시태그">
-	                                    </div>
-	                                </div>
-	                        </div>
+		                                    <div class="textAreaStar">
+		                                    	<div class="star-rating space-x-4 mx-auto">
+													<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+													<label for="5-stars" class="star pr-4">★</label>
+													<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+													<label for="4-stars" class="star">★</label>
+													<input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+													<label for="3-stars" class="star">★</label>
+													<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+													<label for="2-stars" class="star">★</label>
+													<input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+													<label for="1-star" class="star">★</label>
+												</div>
+		                                    </div>
+		                                    <div class="textAreaRoc">
+		                                    	<input type="text" name="userAddress" placeholder="위치">
+		                                    </div>
+		                                    <div class="textAreaH">
+		                                    	<input type="text" name="userHashtag" placeholder="해시태그">
+		                                    </div>
+	                             	   </div>
+	                        	</div>
+	                        	</form>
 	                            </div>
 	                    </div>
 	            </div>
-        </form>
             <!--팝업 버튼 영역-->
         </div>
 

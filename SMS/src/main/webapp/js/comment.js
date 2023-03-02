@@ -34,24 +34,27 @@ function closePopuplogout() {
 }
 
 //좋아요 하트 변경
+	var cnt = 0;
 $(function heart(){
     var $likeBtn =$('.likeIcon');
 
         $likeBtn.click(function(){
         $(this).toggleClass('active');
 
-        if($likeBtn.hasClass('active')){          
+        if($likeBtn.hasClass('active')==(cnt=0)){          
            $(this).find('img').attr({
-              'src': 'img/hearts.png'
+              'src': 'img/hearts.png',
                 });
-          
+              cnt= 1;
           
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
-              'src': 'img/like.png'
+              'src': 'img/like.png',
            })
+           cnt= 0;
          }
+     console.log(cnt); 
      })
 })
 
@@ -67,14 +70,16 @@ $(function save(){
            $(this).find('img').attr({
               'src': 'img/saveBlack.png',
                 });
-          
+          cnt= 1;
           
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
-              'src': 'img/saveWhite.png'
+              'src': 'img/saveWhite.png',
            })
+         cnt= 0;
          }
+     console.log(cnt); 
      })
 })
 
