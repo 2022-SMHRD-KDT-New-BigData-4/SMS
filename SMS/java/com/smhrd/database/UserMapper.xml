@@ -25,18 +25,19 @@
   <!-- 메인화면으로 이동할때마다 실행되어야 하는 쿼리문 -->
   <select id="main" parameterType="com.smhrd.model.followVO"
   	      resultType="com.smhrd.model.profilereviewVO">
-select A.*, B.mb_pic, C.res_name, D.mb_name
-  from tb_review A
-     , tb_profile B
-     , tb_restaurant C
-     , tb_member D
- where A.mb_id = B.mb_id
-   and A.res_seq = C.res_seq
-   and A.mb_id = D.mb_id
-   and A.rv_seq in (select rv_seq from tb_review	
-                 	where mb_id in ( select followee
-                    				   from tb_follow
-                        			  where follower = #{follower}))
+	 select A.*, B.mb_pic, C.res_name, D.mb_name
+	  from tb_review A
+	     , tb_profile B
+	     , tb_restaurant C
+	     , tb_member D
+	 where A.mb_id = B.mb_id
+	   and A.res_seq = C.res_seq
+	   and A.mb_id = D.mb_id
+	   and A.rv_seq in (select rv_seq from tb_review	
+	                 	where mb_id in ( select followee
+	                    				   from tb_follow
+	                        			  where follower = #{follower}))
+	  order by A.rv_date desc
   </select>
 
 
@@ -195,6 +196,7 @@ select A.*, B.mb_pic, C.res_name, D.mb_name
 	 where C.mb_id = B.mb_id
 	   and C.mb_id = A.mb_id
 	   and C.mb_id = #{mb_id}
+	 order by A.rv_date desc
   </select>
 
 
