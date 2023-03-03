@@ -36,11 +36,23 @@
 .userSetText li{
    margin:10px;
 }
+.userSetText{
+	margin-bottom:55px;
+}
+li.userSetText_sums{
+	margin-top:25px;
+	margin-bottom:25px;
+}
+.userSetText button{
+    background: #51c26f;
+    color:white;
+    border:none;
+    border-radius: 8%;
+    padding: 3px;
+}
 .userSetText_sums a{
    margin-right:10px;
-   background: linear-gradient(to left, #51c26f , #f2e901);
-    color: transparent;
-    -webkit-background-clip: text;
+
 }
 a { text-decoration:none; }
 

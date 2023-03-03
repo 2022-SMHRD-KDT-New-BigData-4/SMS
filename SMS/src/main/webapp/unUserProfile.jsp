@@ -74,7 +74,7 @@
                   	<div><img id="setImg" src="./img/ex_post.jpg"></div>
                     <div>
                     	<ul class="userSetText">
-                    		 <li style="margin-top:36px;">유저아이디<button style="margin-left:10px;">프로필 변경</button></li>
+                    		 <li style="margin-top:36px;">유저아이디<button style="margin-left:10px;">프로필 변경</button><button style="margin-left:10px;">팔로우</button></li>
               				 <li class="userSetText_sums">
                   				<a href="#">게시물00</a>
                   				<a href="#">팔로우00</a>
@@ -87,10 +87,10 @@
                   </div>
                   <div><hr id="proflie_bar"></div>
                   <div class="userReview">
-                   <c:forEach var="i" begin="0" end="${userinfo.size()-1 }">
+                   <c:forEach var="i" begin="0" end="9">
                 
                     <div>
-                         <a href="javascript:openPop()"><img src="${userinfo.get(i).rv_pic1 }"></a>
+                         <a href="javascript:openPop()"><img src="#"></a>
                       </div>
                   </c:forEach>
                   </div>
