@@ -188,7 +188,7 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        사진
+                        <img src="${review.get(i).rv_pic1}" class="otherUserPic">
                     </div>
                     <div class="main">
                         <div class="profile">
@@ -216,14 +216,12 @@
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>
-                                <form action="ReplyService.do">
                                 <div class="myComment">
                                     <input type="text" id="comInput" name="commentText" placeholder="댓글달기">
                                 </div>
                                 <div class="submit">
                                     <input type="submit" id="submit" value="게시">
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>

@@ -31,46 +31,20 @@ $(function heart(){
 
         if($likeBtn.hasClass('active')==(cnt=0)){          
            $(this).find('img').attr({
-              'src': 'img/hearts.png',
-                });
-              cnt= 1;
-          
-         }else{
-            $(this).find('i').removeClass('fas').addClass('far')
-           $(this).find('img').attr({
               'src': 'img/like.png',
-           })
-           cnt= 0;
-         }
-     console.log(cnt); 
-     })
-})
-
-//보관함 변경
-$(function save(){
-    var $saveBtn =$('.saveIcon');
-
-        $saveBtn.on('click', function(e){
-		e.preventDefault();
-        $(this).toggleClass('active');
-
-        if($saveBtn.hasClass('active')){          
-           $(this).find('img').attr({
-              'src': 'img/saveBlack.png',
                 });
-          cnt= 1;
+              cnt= 0;
           
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
-              'src': 'img/saveWhite.png',
+              'src': 'img/hearts.png',
            })
-         cnt= 0;
+           cnt= 1;
          }
      console.log(cnt); 
      })
 })
-
 
 
 //보관함 변경
@@ -83,15 +57,17 @@ $(function saveMap(){
 
         if($saveBtn.hasClass('active')){          
            $(this).find('img').attr({
-              'src': './img/saveWhite.png'
+              'src': './img/saveBlack.png'
                 });
-          
+          cnt= 1;
           
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
-              'src': './img/saveBlack.png'
+              'src': './img/saveWhite.png'
            })
+         cnt= 0;
          }
+         console.log(cnt);
      })
 })

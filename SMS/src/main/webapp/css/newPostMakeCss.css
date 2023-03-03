@@ -20,10 +20,10 @@
 
 .picPost {
 	max-width: 400px;
-	max-height: 500px;
+	max-height: 340px;
     width: 500px;
     height: 600px;
-    margin-top: 100px;
+    margin-top: 95px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,7 +78,8 @@
 #album {
 	max-width: 400px;
 	max-height: 500px;
-	position: absolute;
+	margin: auto;
+	object-fit: cover;
 }
 
 .newTextProfileId{
@@ -183,7 +184,6 @@ textarea {
 .picPost p {
     font-size: 20px;
     margin-top: 40px;
-    margin-top: 215px;
     width: 373px;
 }
 

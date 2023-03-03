@@ -107,3 +107,9 @@ const handleFiles = (e) => {
 };
 
 fileInput.addEventListener("change", handleFiles);
+
+//댓글 새로고침
+$('#submit').click(function() {
+    $('.overlay').load(window.location.href + ' .overlay');
+	console.log('성공');
+});

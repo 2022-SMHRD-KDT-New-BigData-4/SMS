@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/commentCss.css">
     <link rel="stylesheet" href="./css/commentPopupMaps.css">
-    <link rel="stylesheet" href="./css/newPostMakePopupMaps.css">
     <link rel="stylesheet" href="./css/newPostMakeCss.css">
+    <link rel="stylesheet" href="./css/newPostMakePopupMaps.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>   
 </head>
@@ -69,12 +69,12 @@
             <!-- 2.saveBar -->
             <div class="saveBar">
             	<!-- 반복-->
-            	<c:forEach var="i" begin="0" end="${searchresult.size()-1}">
+            	<c:forEach var="i" begin="0" end="4">
 	            	<div class="saveReview">
 	            		<ul class="saveReviewBox">
 	            			<li class="saveReviewBox_1">
 	            			<form action="#" name="reviewPicData">
-	            				<input type="hidden" name="reviewNum" value="${searchresult.mb_id}">
+	            				<input type="hidden" name="reviewNum" value="${searchresult.get(i).mb_id}">
 	            			</form>
 	            				<a href="#" onclick="document.forms['reviewPicData'].submit()"><img src="${searchresult.get(i).res_pic1}"></a>
 			            			<div>
