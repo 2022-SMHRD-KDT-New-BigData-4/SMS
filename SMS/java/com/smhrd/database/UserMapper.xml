@@ -170,7 +170,7 @@
 	                    from (select *
 	                            from (select distinct res_seq
 	                                    from tb_review
-	                                   where rv_hashtag = '이자카야'
+	                                   where rv_hashtag = '일식'
 	                                   order by dbms_random.value)
 	                           order by rownum)
 	                   where rownum = 1 )

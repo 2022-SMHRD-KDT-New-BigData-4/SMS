@@ -150,7 +150,7 @@
                             <ul class="koreanFood_imgs">
                                <c:forEach var="i" begin="0" end="9" >
                                 <li>
-                                    <a type="hidden" onclick="document.forms['food_rec'].submit()" value="">
+                                    <a type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
                                     <img class="japanesFood_img" src="${show1.get(i).rv_pic1}"></a>
                                 </li>
                                 </c:forEach>                            
@@ -171,7 +171,7 @@
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
                                     <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
-                                    <img class="japanesFood_img" src="#"></a>
+                                    <img class="japanesFood_img" src="${show3.get(i).rv_pic1}"></a>
                                 </li>
                                 </c:forEach>    
                             </ul>

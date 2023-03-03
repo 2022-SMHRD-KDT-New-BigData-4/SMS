@@ -93,7 +93,7 @@
                         
                         <!-- 게시물 중간 칸 -->
                         <!-- 리뷰 사진 -->
-                        <div id="postCenter"><img src="${review.get(i).rv_pic1}"></div>
+                        <div id="postCenter"><img src="${review.get(i).rv_pic1}" id = "userReviewPic"></div>
                         
                         <!-- 게시문 맨 밑칸 -->
                         <div id="postBottom">                       
@@ -188,7 +188,7 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="${review.get(i).rv_pic1}" class="otherUserPic">
+                        <img src="#" class="otherUserPic">
                     </div>
                     <div class="main">
                         <div class="profile">
@@ -341,6 +341,9 @@
       this.close();
     };
   }
+  
+  const otherUserPic = document.querySelector('.otherUserPic');
+  otherUserPic.setAttribute('src', review[i].rv_pic1);
 </script>
     
     
