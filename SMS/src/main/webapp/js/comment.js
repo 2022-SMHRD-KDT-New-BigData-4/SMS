@@ -1,5 +1,7 @@
 //팝업 띄우기
-function openPop() {
+function openPop(img_url) {
+	var profile_review =document.getElementById("profile_review");
+	profile_review.src =img_url;
     document.getElementById("popup_layer").style.display = "block";
 
 }
@@ -107,9 +109,3 @@ const handleFiles = (e) => {
 };
 
 fileInput.addEventListener("change", handleFiles);
-
-//댓글 새로고침
-$('#submit').click(function() {
-    $('.overlay').load(window.location.href + ' .overlay');
-	console.log('성공');
-});

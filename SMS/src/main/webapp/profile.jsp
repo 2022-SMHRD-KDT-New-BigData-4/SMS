@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -15,9 +16,9 @@
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<link rel="stylesheet" href="./css/newPostMakeCss.css">
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
-       <link rel="stylesheet" href="./css/logoutCss.css">
-       <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
-          	
+        <link rel="stylesheet" href="./css/logoutCss.css">
+        <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -51,7 +52,7 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a href="profileService.do"><img src="${user2.mb_pic}" id="getUserPic"></a>
+                        <a id="profileProfile" href="profileService.do"><img src="${user2.mb_pic}" id="getUserPic"></a>
                         <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
@@ -74,25 +75,28 @@
                   	<div><img id="setImg" src="./img/ex_post.jpg"></div>
                     <div>
                     	<ul class="userSetText">
-                    		 <li style="margin-top:36px;">유저아이디<button style="margin-left:10px;">프로필 변경</button></li>
+                    		 <li style="margin-top:36px;">${userinfo.get(0).mb_id}<button style="margin-left:10px;">프로필 변경</button></li>
               				 <li class="userSetText_sums">
                   				<a href="#">게시물00</a>
                   				<a href="#">팔로우00</a>
                  				 <a href="#">팔로잉00</a>
               				</li>
-              				<li>유저 이름</li>
-              				<li>소개글</li>
+              				<li>${userinfo.get(0).mb_name}</li>
+              				<li>${userinfo.get(0).mb_profile}</li>
                     	</ul>
                     </div>
                   </div>
                   <div><hr id="proflie_bar"></div>
                   <div class="userReview">
-                   <c:forEach var="i" begin="0" end="${userinfo.size()-1 }">
-                
+                   <c:forEach var="i" begin="0" end="${userinfo.size()-1 }">     
                     <div>
-                         <a href="javascript:openPop()"><img src="${userinfo.get(i).rv_pic1 }"></a>
-                      </div>
+                        <a href="javascript:openPop(`${userinfo.get(i).rv_pic1}`)" class="hiddeninfo">
+                        	<img id="popup_review" src="${userinfo.get(i).rv_pic1}">
+                        </a>
+                    </div>
+                    
                   </c:forEach>
+                  
                   </div>
                 </div>
                 
@@ -107,7 +111,8 @@
 
 <!-- ----------댓글, 하트 --------------------- -->
 
-    <div class="popup_layer" id="popup_layer" style="display: none;">
+
+	<div class="popup_layer" id="popup_layer" style="display: none;">
         <div class="close">
             <a href="javascript:closePop();"><img src="img/x.png" class="m_header-banner-close" width="30px" height="30px"></a>
         </div>
@@ -118,8 +123,8 @@
             <form action="#">
             <div class="upload">
                 <div class="overlay"></div>
-                    <div class="pic">
-                        사진
+                    <div>
+                       <img src="" id="profile_review">
                     </div>
                     <div class="main">
                         <div class="profile">
@@ -267,7 +272,6 @@
     
 <script src="./js/comment.js"></script>
     
-    
-    
+
     
 </html>

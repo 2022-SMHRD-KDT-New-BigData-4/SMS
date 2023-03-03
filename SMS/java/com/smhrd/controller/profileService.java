@@ -30,10 +30,6 @@ public class profileService implements Command {
 		
 		request.setAttribute("userinfo", result);
 		
-		
-		
-		
-		
 		return "profile";
 	}
 
