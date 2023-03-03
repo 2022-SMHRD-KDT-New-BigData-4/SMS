@@ -7,17 +7,19 @@ import javax.servlet.http.HttpSession;
 import com.smhrd.command.Command;
 import com.smhrd.model.replyDAO;
 import com.smhrd.model.replyVO;
+import com.smhrd.model.userVO;
 
 public class ReplyService implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-//		// 세션에서 유저 아이디 가져오기
+		// 세션에서 유저 아이디 가져오기
 		HttpSession session = request.getSession();
 		
-		String id = (String)session.getAttribute("user");
-//		String id = "test";
+		userVO vo_mem = (userVO)session.getAttribute("user");
+		String id = vo_mem.getMb_id();
+
 		
 		// 폼 태그로 보내준 컨텐츠 받아주기
 		String content = request.getParameter("commentText");
@@ -43,11 +45,11 @@ public class ReplyService implements Command {
 
 		if (result > 0) {
 			// 댓글작성 성공
-			moveURL = "Ex03";		// 댓글작성 성공했는지 확인하는 페이지
+			moveURL = null;		// 댓글작성 성공했는지 확인하는 페이지
 
 		} else {
 			// 댓글작성 실패
-			moveURL = "Ex01";		// 실패했다면 현재 페이지에 남아있어야 함
+			moveURL = null;		// 실패했다면 현재 페이지에 남아있어야 함
 		}
 
 		return moveURL;

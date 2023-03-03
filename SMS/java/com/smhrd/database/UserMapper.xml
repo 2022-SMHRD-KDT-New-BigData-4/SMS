@@ -60,6 +60,59 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  <!-- 가게이름으로 가게의번호를 찾아오는 쿼리문 -->
+  <select id="search_res" parameterType="com.smhrd.model.restaurantVO"
+  	      resultType="com.smhrd.model.restaurantVO">
+  	select * from tb_restaurant
+  	where res_name = #{res_name}
+  </select>
+
+
+  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재할때) -->
+  <select id="user_search1" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO">
+  	select * from tb_review
+  	where mb_id = #{mb_id}
+  	   or res_seq = #{res_seq}
+  	   or rv_hashtag = #{rv_hashtag}
+  </select>
+
+  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재하지 않을 때) -->
+  <select id="user_search2" parameterType="com.smhrd.model.reviewVO"
+  	      resultType="com.smhrd.model.reviewVO">
+  	select * from tb_review
+  	where mb_id = #{mb_id}
+  	   or rv_hashtag = #{rv_hashtag}
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- 추천페이지에서 필요한 쿼리문들 -->
   
   <!-- 추천페이지에서 좋아요가 많은 순서로 게시물을 가져오는 쿼리문 -->
@@ -149,6 +202,13 @@
 
 
 
+
+
+
+
+
+
+
   <!-- 보관페이지(지도)에서 필요한 쿼리문들 -->
   
   <!-- 유저 개인 보관함리뷰 데이터  -->
@@ -179,7 +239,44 @@
 
 
 
-  <!-- 게시글을 작성한는데 필요한 쿼리문들 -->
+
+
+
+
+
+
+
+  <!-- 게시글을 작성하는데 필요한 쿼리문들 -->
+  
+  <!-- 게시글을 작성하여 저장하는 쿼리문 -->
+  <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
+  	insert into tb_review(
+  		rv_content,
+  		rv_ratings,
+  		mb_id,
+  		res_seq,
+  		rv_hashtag
+  	) values (
+  		#{rv_content},
+  		#{rv_ratings},
+  		#{mb_id},
+  		#{res_seq},
+  		#{rv_hashtag}
+  	)
+  </insert>
+  
+  <!-- 댓글을 작성하여 저장하는 쿼리문 -->
+  <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
+  	insert into tb_reply(
+  		rv_seq,
+  		rp_content,
+  		mb_id
+  	) values (
+  		#{rv_seq},		
+  		#{rp_content},
+  		#{mb_id}
+  	)
+  </insert>
   
   
   
@@ -187,7 +284,13 @@
   
   
   
-    <!-- 게시글을 키웠을때(or 작성을 작성하기위한 페이지를 열때) 필요한 쿼리문들 -->
+  
+  
+  
+  
+  
+  
+  <!-- 게시글을 키웠을때(or 작성을 작성하기위한 페이지를 열때) 필요한 쿼리문들 -->
 
   <!-- 해당 게시글의 리뷰데이터들 가져오는 쿼리문 -->
   <select id="reviewpage" parameterType="com.smhrd.model.replyVO"
@@ -215,6 +318,8 @@
 	   and A.rv_seq = #{rv_seq}
 	 order by rp_date
   </select>
+
+
 
 
 
@@ -260,55 +365,15 @@
 
 
 
-  <select id="search1" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.followVO"
-  >
-  	select * from tb_follow	where follower = #{follower}
-  </select>
-
-  <select id="search2" parameterType="com.smhrd.model.reviewVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review	where mb_id = #{mb_id}
-  </select>
-
-
-
-  <!-- 로그인한(세션에 아이디 저장되어있는) 유저의 팔로우 유저를 검색
-  		팔로우하고 있는 유저들의 리뷰를 가져오는 쿼리문 -->
-  <select id="search3" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review	
-  	where mb_id in ( select followee
-  					   from tb_follow
-  					  where follower = #{follower})
-  </select>
-
-
-  <select id="search6" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.profileVO"
-  >
-  	select * from tb_profile	
-  	where mb_id in ( select followee
-  					   from tb_follow
-  					  where follower = #{follower})
-  </select>
 
 
 
 
-  <insert id = "reply" parameterType = "com.smhrd.model.replyVO">
-  	insert into tb_reply(
-  		rv_seq,
-  		rp_content,
-  		mb_id
-  	) values (
-  		#{rv_seq},		<!-- 여기는 수정이 필요 -->
-  		#{rp_content},
-  		#{mb_id}
-  	)
-  </insert>
+
+
+
+
+
 
 
   <!-- 해당 게시글에 작성되어 있는 댓글들의 데이터를 가져오는 쿼리문 -->
@@ -320,30 +385,8 @@
   </select>
 
 
-  <!-- 가게이름으로 가게의번호를 찾아오는 쿼리문 -->
-  <select id="search5" parameterType="com.smhrd.model.restaurantVO"
-  	      resultType="com.smhrd.model.restaurantVO"
-  >
-  	select * from tb_restaurant
-  	where res_name = #{res_name}
-  </select>
 
-  <!-- 게시글을 작성하여 저장하는 쿼리문 -->
-  <insert id = "make" parameterType = "com.smhrd.model.reviewVO">
-  	insert into tb_review(
-  		rv_content,
-  		rv_ratings,
-  		mb_id,
-  		res_seq,
-  		rv_hashtag
-  	) values (
-  		#{rv_content},
-  		#{rv_ratings},
-  		#{mb_id},
-  		#{res_seq},
-  		#{rv_hashtag}
-  	)
-  </insert>
+
 
 
 
@@ -390,24 +433,7 @@
 
 
 
-  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재할때) -->
-  <select id="user_search1" parameterType="com.smhrd.model.reviewVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review
-  	where mb_id = #{mb_id}
-  	   or res_seq = #{res_seq}
-  	   or rv_hashtag = #{rv_hashtag}
-  </select>
 
-  <!-- 검색을 하였을때 검색의 결과를 보여주는 쿼리문 (가게가 존재하지 않을 때) -->
-  <select id="user_search2" parameterType="com.smhrd.model.reviewVO"
-  	      resultType="com.smhrd.model.reviewVO"
-  >
-  	select * from tb_review
-  	where mb_id = #{mb_id}
-  	   or rv_hashtag = #{rv_hashtag}
-  </select>
 
   <!-- 유저의 프로필사진을 가져오는 쿼리문 -->
   <select id="profilepic" parameterType="com.smhrd.model.profileVO"
@@ -441,32 +467,18 @@
 
 
 
-  
-  <!-- 모든 회원의 정보를 조회할 수 있는 쿼리문 작성 -->
-  <!-- select구문은 반드시 resultType 잡아주기!!!!!!!!!!!!  -->
-  <select id="selectAll" resultType="userVO">
-  	select * from tb_member
-  	where email != 'admin'
-  </select>
-  
 
-  
-  
-  
-  
-  <!-- 이메일 체크기능 -->
-  <!-- String은 기본 자료형이 아니기때문에, 반드시 parameterType과
-  	   resultType을 명시해줘야 한다!
-   -->
-  <select id="emailCheck" parameterType="java.lang.String" 
-  		  resultType="java.lang.String">
-  	select email from web_member where email = #{receive_email}
-  
-  </select>
 
-  
 
-  
+
+
+
+
+
+
+
+
+
   
    <!-- 회원정보수정 쿼리문 -->  
   <update id="update" parameterType="com.smhrd.model.userVO">

@@ -24,9 +24,9 @@ public class ReviewMake implements Command {
 		
 		// 리뷰내용, 리뷰평점, 작성하는 가게, 해시태그는 폼태그로 넘겨받음
 		String rv_content = request.getParameter("");
-		int rv_ratings = Integer.parseInt(request.getParameter(""));
-		String res_name = request.getParameter("");
-		String rv_hashtag = request.getParameter("");
+		int rv_ratings = Integer.parseInt(request.getParameter("rating"));
+		String res_name = request.getParameter("userAddress");
+		String rv_hashtag = request.getParameter("userHashtag");
 		
 		// 입력받은 가게 이름을 가지고 res_seq 찾아와야 함
 		restaurantVO vo_res = new restaurantVO(res_name);

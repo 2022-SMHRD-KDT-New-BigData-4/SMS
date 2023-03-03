@@ -39,16 +39,16 @@ public class searchService implements Command {
 			// 리뷰테이블에서 데이터 가져오기(mb_id, 가게번호 , 해시태그)
 			reviewVO vo_rev = new reviewVO(search,num,search);
 			reviewDAO dao_rev = new reviewDAO();
-			List<reviewVO> list1 = dao_rev.usersearch1(vo_rev);
+			list = dao_rev.usersearch1(vo_rev);
 			
-			list = list1;
+			
 		}else {
 			// 가게의 이름이 존재하지 않을 때
 			reviewVO vo_rev = new reviewVO(search,search);
 			reviewDAO dao_rev = new reviewDAO();
-			List<reviewVO> list2 = dao_rev.usersearch1(vo_rev);
+			list = dao_rev.usersearch2(vo_rev);
 			
-			list = list2;
+			
 		}
 		
 		request.setAttribute("searchresult", list);
