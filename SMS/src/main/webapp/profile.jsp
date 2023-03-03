@@ -90,9 +90,12 @@
                   <div class="userReview">
                    <c:forEach var="i" begin="0" end="${userinfo.size()-1 }">     
                     <div>
-                        <a href="javascript:openPop(`${userinfo.get(i).rv_pic1}`)" class="hiddeninfo">
-                        	<img id="popup_review" src="${userinfo.get(i).rv_pic1}">
+                    <form name="pic1111" action="profileReplyCheck.do">
+                    	 <input type="hidden" name="profile_myReview" value="${userinfo.get(i).rv_seq}">
+                       	 <a href="javascript:openPop(`${userinfo.get(i).rv_pic1}`)" onclick="document.forms['pic1111'].submit()" >
+                         <img id="popup_review" src="${userinfo.get(i).rv_pic1}">
                         </a>
+                    </form>    
                     </div>
                     
                   </c:forEach>

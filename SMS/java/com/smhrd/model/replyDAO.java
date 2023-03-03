@@ -27,11 +27,11 @@ public class replyDAO {
 	// 게시글을 키웠을때(or 작성을 작성하기위한 페이지를 열때)
 	
 	// 게시물 데이터 가져오는 메소드
-	public List<reviewpageVO> reviewer(replyVO vo_rep) {
+	public reviewpageVO reviewer(replyVO vo_rep) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		List<reviewpageVO> result = sqlSession.selectList("reviewpage", vo_rep);
+		reviewpageVO result = sqlSession.selectOne("reviewpage", vo_rep);
 		
 		sqlSession.close();
 		

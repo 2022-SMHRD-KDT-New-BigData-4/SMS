@@ -10,14 +10,13 @@ import com.smhrd.model.replyDAO;
 import com.smhrd.model.replyVO;
 import com.smhrd.model.reviewpageVO;
 
-public class ReplyCheck implements Command{
-
-	@Override
+public class profileReplyCheck implements Command {
+	
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
 		// 버튼을 누를때 해당 게시글의 번호가 들어옴
 		
-		int rv_seq = 23;	// 프론트에서 버튼을 클릭할때 해당게시글의 번호를 받아오도록 변경이 필요
+		int rv_seq = Integer.parseInt(request.getParameter("profile_myReview"));	// 프론트에서 버튼을 클릭할때 해당게시글의 번호를 받아오도록 변경이 필요
 		
 		// 리뷰데이터
 		replyVO vo_rep = new replyVO(rv_seq);
@@ -31,7 +30,7 @@ public class ReplyCheck implements Command{
 		request.setAttribute("reviewer", result_reviewer);
 		request.setAttribute("replyer", result_replyer);
 		
-		return null;
+		return "redirect:/profileService.do";
 	}
-
+	
 }
