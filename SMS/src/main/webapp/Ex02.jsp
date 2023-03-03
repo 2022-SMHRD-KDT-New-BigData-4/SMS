@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.mainVO"%>
 <%@page import="com.smhrd.model.reviewVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,11 +12,11 @@
 <body>
 
 	<%
-		// 1. request영역에 저장되어있는 데이터 꺼내오기
-		List<reviewVO> list = (List<reviewVO>)request.getAttribute("review");
+		List<mainVO> main= (List<mainVO>)request.getAttribute("review");	
 		
-		response.sendRedirect("main.jsp");
-		
+		for(mainVO vo: main){
+			out.print(vo.getRv_content());
+		}
 	
 	
 	%>

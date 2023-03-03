@@ -1,7 +1,17 @@
 //팝업 띄우기
-function openPop(img_url) {
+function openPopImg(img_url) {
 	var profile_review =document.getElementById("profile_review");
 	profile_review.src =img_url;
+    document.getElementById("popup_layer").style.display = "block";
+}
+
+function openPopMain(img_url) {
+	var profile_review =document.getElementById("reviewPicArea");
+	profile_review.src =img_url;
+    document.getElementById("popup_layer").style.display = "block";
+
+}
+function openPop() {
     document.getElementById("popup_layer").style.display = "block";
 
 }

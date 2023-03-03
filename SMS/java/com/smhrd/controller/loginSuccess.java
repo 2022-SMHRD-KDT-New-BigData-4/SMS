@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.command.Command;
 import com.smhrd.model.followVO;
+import com.smhrd.model.likesDAO;
 import com.smhrd.model.mainVO;
 import com.smhrd.model.profileDAO;
 import com.smhrd.model.profileVO;
@@ -41,12 +42,14 @@ public class loginSuccess implements Command {
 		reviewDAO dao_rev = new reviewDAO();
 		List<mainVO> result = dao_rev.search(vo_fol);
 		
-
+		
+		likesDAO dao_lik = new likesDAO();
+		List<mainVO> result1 = dao_lik.rank();
 		
 		
 		// request 영역에 담아주기
 		request.setAttribute("review", result);
-
+		request.setAttribute("rank", result1);
 
 		
 		

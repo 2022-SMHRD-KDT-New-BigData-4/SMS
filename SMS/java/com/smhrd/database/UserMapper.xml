@@ -24,8 +24,8 @@
 
   <!-- 메인화면으로 이동할때마다 실행되어야 하는 쿼리문 -->
   <select id="main" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.profilereviewVO">
-	 select A.*, B.mb_pic, C.res_name, D.mb_name
+  	      resultType="com.smhrd.model.mainVO">
+	 select A.*, B.mb_pic, C.res_name, D.mb_name, D.mb_nick
 	  from tb_review A
 	     , tb_profile B
 	     , tb_restaurant C
@@ -338,17 +338,24 @@
 
   <!-- 프로필페이지에서 필요한 쿼리문들 -->
 
-  <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
+   <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
   <select id="profilepage" parameterType="com.smhrd.model.userVO"
-  	      resultType="com.smhrd.model.userinfoVO">
-	select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.*
-	  from tb_review A
-	     , tb_profile B
-	     , tb_member C
-	 where C.mb_id = B.mb_id
-	   and C.mb_id = A.mb_id
-	   and C.mb_id = #{mb_id}
-	 order by A.rv_date desc
+           resultType="com.smhrd.model.userinfoVO">
+   select A.*, B.mb_pic, C.mb_name, C.mb_nick
+     from (   select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.mb_id as reviewer, C.*, D.mb_id as replyer, D.rp_content
+               from tb_review A
+                    , tb_profile B
+                    , tb_member C
+                    , tb_reply D
+                where C.mb_id = B.mb_id
+                  and C.mb_id = A.mb_id
+                  and A.rv_seq = D.rv_seq(+)
+                  and C.mb_id = 'test'
+                order by A.rv_date desc) A,
+           tb_profile B,
+           tb_member C
+    where A.replyer = B.mb_id(+)
+      and A.replyer = C.mb_id(+)
   </select>
 
 
