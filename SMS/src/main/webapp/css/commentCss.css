@@ -152,6 +152,10 @@ a { text-decoration:none; }
     margin-left: 10px;
 }
 
+.comText p {
+	margin-top: 35px;
+}
+
 .card-description {
 	text-align: center;
   margin-top: 10px;

@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.totalreplyVO"%>
 <%@page import="com.smhrd.model.mainVO"%>
 <%@page import="com.smhrd.model.reviewVO"%>
 <%@page import="java.util.List"%>
@@ -12,10 +13,11 @@
 <body>
 
 	<%
-		List<mainVO> main= (List<mainVO>)request.getAttribute("review");	
+		List<totalreplyVO> main= (List<totalreplyVO>)session.getAttribute("total");	
 		
-		for(mainVO vo: main){
-			out.print(vo.getRv_content());
+		for(totalreplyVO vo: main){
+			out.print(vo.getRp_content());
+			
 		}
 	
 	

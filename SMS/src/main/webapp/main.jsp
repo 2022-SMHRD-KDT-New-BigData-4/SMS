@@ -193,8 +193,7 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src=".
-                        " id="reviewPicArea">
+                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea">
                     </div>
                     <div class="main">
                         <div class="profile">
@@ -206,19 +205,20 @@
                         </div>
                         <div class="text">
                             <div class="comment">
+                         	<c:forEach var="i" begin="3" end="5">
                                 <div class="comProfilepic"><a href="#"></a></div>
                                 <div class="comments">
-                                    <div class="comName"><a href="#"></a>댓글이름</div>
+                                    <div class="comName"><a href="#"></a></div>
                                 </div>
-                         <div class="comText" onclick="toggleEllipsis(this)">
-                             <p class="card-description">텍스트 길이만큼 늘어나는 div</p>
-                            <input type="checkbox" class="card-content__more-btn">
-                         </div>
+		                         <div class="comText" onclick="toggleEllipsis(this)">
+            						<p>${total.get(i).rp_content}</p>             		
+	    	                     </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
                                         <img src="img/like.png" alt="찜하기" width="20px">
                                     </a>
                                 </div>
+                         	</c:forEach>  
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>

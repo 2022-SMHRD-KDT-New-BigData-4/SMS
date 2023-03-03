@@ -56,7 +56,14 @@
 
 
 
-
+  <select id="totalreply" resultType="com.smhrd.model.totalreplyVO">
+     select A.*, B.mb_name, B.mb_nick, C.mb_pic
+     from tb_reply A
+        , tb_member B
+        , tb_profile C
+     where B.mb_id = C.mb_id
+       and B.mb_id = A.mb_id
+  </select>
 
 
 
@@ -338,24 +345,19 @@
 
   <!-- 프로필페이지에서 필요한 쿼리문들 -->
 
-   <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
+  <!-- 프로필페이지에서 필요한 쿼리문들 -->
+
+  <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
   <select id="profilepage" parameterType="com.smhrd.model.userVO"
            resultType="com.smhrd.model.userinfoVO">
-   select A.*, B.mb_pic, C.mb_name, C.mb_nick
-     from (   select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.mb_id as reviewer, C.*, D.mb_id as replyer, D.rp_content
-               from tb_review A
-                    , tb_profile B
-                    , tb_member C
-                    , tb_reply D
-                where C.mb_id = B.mb_id
-                  and C.mb_id = A.mb_id
-                  and A.rv_seq = D.rv_seq(+)
-                  and C.mb_id = 'test'
-                order by A.rv_date desc) A,
-           tb_profile B,
-           tb_member C
-    where A.replyer = B.mb_id(+)
-      and A.replyer = C.mb_id(+)
+   select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.*
+     from tb_review A
+        , tb_profile B
+        , tb_member C
+    where C.mb_id = B.mb_id
+      and C.mb_id = A.mb_id
+      and C.mb_id = #{mb_id}
+    order by A.rv_date desc
   </select>
 
 

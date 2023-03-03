@@ -76,6 +76,18 @@ public class userDAO {
 		
 	}
 	
+	   // 댓글 가져오기 메소드
+	   public List<totalreplyVO> total(){
+	      
+	      SqlSession sqlsession = sqlSessionFactory.openSession(true);
+
+	      List<totalreplyVO> result = sqlsession.selectList("totalreply");
+	      
+	      sqlsession.close();
+	      
+	      return result;
+	   }
+	   
 	
 	
 	
