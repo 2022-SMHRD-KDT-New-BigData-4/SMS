@@ -1,3 +1,5 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.reviewVO"%>
 <%@page import="com.smhrd.model.restaurantVO"%>
 <%@page import="java.util.List"%>
@@ -21,9 +23,37 @@
     <link rel="stylesheet" href="./css/newPostMakeCss.css">
     <link rel="stylesheet" href="./css/newPostMakePopupMaps.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>   
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad32e4cc626799cc0ad5db80f46f316a&libraries=services"></script>
+
 </head>
+<%-- <%
+ArrayList<Integer> rv_Seq = new ArrayList<Integer>();
+ArrayList<String> rv_Content = new ArrayList<String>();
+ArrayList<Integer> rv_Ratings = new ArrayList<Integer>();
+ArrayList<Integer> rv_Likes = new ArrayList<Integer>();
+ArrayList<String> mb_Id = new ArrayList<String>();
+ArrayList<Integer> res_Seq = new ArrayList<Integer>();
+ArrayList<String> rv_Pic1 = new ArrayList<String>();
+ArrayList<String> rv_Hashtag = new ArrayList<String>();
+ArrayList<String> rv_Date = new ArrayList<String>();
+%>
+ --%>
 <body link="black" vlink="black" alink="black">
+<!-- 혹시몰라주석 -->
+<%-- <% List<reviewVO> list1= (List<reviewVO>)request.getAttribute("list1");%>
+<% for (int i = 0; i < list1.size(); i++) {
+	rv_Seq.add(list1.get(i).getRv_seq());
+	rv_Content.add(list1.get(i).getRv_content());
+	rv_Ratings.add(list1.get(i).getRv_ratings());
+	rv_Likes.add(list1.get(i).getRv_likes());
+	mb_Id.add(list1.get(i).getMb_id());
+	res_Seq.add(list1.get(i).getRes_seq());
+	rv_Pic1.add(list1.get(i).getRv_pic1());
+	rv_Hashtag.add(list1.get(i).getRv_hashtag());
+	rv_Date.add(list1.get(i).getRv_date());
+}%>
+<%= rv_Seq.size() %>
+<%= list1.size() %> --%>
 		<div class="container1">
         <!-- 화면 레이아웃은 left, center, right로 나눠져있음 -->
         
@@ -69,7 +99,7 @@
             <!-- 2.saveBar -->
             <div class="saveBar">
             	<!-- 반복-->
-            	<c:forEach var="i" begin="0" end="4">
+            	<c:forEach var="i" begin="0" end="${list1.size()-1}">
 	            	<div class="saveReview">
 	            		<ul class="saveReviewBox">
 	            			<li class="saveReviewBox_1">
@@ -84,10 +114,10 @@
 	            			</li>
 	            			
 	            			<li class="saveReviewBox_2">
-	            				<a href="#">가게명</a>
+	            				<a href="#">${list1.get(i).rv_seq}</a>
 	            			</li>
 	            			<li class="saveReviewBox_3">	
-	            				<img src="#">
+	            				<img src="${list1.get(i).rv_pic1}">
 	            			</li>
 	            			
 	            			<li class="saveReviewBox_4">
@@ -95,13 +125,13 @@
 	            				<a href="javascript:openPop()"><img src="./img/comment.png"></a>
 	            				<a href="javascript:saveMap()" class="saveIcon save"><img src="./img/saveBlack.png"></a>
 								<div class="likeId">
-	            				<P>좋아요 누적</P>
+	            				<P></P>
 	            				<a>id</a>
 	            				</div>
 	            			</li>
 	            			
 	            			<li class="saveReviewBox_5">
-	            				<p>리뷰내용</p>
+	            				<p>${list1.get(i).rv_content}</p>
 	            			</li>
 	            		</ul>
 	            	</div> <!-- 닫히는 디브-->
@@ -259,6 +289,7 @@ $('body').scroll(function() {
 <!-- 데이터 꺼내기 -->
 <%
 List<restaurantVO> list= (List<restaurantVO>)request.getAttribute("list");
+
 %>
 <script>
     // 데이터 꺼내오기
@@ -276,6 +307,7 @@ List<restaurantVO> list= (List<restaurantVO>)request.getAttribute("list");
 	data5.push('<%=list.get(i).getRes_addr()%>')
 	data6.push('<%=list.get(i).getRes_tel()%>')
 <%}%>
+
 </script>
 </body>
 
