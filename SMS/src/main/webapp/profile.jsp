@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -8,13 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./css/proflie.css">
+        <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/reset.css">
     	<link rel="stylesheet" href="./css/commentCss.css">
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<link rel="stylesheet" href="./css/newPostMakeCss.css">
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
        <link rel="stylesheet" href="./css/logoutCss.css">
-       <link rel="stylesheet" href="./css/logoutPopupCss.css">    	
+       <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
+          	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
@@ -48,8 +51,8 @@
                     </li>
                     <!-- 프로필 버튼 -->
                     <li>
-                        <a><img src="#"></a>
-                        <a class="icontext" href="#">프로필</a>
+                        <a href="profileService.do"><img src="${user2.mb_pic}" id="getUserPic"></a>
+                        <a class="icontext" href="profileService.do">프로필</a>
                     </li>
                 </ul> <!-- 카테고리 버튼 종료 ul태그 -->
                 
@@ -72,8 +75,7 @@
                     <div>
                     	<ul class="userSetText">
                     		<li class="userSetText_sums"><a href="#">게시물</a><a href="#">팔로우00<a href="#">팔로잉00</a></a></li>
-							<li>유저아이디<button style="margin-left:10px;">프로필 변경</button></li>
-                    		<li>유저아이디<button>프로필 변경</button></li>.
+							<li>${userinfo.get(0).mb_id }<button style="margin-left:10px;">프로필 변경</button></li>
                     		<li>유저 이름</li>
                     		<li><br>소개글</li>
                     	</ul>
@@ -81,9 +83,10 @@
                   </div>
                   <div><hr id="proflie_bar"></div>
                   <div class="userReview">
-                   <c:forEach var="i" begin="0" end="userinfo.size()-1">
+                   <c:forEach var="i" begin="0" end="${userinfo.size()-1 }">
+                
                     <div>
-                         <a href="javascript:openPop()"><img src="${user }"></a>
+                         <a href="javascript:openPop()"><img src="${userinfo.get(i).rv_pic1 }"></a>
                       </div>
                   </c:forEach>
                   </div>

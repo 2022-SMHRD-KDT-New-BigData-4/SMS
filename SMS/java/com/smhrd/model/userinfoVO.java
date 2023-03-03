@@ -3,6 +3,7 @@ package com.smhrd.model;
 public class userinfoVO {
 
 	private int rv_seq;			// 등록되는 리뷰 번호
+	private String rv_pic1;		// 유저 타입 (사용자? 운영자?)
 	private String mb_profile;	// 프로필글
 	private String mb_pic;		// 유저 사진
 	private String mb_id;		// 유저id
@@ -16,10 +17,13 @@ public class userinfoVO {
 		super();
 	}
 	
-	public userinfoVO(int rv_seq, String mb_profile, String mb_pic, String mb_id, String mb_pw, String mb_name,
-			String mb_nick, String mb_joindate, String mb_type) {
+	
+	
+	public userinfoVO(int rv_seq, String rv_pic1, String mb_profile, String mb_pic, String mb_id, String mb_pw,
+			String mb_name, String mb_nick, String mb_joindate, String mb_type) {
 		super();
 		this.rv_seq = rv_seq;
+		this.rv_pic1 = rv_pic1;
 		this.mb_profile = mb_profile;
 		this.mb_pic = mb_pic;
 		this.mb_id = mb_id;
@@ -29,14 +33,6 @@ public class userinfoVO {
 		this.mb_joindate = mb_joindate;
 		this.mb_type = mb_type;
 	}
-	
-	
-	
-	
-	
-
-
-
 
 
 
@@ -45,6 +41,12 @@ public class userinfoVO {
 	}
 	public void setRv_seq(int rv_seq) {
 		this.rv_seq = rv_seq;
+	}
+	public String getRv_pic1() {
+		return rv_pic1;
+	}
+	public void setRv_pic1(String rv_pic1) {
+		this.rv_pic1 = rv_pic1;
 	}
 	public String getMb_profile() {
 		return mb_profile;
@@ -94,6 +96,8 @@ public class userinfoVO {
 	public void setMb_type(String mb_type) {
 		this.mb_type = mb_type;
 	}
+	
+	
 	
 	
 	

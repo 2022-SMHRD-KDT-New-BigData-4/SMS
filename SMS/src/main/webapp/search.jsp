@@ -52,7 +52,7 @@
                 
                 <!-- 검색해온 자료 반복 -->
                 <div class="container">
-                  <c:forEach var="i" begin="0" end="${searchresult.size()-1}">
+                  <c:forEach var="i" begin="0" end="2">
                    		<div>
                    		<a type="hidden" onclick="document.forms['ReplyCheck.do'].submit()" value="${searchresult.get(i).res_seq}" href="javascript:openPop()">
                    		<img class="container_img" src="${searchresult.get(i).res_pic1}">
