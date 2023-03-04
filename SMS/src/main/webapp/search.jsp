@@ -162,7 +162,7 @@
                     <div class="main">
                         <div class="profile">
                             <div class="profilepic">
-                            	<img src="<%=vo_info2.getMb_pic() %>">
+                            	<img src="<%=vo_info2.getMb_pic() %>" width="50px">
                             </div>
                             <div class="username">
                                 <div class="name"><%=vo_info.getMb_name() %></div>
@@ -175,7 +175,7 @@
                             		for(int i=6;i<8;i++){
                             	%>
                                 <div class="comProfilepic">
-                                	<img src="<%=list2.get(i).getMb_pic() %>">
+                                	<img src="<%=list2.get(i).getMb_pic() %>" width="60px">
                                 </div>
                                 <div class="comments">
                                     <div class="comName"><%=list2.get(i).getMb_id() %></div>
@@ -204,7 +204,7 @@
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic">
-                                	<img src="<%=vo_info2.getMb_pic() %>">
+                                	<img src="<%=vo_info2.getMb_pic() %>" width="50px">
                                 </div>
                                 <div class="myComment">
                                     <input type="text" id="comInput" placeholder="댓글달기">

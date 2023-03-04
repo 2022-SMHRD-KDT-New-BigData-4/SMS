@@ -235,17 +235,3 @@
     overflow-x: hidden;
   }
 
-  .profilepic  img{
-    width: 40px;
-    margin-top: 5px;
-  }
-  
-  .comProfilepic img {
-    width: 50px;
-    margin-top: 5px;
-  }
-  
-  .myProfilepic img {
-    width: 50px;
-    margin-top: 5px;
-  }
