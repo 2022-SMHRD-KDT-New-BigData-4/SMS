@@ -178,7 +178,7 @@
                                 	<img src="<%=list2.get(i).getMb_pic() %>">
                                 </div>
                                 <div class="comments">
-                                    <div class="comName"><%=list2.get(i).getMb_name() %></div>
+                                    <div class="comName"><%=list2.get(i).getMb_id() %></div>
                                     <div class="comnUserid">답글달기</div>
                                 </div>
                                 <div class="comText"><%=list2.get(i).getRp_content() %></div>
@@ -193,9 +193,9 @@
                             <ul>
                                 <li class="searchCommentIcons">
                                 	<!-- 좋아요 버튼 -->
-                                    <a href="javascript:heart();" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <a href="javascript:heart()" class="likeIcon heart"><img src="./img/like.png"></a>
                                     <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/save.png"></a>
+                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
                                 </li>
                                 <li class="likesSum">
                                 	좋아요 n개
