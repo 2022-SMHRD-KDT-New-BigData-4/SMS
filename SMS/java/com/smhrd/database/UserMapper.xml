@@ -37,7 +37,7 @@
 	                 	where mb_id in ( select followee
 	                    				   from tb_follow
 	                        			  where follower = #{follower}))
-	  order by dbms_random.value
+	  order by A.rv_date desc
   </select>
 
 
@@ -63,6 +63,7 @@
         , tb_profile C
      where B.mb_id = C.mb_id
        and B.mb_id = A.mb_id
+     order by rp_date desc
   </select>
 
 

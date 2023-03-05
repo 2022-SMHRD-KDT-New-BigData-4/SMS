@@ -189,7 +189,7 @@
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
-        <form action="ReplyService.do">
+        <form action="ReplyService.do" method="post">
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
@@ -205,7 +205,7 @@
                         </div>
                         <div class="text">
                             <div class="comment">
-                         	<c:forEach var="i" begin="3" end="5">
+                         	<c:forEach var="i" begin="0" end="2">
                                 <div class="comProfilepic"><a href="#"><img src="${total.get(i).mb_pic}" width="60px" class="img"></a></div>
                                 <div class="comments">
                                     <div class="comName"><a href="#">${total.get(i).mb_id}</a></div>
@@ -249,7 +249,7 @@
             </div>
             <!--팝업 컨텐츠 영역-->
 	            <div class="uploadPost">
-	            <form action="ReplyService.do" method="post">
+	            <form action="ReviewMake.do" method="post">
 	                <div class="overlayPost"></div>
 	                    <div class="mainNewPost">
 	                        <div class="profilePost">
@@ -271,7 +271,7 @@
 	                                    </div>
 	                                   <div class="pick">
 	                                       <label for="files" id="label">폴더에서 선택</label>
-	                                       <input type="file" class="pickBtn" id="files" accept='image/*'>
+	                                       <input type="file" name="img" class="pickBtn" id="files" accept='image/*'>
 	                                   </div>
 	                                </div>
 	                                <div class="textArea">
@@ -285,7 +285,7 @@
 	                                    </div>
 	                                    <div class="textAreaMain">
 	                                        <div class="textAreaMainPost">
-	                                        	<textarea placeholder="내용을 입력해주세요."></textarea>
+	                                        	<textarea placeholder="내용을 입력해주세요." name="content"></textarea>
 	                                        </div>
 	                                    </div>
 		                                    <div class="textAreaStar">

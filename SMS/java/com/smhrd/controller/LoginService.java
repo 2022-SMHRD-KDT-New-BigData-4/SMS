@@ -39,7 +39,7 @@ public class LoginService implements Command {
 			profileVO user_pro = dao_pro.pic(vo_pro);
 			// session에 담아주기
 			session.setAttribute("user2", user_pro);
-	        session.setAttribute("total", total);
+
 			
 			return "redirect:/loginSuccess.do";
 		} else {
