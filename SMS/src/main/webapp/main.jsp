@@ -19,6 +19,10 @@
        <link rel="stylesheet" href="./css/logoutCss.css">
        <link rel="stylesheet" href="./css/logoutPopupCss.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+                <script>
+                 let a= ${review.get(0).res_seq}
+       		     let b= ${review.get(0).rv_seq}
+       		  </script>  
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
@@ -74,7 +78,8 @@
                 <!-- 팔로워 게시물 -->
                 <div class="container">
                          
-                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
+                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">
+           
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">
                     <div class="post">
@@ -357,7 +362,7 @@
           console.log(result);
       });
   });
-ㄴ
+
 
   
   

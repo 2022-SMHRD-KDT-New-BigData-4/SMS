@@ -243,6 +243,21 @@
   					   FROM TB_USERPICK
   					  WHERE MB_ID = #{MB_ID})
   </select>
+  	 <!-- 유저리뷰저장 쿼리문 -->
+  <insert id = "userReviewSave" parameterType = "com.smhrd.model.userMapVO">
+  	insert into tb_userpick
+  		  (  mb_id,
+  		  	 res_seq,
+  		  	 rv_seq  )
+  	values(
+  			#{mb_id},
+  			#{res_seq},
+  			#{rv_seq})
+  </insert>
+  <delete id="userReviewCancel" parameterType="com.smhrd.model.userMapVO">
+ 	DELETE FROM tb_userpick
+	WHERE mb_id = #{mb_id} AND res_seq = #{res_seq} AND rv_seq = #{rv_seq}
+  </delete>
   
 
 

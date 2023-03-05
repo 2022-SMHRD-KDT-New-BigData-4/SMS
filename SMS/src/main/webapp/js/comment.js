@@ -71,6 +71,7 @@ $(function heart(){
 
 //보관함 변경
 $(function save(){
+	
     var $saveBtn =$('.saveIcon');
 
         $saveBtn.on('click', function(e){
@@ -81,7 +82,7 @@ $(function save(){
            $(this).find('img').attr({
               'src': 'img/saveBlack.png',
                 });
-          cnt= 1;
+          cnt=1 ;
           
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
@@ -90,9 +91,49 @@ $(function save(){
            })
          cnt= 0;
          }
+     if(cnt===1){
      console.log(cnt); 
+     	 $.ajax({
+	      url: 'userReviewSave.do',
+	      data: {
+	        resSeq: a,
+	        rvSeq: b
+	      },
+	      type: 'POST',
+	      success: function() {
+	        console.log("성공");
+	        alert("리뷰를 보관하였습니다!")
+	      },
+	      error: function() {
+	        console.log("리뷰저장통신실패");
+	      }
+	    })
+
+	    }else if(cnt===0){
+			
+	 	    $.ajax({
+	 	      url: 'userReviewCancel.do',
+	 	      data: {
+	 	        resSeq: a,
+	 	        rvSeq: b
+	 	      },
+	 	      type: 'POST',
+	 	      success: function() {
+	 	        console.log("삭제성공");
+	 	        alert("리뷰를 삭제하였습니다!")
+	 	      },
+	 	      error: function() {
+	 	        console.log("리뷰삭제통신실패");
+	       }
+	     });
+			
+		}
      })
-})
+ 
+	
+	    	         
+	 }
+)
 
 
 
