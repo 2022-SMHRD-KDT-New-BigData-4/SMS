@@ -242,7 +242,7 @@
                         <ul class="recList">
                         
                             <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
-                            <c:forEach var="i" begin="0" end="4">
+                            <c:forEach var="i" begin="0" end="3">
 	                            <li class="rec">
 	                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
 	                               <a><img class="rec_img" src="${rank.get(i).mb_pic }"></a>        

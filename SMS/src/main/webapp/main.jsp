@@ -158,7 +158,7 @@
                         <ul class="recList">
                         
                             <!-- class="rec" 클래스 li 반복 / 5개의 리스트를 보여줄 예정--> 
-                            <c:forEach var="i" begin="0" end="4">
+                            <c:forEach var="i" begin="0" end="3">
 	                            <li class="rec">
 	                               <!-- 추천 이용자 프로필 사진 / class="rec_img" -->
 	                               <a><img class="rec_img" src="${rank.get(i).mb_pic }"></a>        
@@ -197,7 +197,7 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"></a></div>
+                            <div class="profilepic"> <a href="#"><img src="${user2.mb_pic}"></a></div>
                             <div class="comusername">
                                 <div class="comname"> <a href="#"></a> ${review.get(i).mb_nick}</div>
                                 <div class="userid">${review.get(i).mb_id}</div>
@@ -277,6 +277,7 @@
 	                                <div class="textArea">
 	                                    <div class="textAreaPic">
 	                                        <div class="newTextProfilePic">
+	                                        	<img src="${user2.mb_pic}">
 	                                        </div>
 	                                        <div class="newTextProfileId">
 	                                            yspark

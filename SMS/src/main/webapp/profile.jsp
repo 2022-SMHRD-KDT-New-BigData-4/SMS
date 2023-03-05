@@ -72,7 +72,7 @@
                 </form>
                 <div class="container">
                   <div class="proflieBox">
-                  	<div><img id="setImg" src="./img/ex_post.jpg"></div>
+                  	<div><img id="setImg" src="${user2.mb_pic}"></div>
                     <div>
                     	<ul class="userSetText">
                     		 <li style="margin-top:36px;">${userinfo.get(0).mb_id}<button style="margin-left:10px;">프로필 변경</button></li>
