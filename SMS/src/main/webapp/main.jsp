@@ -254,7 +254,7 @@
             </div>
             <!--팝업 컨텐츠 영역-->
 	            <div class="uploadPost">
-	            <form action="ReplyService.do" method="post">
+	            <form action="ReviewMake.do" method="post">
 	                <div class="overlayPost"></div>
 	                    <div class="mainNewPost">
 	                        <div class="profilePost">
@@ -290,7 +290,7 @@
 	                                    </div>
 	                                    <div class="textAreaMain">
 	                                        <div class="textAreaMainPost">
-	                                        	<textarea placeholder="내용을 입력해주세요."></textarea>
+	                                        	<textarea name="reviewContent" placeholder="내용을 입력해주세요."></textarea>
 	                                        </div>
 	                                    </div>
 		                                    <div class="textAreaStar">
