@@ -227,6 +227,12 @@ a { text-decoration:none; }
   	object-fit: contain;
   }
   
+  #reviewPicArea1 {
+    width: 500px;
+    max-height: 600px;
+  	object-fit: contain;
+  }
+  
   .comName {
   margin-top: 20px;
   }

@@ -126,7 +126,7 @@ a { text-decoration:none; }
     display: flex;
     flex-direction: column;
     width: 700px;
-    height: 600px;
+    height: 620px;
     border: 1px solid gainsboro;
    
 }
@@ -157,6 +157,11 @@ a { text-decoration:none; }
    margin:0px;
    margin:0px;
 }
+
+.three a {
+	margin-left: 10px;	
+}
+
 .postTop img{
     width: 60px;
     height: 60px;

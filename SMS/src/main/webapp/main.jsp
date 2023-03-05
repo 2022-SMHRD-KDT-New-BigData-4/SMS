@@ -120,7 +120,6 @@
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">
-                                    <p>좋아요 00개</p>
                                 </li>
                                 <!-- 팔로워 ID(=리뷰작성자 ID) -->
                                 <li class="three">                                   
@@ -194,7 +193,7 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea">
+                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea1">
                     </div>
                     <div class="main">
                         <div class="profile">
