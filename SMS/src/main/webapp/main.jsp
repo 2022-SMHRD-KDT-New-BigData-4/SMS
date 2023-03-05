@@ -93,7 +93,12 @@
                         
                         <!-- 게시물 중간 칸 -->
                         <!-- 리뷰 사진 -->
-                        <div id="postCenter"><img src="${review.get(i).rv_pic1}" id = "userReviewPic"></div>
+                        <input class="hidevalue" type="hidden" value="${review.get(i).res_seq}">
+                        <div id="postCenter">
+	                        <a href="#" class="hiddeninfo">
+	                        	<img src="${review.get(i).rv_pic1}" id = "userReviewPic">
+	                        </a>
+                        </div>
                         
                         <!-- 게시문 맨 밑칸 -->
                         <div id="postBottom">                       
@@ -101,16 +106,16 @@
                                 <li class="one">
                                    <form name="likesSum" action="LikeService.do" method="post">
                                    <!-- 좋아요 버튼 -->
-                                    <a href="javascript:heart;" onclick="document.forms['likesSum'].submit()" class="likeIcon heart"><img src="./img/like.png"></a>
+                                    <a href="javascript:heart()" class="likeIcon heart"><img src="./img/like.png"></a>
                                     <input type="hidden" name="likes" value="javascript:heart()">
                                     </form>
                                     
                                     <!-- 댓글 버튼 -->
-                                    <a href="javascript:openPop()" ><img src="./img/comment.png"></a>
+                                    <a href="javascript:openPop(`${review.get(i).rv_pic1}`)" ><img src="./img/comment.png" id="reviewPicArea"></a>
                                     
                                     <form name="saveSum" action="userMapService.do" method="post">
                                     <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" onclick="document.forms['saveSum'].submit()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
+                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
                                     </form>
                                 </li>
                                 <!-- 좋아요 누적수 -->
@@ -119,11 +124,11 @@
                                 </li>
                                 <!-- 팔로워 ID(=리뷰작성자 ID) -->
                                 <li class="three">                                   
-                                    <a href="#">${reivew.get(i).mb_id}</a>
+                                    <a href="#">${review.get(i).mb_id}</a>
                                 </li>
                                 <!-- 리뷰 내용 -->
                                 <li class="four">
-                                    <p>${reivew.get(i).rv_content}</p>
+                                    <p>${review.get(i).rv_content}</p>
                                 </li>
                             </ul>
                         </div>
@@ -188,31 +193,32 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="#" class="otherUserPic">
+                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea">
                     </div>
                     <div class="main">
                         <div class="profile">
                             <div class="profilepic"> <a href="#"></a></div>
-                            <div class=comusername">
-                                <div class="comname"> <a href="#"></a> 이름</div>
-                                <div class="userid">유저id</div>
+                            <div class="comusername">
+                                <div class="comname"> <a href="#"></a> ${review.get(i).mb_nick}</div>
+                                <div class="userid">${review.get(i).mb_id}</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
+                         	<c:forEach var="i" begin="3" end="5">
                                 <div class="comProfilepic"><a href="#"></a></div>
                                 <div class="comments">
-                                    <div class="comName"><a href="#"></a>댓글이름</div>
+                                    <div class="comName"><a href="#"></a></div>
                                 </div>
-                         <div class="comText" onclick="toggleEllipsis(this)">
-                             <p class="card-description">텍스트 길이만큼 늘어나는 div</p>
-                            <input type="checkbox" class="card-content__more-btn">
-                         </div>
+		                         <div class="comText" onclick="toggleEllipsis(this)">
+            						<p>${total.get(i).rp_content}</p>             		
+	    	                     </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
                                         <img src="img/like.png" alt="찜하기" width="20px">
                                     </a>
                                 </div>
+                         	</c:forEach>  
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>
@@ -342,8 +348,18 @@
     };
   }
   
-  const otherUserPic = document.querySelector('.otherUserPic');
-  otherUserPic.setAttribute('src', review[i].rv_pic1);
+  
+  $(function() {
+      $(".hiddeninfo").click(function(event) {
+          event.preventDefault();
+          let result = $(this).parent().children('input[type=hidden]').val();
+          console.log(result);
+      });
+  });
+ㄴ
+
+  
+  
 </script>
     
     

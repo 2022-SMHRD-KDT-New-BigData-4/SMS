@@ -12,12 +12,12 @@
         <link rel="stylesheet" href="./css/proflie.css">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/reset.css">
-    	<link rel="stylesheet" href="./css/commentCss.css">
     	<link rel="stylesheet" href="./css/commentPopup.css">
     	<link rel="stylesheet" href="./css/newPostMakeCss.css">
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
         <link rel="stylesheet" href="./css/logoutCss.css">
         <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
+    	<link rel="stylesheet" href="./css/commentCss.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
@@ -92,7 +92,7 @@
                     <div>
                     <form name="pic1111" action="profileReplyCheck.do">
                     	 <input type="hidden" name="profile_myReview" value="${userinfo.get(i).rv_seq}">
-                       	 <a href="javascript:openPop(`${userinfo.get(i).rv_pic1}`)" onclick="document.forms['pic1111'].submit()" >
+                       	 <a href="javascript:openPopImg(`${userinfo.get(i).rv_pic1}`)" >
                          <img id="popup_review" src="${userinfo.get(i).rv_pic1}">
                         </a>
                     </form>    
@@ -127,31 +127,32 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div>
-                       <img src="" id="profile_review">
+                       <img src="${userinfo.get(i).rv_pic1}" id="profile_review">
                     </div>
                     <div class="main">
                         <div class="profile">
                             <div class="profilepic"> <a href="#"></a></div>
-                            <div class=comusername">
-                                <div class="comname"> <a href="#"></a> 이름</div>
-                                <div class="userid">유저id</div>
+                            <div class="comusername">
+                                <div class="comname"> <a href="#"></a> ${userinfo.get(i).mb_nick}</div>
+                                <div class="userid">${userinfo.get(i).mb_id}</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
+                         	<c:forEach var="i" begin="0" end="2">
                                 <div class="comProfilepic"><a href="#"></a></div>
                                 <div class="comments">
-                                    <div class="comName"><a href="#"></a>댓글이름</div>
+                                    <div class="comName"><a href="#"></a></div>
                                 </div>
-                         <div class="comText" onclick="toggleEllipsis(this)">
-                             <p class="card-description">텍스트 길이만큼 늘어나는 div</p>
-                            <input type="checkbox" class="card-content__more-btn">
-                         </div>
+		                         <div class="comText" onclick="toggleEllipsis(this)">
+            						<p>${total.get(i).rp_content}</p>             		
+	    	                     </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
                                         <img src="img/like.png" alt="찜하기" width="20px">
                                     </a>
                                 </div>
+                         	</c:forEach>  
                             </div>
                             <div class="userComment">
                                 <div class="myProfilepic"> <a href="#"></a></div>

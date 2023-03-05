@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -7,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.smhrd.command.Command;
 import com.smhrd.model.profileDAO;
 import com.smhrd.model.profileVO;
+import com.smhrd.model.totalreplyVO;
 import com.smhrd.model.userDAO;
 import com.smhrd.model.userVO;
 
@@ -21,6 +24,7 @@ public class LoginService implements Command {
 
 		// 2. DB와 연결하기
 		userDAO dao = new userDAO();
+	    List<totalreplyVO> total = dao.total();
 
 		userVO result = dao.login(new userVO(id, pw));
 
@@ -35,6 +39,7 @@ public class LoginService implements Command {
 			profileVO user_pro = dao_pro.pic(vo_pro);
 			// session에 담아주기
 			session.setAttribute("user2", user_pro);
+	        session.setAttribute("total", total);
 			
 			return "redirect:/loginSuccess.do";
 		} else {

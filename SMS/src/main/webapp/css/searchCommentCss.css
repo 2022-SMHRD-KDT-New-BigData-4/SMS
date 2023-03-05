@@ -19,6 +19,12 @@
     float: left;
 }
 
+.pic img {
+	max-width: 653px;
+    max-height: 800px;
+    object-fit: contain;
+}
+
 .main {
     display: flex;
     min-width: 440px;
@@ -228,3 +234,4 @@
     background-color: rgba(0,0,0, 0.4);
     overflow-x: hidden;
   }
+

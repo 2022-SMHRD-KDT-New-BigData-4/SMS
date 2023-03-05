@@ -24,8 +24,8 @@
 
   <!-- 메인화면으로 이동할때마다 실행되어야 하는 쿼리문 -->
   <select id="main" parameterType="com.smhrd.model.followVO"
-  	      resultType="com.smhrd.model.profilereviewVO">
-	 select A.*, B.mb_pic, C.res_name, D.mb_name
+  	      resultType="com.smhrd.model.mainVO">
+	 select A.*, B.mb_pic, C.res_name, D.mb_name, D.mb_nick
 	  from tb_review A
 	     , tb_profile B
 	     , tb_restaurant C
@@ -56,7 +56,14 @@
 
 
 
-
+  <select id="totalreply" resultType="com.smhrd.model.totalreplyVO">
+     select A.*, B.mb_name, B.mb_nick, C.mb_pic
+     from tb_reply A
+        , tb_member B
+        , tb_profile C
+     where B.mb_id = C.mb_id
+       and B.mb_id = A.mb_id
+  </select>
 
 
 
@@ -338,17 +345,19 @@
 
   <!-- 프로필페이지에서 필요한 쿼리문들 -->
 
+  <!-- 프로필페이지에서 필요한 쿼리문들 -->
+
   <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
   <select id="profilepage" parameterType="com.smhrd.model.userVO"
-  	      resultType="com.smhrd.model.userinfoVO">
-	select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.*
-	  from tb_review A
-	     , tb_profile B
-	     , tb_member C
-	 where C.mb_id = B.mb_id
-	   and C.mb_id = A.mb_id
-	   and C.mb_id = #{mb_id}
-	 order by A.rv_date desc
+           resultType="com.smhrd.model.userinfoVO">
+   select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.*
+     from tb_review A
+        , tb_profile B
+        , tb_member C
+    where C.mb_id = B.mb_id
+      and C.mb_id = A.mb_id
+      and C.mb_id = #{mb_id}
+    order by A.rv_date desc
   </select>
 
 

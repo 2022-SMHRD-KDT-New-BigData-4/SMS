@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.command.Command;
+import com.smhrd.model.likesDAO;
+import com.smhrd.model.mainVO;
 import com.smhrd.model.restaurantDAO;
 import com.smhrd.model.restaurantVO;
 import com.smhrd.model.reviewDAO;
@@ -28,6 +30,13 @@ public class searchService implements Command {
 		restaurantVO vo_res = new restaurantVO(search);
 		restaurantDAO dao_res = new restaurantDAO();
 		restaurantVO result = dao_res.search(vo_res);
+		
+		
+		
+		likesDAO dao_lik = new likesDAO();
+		List<mainVO> result1 = dao_lik.rank();
+		
+		
 		
 		
 		List<reviewVO> list = new ArrayList<>();
@@ -52,7 +61,7 @@ public class searchService implements Command {
 		}
 		
 		request.setAttribute("searchresult", list);
-		
+		request.setAttribute("rank", result1);
 		
 		
 		
