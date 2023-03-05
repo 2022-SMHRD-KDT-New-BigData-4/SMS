@@ -273,3 +273,27 @@ a { text-decoration:none; }
     width: 20px;
     height: 20px;
 }
+
+#koreanFood_ment {
+	color:  #5cb270;
+	font-size: large;
+	
+}
+
+#japanesFood_ment{
+	color:  #5cb270;
+	font-size: large;
+	
+}
+
+#chinaFood_ment{
+	color:  #5cb270;
+	font-size: large;
+	
+}
+
+#cafeFood_ment{
+	color:  #5cb270;
+	font-size: large;
+	
+}

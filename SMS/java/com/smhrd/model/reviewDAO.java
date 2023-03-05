@@ -49,44 +49,44 @@ public class reviewDAO {
 	}
 	
 	// 추천페이지에 게시글들 카테고리별로 랜덤으로 데이터 가져오기
-	public List<reviewVO> show_ct1() {
+	public List<mainVO> show_ct1() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		List<reviewVO> result = sqlSession.selectList("show1");
+		List<mainVO> result = sqlSession.selectList("show1");
 		
 		sqlSession.close();
 		
 		return result;
 	}
 	
-	public List<reviewVO> show_ct2() {
+	public List<mainVO> show_ct2() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		List<reviewVO> result = sqlSession.selectList("show2");
+		List<mainVO> result = sqlSession.selectList("show2");
 		
 		sqlSession.close();
 		
 		return result;
 	}
 	
-	public List<reviewVO> show_ct3() {
+	public List<mainVO> show_ct3() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		List<reviewVO> result = sqlSession.selectList("show3");
+		List<mainVO> result = sqlSession.selectList("show3");
 		
 		sqlSession.close();
 		
 		return result;
 	}
 	
-	public List<reviewVO> show_ct4() {
+	public List<mainVO> show_ct4() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-		List<reviewVO> result = sqlSession.selectList("show4");
+		List<mainVO> result = sqlSession.selectList("show4");
 		
 		sqlSession.close();
 		

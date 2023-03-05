@@ -29,13 +29,13 @@ public class recommendService implements Command {
 		// 카테고리별 랜덤
 		reviewDAO dao_rev = new reviewDAO();
 		// 한식
-		List<reviewVO> result_kr = dao_rev.show_ct1();
+		List<mainVO> result_kr = dao_rev.show_ct1();
 		// 중식
-		List<reviewVO> result_ch = dao_rev.show_ct2();
+		List<mainVO> result_ch = dao_rev.show_ct2();
 		// 이자카야
-		List<reviewVO> result_jp = dao_rev.show_ct3();
+		List<mainVO> result_jp = dao_rev.show_ct3();
 		// 카페
-		List<reviewVO> result_cf = dao_rev.show_ct4();
+		List<mainVO> result_cf = dao_rev.show_ct4();
 		
 		
 		

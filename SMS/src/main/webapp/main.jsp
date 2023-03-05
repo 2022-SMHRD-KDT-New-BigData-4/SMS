@@ -197,7 +197,7 @@
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"><img src="${user2.mb_pic}"></a></div>
+                            <div class="profilepic"> <a href="#"><img src="${review.get(i).mb_pic}" width="50px" border-radius="50px"></a></div>
                             <div class="comusername">
                                 <div class="comname"> <a href="#"></a> ${review.get(i).mb_nick}</div>
                                 <div class="userid">${review.get(i).mb_id}</div>
@@ -206,7 +206,7 @@
                         <div class="text">
                             <div class="comment">
                          	<c:forEach var="i" begin="3" end="5">
-                                <div class="comProfilepic"><a href="#"><img src="${total.get(i).mb_pic}" width="60px"></a></div>
+                                <div class="comProfilepic"><a href="#"><img src="${total.get(i).mb_pic}" width="60px" class="img"></a></div>
                                 <div class="comments">
                                     <div class="comName"><a href="#">${total.get(i).mb_id}</a></div>
                                 </div>
@@ -221,7 +221,7 @@
                          	</c:forEach>  
                             </div>
                             <div class="userComment">
-                                <div class="myProfilepic"> <a href="#"></a></div>
+                                <div class="myProfilepic"> <a href="#"><img src="${user2.mb_pic}" width="50px" style="border-radius: 50px"></a></div>
                                 <div class="myComment">
                                     <input type="text" id="comInput" name="commentText" placeholder="댓글달기">
                                 </div>
@@ -277,10 +277,10 @@
 	                                <div class="textArea">
 	                                    <div class="textAreaPic">
 	                                        <div class="newTextProfilePic">
-	                                        	<img src="${user2.mb_pic}">
+	                                        	<img src="${user2.mb_pic}" width="50px" style="border-radius: 50px">
 	                                        </div>
 	                                        <div class="newTextProfileId">
-	                                            yspark
+	                                            ${user.mb_id}
 	                                        </div>
 	                                    </div>
 	                                    <div class="textAreaMain">

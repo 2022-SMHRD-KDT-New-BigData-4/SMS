@@ -141,8 +141,9 @@
                    
                    <!-- 반복되는 추천디브 - 한식 -->
                    <div class="koreanFood">
-                        <p id="koreanFood_ment">한국인은 밥심! 든든한 한식 맛집 추천 : 
-                        </p>
+                   <br>
+	                        <p id="koreanFood_ment">${show1.get(0).res_name}
+	                        </p>  
                         <div class="koreanFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                            
@@ -162,7 +163,7 @@
                    
                    <!-- 반복되는 추천디브 - 일식 -->
                    <div class="japanesFood">
-                        <p id="japanesFood_ment">이자카야/술집</p>
+                        <p id="japanesFood_ment">${show3.get(0).res_name}</p>
                         <div class="japanesFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
@@ -182,7 +183,7 @@
                    
                    <!-- 반복되는 추천디브 - 중식 -->
                    <div class="chinaFood">
-                        <p id="chinaFood_ment">아시안 음식</p>
+                        <p id="chinaFood_ment">${show2.get(0).res_name}</p>
                         <div class="chinaFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
@@ -202,7 +203,7 @@
                   
                    <!-- 반복되는 추천디브 - 카페 -->
                    <div class="cafeFood">
-                        <p id="cafeFood_ment">카페</p>
+                        <p id="cafeFood_ment">${show4.get(0).res_name}</p>
                         <div class="cafeFoodimg_box">
                             <button id="left" class="button_icon"><img class="button_icon_left" src="./img/i_left.png"></button>
                             
@@ -211,7 +212,7 @@
                                 <c:forEach var="i" begin="0" end="9" >
                                 <li>
                                     <a href="#" type="hidden" onclick="document.forms['food_rec'].submit()" value="#">
-                                    <img class="cafeFood_img" src="#"></a>
+                                    <img class="cafeFood_img" src="${show4.get(i).rv_pic1}"></a>
                                 </li>
                                 </c:forEach>    
                             </ul>

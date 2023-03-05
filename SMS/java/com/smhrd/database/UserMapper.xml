@@ -37,7 +37,7 @@
 	                 	where mb_id in ( select followee
 	                    				   from tb_follow
 	                        			  where follower = #{follower}))
-	  order by A.rv_date desc
+	  order by dbms_random.value
   </select>
 
 
@@ -142,10 +142,12 @@
   </select>
 
   <!-- 추천페이지에서 카테고리별 게시물을 가져오는 쿼리문 -->
-  <select id="show1" resultType="com.smhrd.model.reviewVO">
-	select *
-	  from tb_review
-	 where res_seq = (select *
+  <select id="show1" resultType="com.smhrd.model.mainVO">
+	select A.*, B.res_name
+	  from tb_review A
+	      , tb_restaurant B
+	 where A.res_seq = B.res_seq
+	   and A.res_seq = (select *
 	                    from (select *
 	                            from (select distinct res_seq
 	                                    from tb_review
@@ -156,10 +158,12 @@
 	 order by dbms_random.value
   </select>
 
-  <select id="show2" resultType="com.smhrd.model.reviewVO">
-	select *
-	  from tb_review
-	 where res_seq = (select *
+  <select id="show2" resultType="com.smhrd.model.mainVO">
+	select A.*, B.res_name
+	  from tb_review A
+	      , tb_restaurant B
+	 where A.res_seq = B.res_seq
+	   and A.res_seq = (select *
 	                    from (select *
 	                            from (select distinct res_seq
 	                                    from tb_review
@@ -170,10 +174,12 @@
 	 order by dbms_random.value
   </select>
 
-  <select id="show3" resultType="com.smhrd.model.reviewVO">
-	select *
-	  from tb_review
-	 where res_seq = (select *
+  <select id="show3" resultType="com.smhrd.model.mainVO">
+	select A.*, B.res_name
+	  from tb_review A
+	      , tb_restaurant B
+	 where A.res_seq = B.res_seq
+	   and A.res_seq = (select *
 	                    from (select *
 	                            from (select distinct res_seq
 	                                    from tb_review
@@ -184,10 +190,12 @@
 	 order by dbms_random.value
   </select>
 
-  <select id="show4" resultType="com.smhrd.model.reviewVO">
-	select *
-	  from tb_review
-	 where res_seq = (select *
+  <select id="show4" resultType="com.smhrd.model.mainVO">
+	select A.*, B.res_name
+	  from tb_review A
+	      , tb_restaurant B
+	 where A.res_seq = B.res_seq
+	   and A.res_seq = (select *
 	                    from (select *
 	                            from (select distinct res_seq
 	                                    from tb_review

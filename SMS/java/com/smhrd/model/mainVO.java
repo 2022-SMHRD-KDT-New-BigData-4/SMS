@@ -21,6 +21,26 @@ public class mainVO {
 		super();
 	}
 	
+	
+	
+	public mainVO(int rv_seq, String rv_content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
+			String rv_pic1, String rv_hashtag, String rv_date, String res_name) {
+		super();
+		this.rv_seq = rv_seq;
+		this.rv_content = rv_content;
+		this.rv_ratings = rv_ratings;
+		this.rv_cnt = rv_cnt;
+		this.rv_likes = rv_likes;
+		this.mb_id = mb_id;
+		this.res_seq = res_seq;
+		this.rv_pic1 = rv_pic1;
+		this.rv_hashtag = rv_hashtag;
+		this.rv_date = rv_date;
+		this.res_name = res_name;
+	}
+
+
+
 	public mainVO(int rv_seq, String rv_content, int rv_ratings, int rv_cnt, int rv_likes, String mb_id, int res_seq,
 			String rv_pic1, String rv_hashtag, String rv_date, String mb_pic, String res_name, String mb_name,
 			String mb_nick) {
