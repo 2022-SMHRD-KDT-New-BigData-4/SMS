@@ -82,7 +82,7 @@
                         <div class="postTop">
                            <!-- 팔로워 프로필 사진 -->
                             <a href="#"><img src="${review.get(i).mb_pic}"></a>
-                            <ul class="name">
+                            <ul class="mainname">
                                 <!-- 팔로워 아이디(게시물 작성자)-->                           
                                 <li><a href="#">${review.get(i).mb_id}</a></li>
                                 <!-- 해시태그 -->                           
@@ -128,6 +128,7 @@
                                 </li>
                                 <!-- 리뷰 내용 -->
                                 <li class="four">
+                                <br>
                                     <p>${review.get(i).rv_content}</p>
                                 </li>
                             </ul>
@@ -249,6 +250,7 @@
             </div>
             <!--팝업 컨텐츠 영역-->
 	            <div class="uploadPost">
+	            <form action="ReplyService.do" method="post">
 	                <div class="overlayPost"></div>
 	                    <div class="mainNewPost">
 	                        <div class="profilePost">
@@ -260,8 +262,7 @@
 	                                </div>
 	                                
 	                            </div>
-	                        </div>
-	                        <form>
+	                      	  </div>
 	                            <div class="commentPost">
 	                                <div class="picPost">
 	                                    <img src="img/KakaoTalk_20230223_114555783.png" width="200px" id="album">
@@ -279,7 +280,7 @@
 	                                        <div class="newTextProfilePic">
 	                                        </div>
 	                                        <div class="newTextProfileId">
-	                                            id
+	                                            yspark
 	                                        </div>
 	                                    </div>
 	                                    <div class="textAreaMain">
@@ -308,9 +309,9 @@
 		                                    	<input type="text" name="userHashtag" placeholder="해시태그">
 		                                    </div>
 	                             	   </div>
-	                        	</div>
-	                        	</form>
+	                        		</div>
 	                            </div>
+	                          </form>  
 	                    </div>
 	            </div>
             <!--팝업 버튼 영역-->
