@@ -104,17 +104,17 @@ ArrayList<String> rv_Date = new ArrayList<String>();
 	            		<ul class="saveReviewBox">
 	            			<li class="saveReviewBox_1">
 	            			<form action="#" name="reviewPicData">
-	            				<input type="hidden" name="reviewNum" value="${searchresult.get(i).mb_id}">
+	            		 		<input type="hidden" name="reviewNum" value="${list1.get(i).rv_seq}">
 	            			</form>
-	            				<a href="#" onclick="document.forms['reviewPicData'].submit()"><img src="${searchresult.get(i).res_pic1}"></a>
+	            				<a href="#" ><img src="${list1.get(i).mb_pic}"></a>
 			            			<div id="saveIdArea">
-			            				<a href="#" onclick="document.forms['reviewPicData'].submit()">id</a>
-			            				<p>이름</p>
+			            				<a href="#" >${list1.get(i).mb_id}</a>
+			            				<p>${list1.get(i).mb_name}</p>
 			            			</div>
 	            			</li>
 	            			
 	            			<li class="saveReviewBox_2">
-	            				<a href="#">${list1.get(i).rv_seq}</a>
+	            				<a href="#"></a>
 	            			</li>
 	            			<li class="saveReviewBox_3">	
 	            				<img src="${list1.get(i).rv_pic1}">

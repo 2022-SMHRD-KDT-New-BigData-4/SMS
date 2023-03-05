@@ -19,6 +19,8 @@ import com.smhrd.model.profileVO;
 import com.smhrd.model.profilereviewVO;
 import com.smhrd.model.reviewDAO;
 import com.smhrd.model.reviewVO;
+import com.smhrd.model.totalreplyVO;
+import com.smhrd.model.userDAO;
 import com.smhrd.model.userVO;
 
 public class loginSuccess implements Command {
@@ -47,10 +49,18 @@ public class loginSuccess implements Command {
 		List<mainVO> result1 = dao_lik.rank();
 		
 		
+		
+		userDAO dao = new userDAO();
+	    List<totalreplyVO> total = dao.total();
+		
+		
+		
+		
+		
 		// request 영역에 담아주기
 		request.setAttribute("review", result);
 		request.setAttribute("rank", result1);
-
+        session.setAttribute("total", total);
 		
 		
 		return "main";

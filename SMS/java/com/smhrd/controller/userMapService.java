@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.smhrd.command.Command;
 import com.smhrd.model.restaurantVO;
 import com.smhrd.model.reviewVO;
+import com.smhrd.model.saveVO;
 import com.smhrd.model.userMapDAO;
 import com.smhrd.model.userMapVO;
 import com.smhrd.model.userReviewDAO;
@@ -35,7 +36,7 @@ public class userMapService implements Command {
 		// 유저 보관함 지도 데이터 가져오기
 		List<restaurantVO> list =dao.userMap(vo);
 		// 유저 보관함 리뷰 데이터 가져오기
-		List<reviewVO> list1 =dao1.userReview(vo);
+		List<saveVO> list1 =dao1.userReview(vo);
 		
 		// <<<<<<<<<<<<<<<<<<<<<<<<<< 올때
 		

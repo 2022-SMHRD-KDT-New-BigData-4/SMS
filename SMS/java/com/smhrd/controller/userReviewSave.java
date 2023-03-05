@@ -26,7 +26,7 @@ public class userReviewSave implements Command {
 		// vo 객체에 담아서 보내주기
 		userMapVO vo1 = new userMapVO(user.getMb_id(),resSeq,rvSeq);
 		userReviewSaveDAO dao = new userReviewSaveDAO();
-		System.out.println(vo1.getMB_ID());
+		System.out.println(vo1.getMb_id());
 		System.out.println(vo1.getRes_seq());
 		System.out.println(vo1.getRv_seq());
 		int result11 = dao.userReviewSave(vo1);

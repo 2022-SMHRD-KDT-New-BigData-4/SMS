@@ -12,11 +12,11 @@ public class userReviewDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 
-	public List<reviewVO> userReview(userMapVO vo) {
+	public List<saveVO> userReview(userMapVO vo) {
 		
 		System.out.println("유저리뷰데이터 DAO : 들어오기 성공");
-		System.out.println("유저리뷰dao아이디체크 : "+vo.getMB_ID());
-		List<reviewVO> result1= new ArrayList<>();
+		System.out.println("유저리뷰dao아이디체크 : "+vo.getMb_id());
+		List<saveVO> result1= new ArrayList<>();
 		SqlSession sqlsession1 = sqlSessionFactory.openSession(true);
 		//----------------------------------------------------------[
 		try {

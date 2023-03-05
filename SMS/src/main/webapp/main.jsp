@@ -198,19 +198,19 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea1">
+                        <img src="${review.get(2).rv_pic1}" id="reviewPicArea1">
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"><img src="${review.get(i).mb_pic}" width="50px" border-radius="50px"></a></div>
+                            <div class="profilepic"> <a href="#"><img src="${review.get(2).mb_pic}" width="50px" border-radius="50px"></a></div>
                             <div class="comusername">
-                                <div class="comname"> <a href="#"></a> ${review.get(i).mb_nick}</div>
-                                <div class="userid">${review.get(i).mb_id}</div>
+                                <div class="comname"> <a href="#"></a> ${review.get(2).mb_nick}</div>
+                                <div class="userid">${review.get(2).mb_id}</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
-                         	<c:forEach var="i" begin="3" end="5">
+                         	<c:forEach var="i" begin="0" end="2">
                                 <div class="comProfilepic"><a href="#"><img src="${total.get(i).mb_pic}" width="60px" class="img"></a></div>
                                 <div class="comments">
                                     <div class="comName"><a href="#">${total.get(i).mb_id}</a></div>

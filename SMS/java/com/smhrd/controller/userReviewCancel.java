@@ -27,7 +27,7 @@ public class userReviewCancel implements Command {
 		// vo 객체에 담아서 보내주기
 		userMapVO vo2 = new userMapVO(user.getMb_id(),resSeq,rvSeq);
 		userReviewCancelDAO dao = new userReviewCancelDAO();
-		System.out.println(vo2.getMB_ID());
+		System.out.println(vo2.getMb_id());
 		System.out.println(vo2.getRes_seq());
 		System.out.println(vo2.getRv_seq());
 		int result11 = dao.userReviewCancel(vo2);
