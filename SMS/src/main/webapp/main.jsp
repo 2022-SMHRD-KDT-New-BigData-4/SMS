@@ -189,7 +189,7 @@
             <div style="height: 10px; width: 375px; float: top;">
             </div>
             <!--팝업 컨텐츠 영역-->
-        <form action="#">
+        <form action="ReplyService.do">
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
@@ -206,9 +206,9 @@
                         <div class="text">
                             <div class="comment">
                          	<c:forEach var="i" begin="3" end="5">
-                                <div class="comProfilepic"><a href="#"></a></div>
+                                <div class="comProfilepic"><a href="#"><img src="${total.get(i).mb_pic}" width="60px"></a></div>
                                 <div class="comments">
-                                    <div class="comName"><a href="#"></a></div>
+                                    <div class="comName"><a href="#">${total.get(i).mb_id}</a></div>
                                 </div>
 		                         <div class="comText" onclick="toggleEllipsis(this)">
             						<p>${total.get(i).rp_content}</p>             		

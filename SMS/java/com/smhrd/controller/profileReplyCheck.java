@@ -30,7 +30,7 @@ public class profileReplyCheck implements Command {
 		request.setAttribute("reviewer", result_reviewer);
 		request.setAttribute("replyer", result_replyer);
 		
-		return "redirect:/profileService.do";
+		return null;
 	}
 	
 }
