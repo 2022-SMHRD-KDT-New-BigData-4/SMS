@@ -73,6 +73,11 @@
     box-sizing: border-box;
 }
 
+#saveIdArea {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
 
 
     /* 오버레이 전체 박스 */

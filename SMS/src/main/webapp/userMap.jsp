@@ -12,10 +12,10 @@
 <head>
     <meta charset="utf-8">
     <title>주소로 장소 표시하기</title>
-    <link rel="stylesheet" href="./css/userMap.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+    <link rel="stylesheet" href="./css/userMap.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/commentCss.css">
@@ -107,7 +107,7 @@ ArrayList<String> rv_Date = new ArrayList<String>();
 	            				<input type="hidden" name="reviewNum" value="${searchresult.get(i).mb_id}">
 	            			</form>
 	            				<a href="#" onclick="document.forms['reviewPicData'].submit()"><img src="${searchresult.get(i).res_pic1}"></a>
-			            			<div>
+			            			<div id="saveIdArea">
 			            				<a href="#" onclick="document.forms['reviewPicData'].submit()">id</a>
 			            				<p>이름</p>
 			            			</div>

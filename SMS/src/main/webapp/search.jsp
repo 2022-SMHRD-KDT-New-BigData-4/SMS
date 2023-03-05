@@ -12,6 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+		<link rel="stylesheet" href="./css/main.css">
 		<link rel="stylesheet" href="./css/search.css">
 		<link rel="stylesheet" href="./css/reset.css">
     	<link rel="stylesheet" href="./css/searchCommentCss.css">
@@ -29,8 +31,8 @@
                 <a id="logoText" href="loginSuccess.do"><img class="logo" src="./img/logo.png"></a>
                 <ul class="iconBtn">
                     <li>
-                        <a href="loginSuccess.do"><img src="./img/home.png">홈</a>
-                       <!--  <a class="icontext" href="loginSuccess.do">홈</a>  -->
+                        <a href="loginSuccess.do"><img src="./img/home.png"></a>
+                        <a class="icontext" href="loginSuccess.do">홈</a>
                     </li>
                     <li>
                         <a href="recommend.do"><img src="./img/rec.png"></a>
