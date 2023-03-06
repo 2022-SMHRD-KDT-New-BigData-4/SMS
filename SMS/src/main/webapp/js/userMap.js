@@ -1,5 +1,6 @@
 
 let clickM=document.getElementsByClassName('saveReview')
+
  // 전역변수들 생성
     let positions=[];
     var marker;
