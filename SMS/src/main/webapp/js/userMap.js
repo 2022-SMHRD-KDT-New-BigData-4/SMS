@@ -1,3 +1,5 @@
+
+let clickM=document.getElementsByClassName('saveReview')
  // 전역변수들 생성
     let positions=[];
     var marker;
@@ -206,6 +208,20 @@ kakao.maps.event.addListener(markers[q], 'mouseout', function() {
             clickedOverlay.setMap(null);  // 커스텀 오버레이 삭제
             
             console.log("123")
+
+         }
+         customOverlay.setMap(map); // 처음찍는거라면 오버레이 생성
+         clickedOverlay = customOverlay; // 생성된 오버레이 클릭오버레이에 담아서 다음 if문대기
+   
+    });  
+        // 리뷰글 클릭했을 때 커스텀 오버레이를 표시
+   	clickM[i].addEventListener('click', function() {
+            console.log("123")
+        // 마커중심으로 옮기는 함수
+        setCenter()
+        if(clickedOverlay) {  // 이미 표시되어 있는 경우
+            clickedOverlay.setMap(null);  // 커스텀 오버레이 삭제
+            
 
          }
          customOverlay.setMap(map); // 처음찍는거라면 오버레이 생성
