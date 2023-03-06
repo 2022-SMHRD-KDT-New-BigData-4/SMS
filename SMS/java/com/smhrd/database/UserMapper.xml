@@ -238,7 +238,8 @@
       and A.mb_id = C.mb_id
       and A.rv_seq in (select rv_seq
   					   from tb_userpick
-  					  where mb_id = #{mb_id})				  
+  					  where mb_id = #{mb_id})
+  					  order by res_seq			  
   </select>
   
   <!-- 유저 개인 보관함 데이터  -->
@@ -248,6 +249,7 @@
   	where res_seq in (select res_seq
   					   from tb_userpick
   					  where mb_id = #{mb_id})
+  					  order by res_seq
   </select>
   	 <!-- 유저리뷰저장 쿼리문 -->
   <insert id = "userReviewSave" parameterType = "com.smhrd.model.userMapVO">
