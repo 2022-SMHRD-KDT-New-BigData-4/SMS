@@ -290,11 +290,7 @@
 	                                    </div>
 	                                    <div class="textAreaMain">
 	                                        <div class="textAreaMainPost">
-<<<<<<< HEAD
-	                                        	<textarea placeholder="내용을 입력해주세요." name="content"></textarea>
-=======
 	                                        	<textarea name="reviewContent" placeholder="내용을 입력해주세요."></textarea>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/SMS.git
 	                                        </div>
 	                                    </div>
 		                                    <div class="textAreaStar">

@@ -77,7 +77,7 @@
                     	<ul class="userSetText">
                     		 <li style="margin-top:36px;">${userinfo.get(0).mb_id}<button style="margin-left:10px;">프로필 변경</button></li>
               				 <li class="userSetText_sums">
-                  				<a href="#">게시물00</a>
+                  				<a href="#">리뷰00</a>
                   				<a href="#">팔로우00</a>
                  				 <a href="#">팔로잉00</a>
               				</li>
@@ -213,9 +213,10 @@
                                 <div class="textArea">
                                     <div class="textAreaPic">
                                         <div class="newTextProfilePic">
+                                        	<img src="${user2.mb_pic}" width="50px" style="border-radius: 50px">
                                         </div>
                                         <div class="newTextProfileId">
-                                            id
+                                            ${user.mb_id}
                                         </div>
                                     </div>
                                     <div class="textAreaMain">
