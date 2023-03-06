@@ -41,6 +41,7 @@ public class FrontController extends HttpServlet {
 		map.put("profileReplyCheck.do", new profileReplyCheck());
 		map.put("userReviewSave.do", new userReviewSave());
 		map.put("userReviewCancel.do", new userReviewCancel());
+		map.put("profileRvService.do", new profileRvService());
 	}
 
 

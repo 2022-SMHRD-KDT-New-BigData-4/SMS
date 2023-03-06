@@ -269,6 +269,9 @@
   
 
 
+<select id="yyPic" resultType="com.smhrd.model.yyPicVO">
+	select rv_pic1 from tb_review where mb_id = 'YY'
+  </select>
 
 
 

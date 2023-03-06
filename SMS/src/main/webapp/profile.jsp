@@ -23,6 +23,26 @@
     	<link rel="stylesheet" href="./css/profilePopCss.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    		<script>
+    	
+      	$.ajax({
+    	    url: 'profileRvService.do',
+    	    type: 'POST',
+    	    success: function(response) {
+    	        console.log(response);
+    	        console.log("프로필도메인이동성공");
+    	        // 응답 데이터 처리 로직 작성
+    	         var dataArr = response.split('\n'); // 엔터 문자 기준으로 문자열 분할
+    	         console.log(dataArr)
+    	         console.log("이름"+ dataArr[0])
+    	    },
+    	    error: function(error) {
+    	        console.log(error);
+    	        // 에러 처리 로직 작성
+    	    }
+    	});
+		
+    	</script>
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
