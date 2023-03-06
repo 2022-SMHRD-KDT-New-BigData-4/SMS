@@ -19,10 +19,7 @@
        <link rel="stylesheet" href="./css/logoutCss.css">
        <link rel="stylesheet" href="./css/logoutPopupCss.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-                <script>
-                 let a= ${review.get(0).res_seq}
-       		     let b= ${review.get(0).rv_seq}
-       		  </script>  
+
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
@@ -118,10 +115,13 @@
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop(`${review.get(i).rv_pic1}`)" ><img src="./img/comment.png" id="reviewPicArea"></a>
                                     
-                                    <form name="saveSum" action="userMapService.do" method="post">
+                                    
                                     <!-- 보관 버튼 -->
-                                    <a href="javascript:save()" class="saveIcon save"><img src="./img/saveWhite.png"></a>
-                                    </form>
+                                    <div>
+                                    <input class="input1" type="hidden" value="${review.get(i).res_seq}">
+                                    <input class="input2" type="hidden" value="${review.get(i).rv_seq}">
+                                    <a href="#" class="saveIcon save"><img src="./img/saveWhite.png"></a>
+                                    </div>
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">

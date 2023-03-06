@@ -68,7 +68,7 @@ $(function heart(){
           	return cnt;
      })
 })
-
+var data11;
 //보관함 변경
 $(function save(){
 	
@@ -83,7 +83,12 @@ $(function save(){
               'src': 'img/saveBlack.png',
                 });
           cnt=1 ;
-          
+           data11 = $(this).parents().children('.input1').val();
+                       console.log(data11)
+           data22 = $(this).parents().children('.input2').val();
+           console.log(data22)
+                      
+                       
          }else{
             $(this).find('i').removeClass('fas').addClass('far')
            $(this).find('img').attr({
@@ -96,8 +101,8 @@ $(function save(){
      	 $.ajax({
 	      url: 'userReviewSave.do',
 	      data: {
-	        resSeq: a,
-	        rvSeq: b
+	        resSeq: data11,
+	        rvSeq: data22
 	      },
 	      type: 'POST',
 	      success: function() {
