@@ -381,7 +381,7 @@
   <!-- 프로필페이지에 필요한 데이터 가져오는 쿼리문 -->
   <select id="profilepage" parameterType="com.smhrd.model.userVO"
            resultType="com.smhrd.model.userinfoVO">
-   select A.rv_seq, A.rv_pic1, B.mb_profile, B.mb_pic, C.*
+   select A.rv_seq, A.rv_pic1, A.rv_content, B.mb_profile, B.mb_pic, C.*
      from tb_review A
         , tb_profile B
         , tb_member C
