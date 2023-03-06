@@ -126,7 +126,7 @@ ArrayList<String> rv_Date = new ArrayList<String>();
 	            				<a href="javascript:saveMap()" class="saveIcon save"><img src="./img/saveBlack.png"></a>
 								<div class="likeId">
 	            				<P></P>
-	            				<a>id</a>
+	            				<a>${list1.get(i).mb_id}</a>
 	            				</div>
 	            			</li>
 	            			
