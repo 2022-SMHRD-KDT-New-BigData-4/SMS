@@ -19,6 +19,10 @@
        <link rel="stylesheet" href="./css/logoutCss.css">
        <link rel="stylesheet" href="./css/logoutPopupCss.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+                <script>
+                 let a= ${review.get(0).res_seq}
+       		     let b= ${review.get(0).rv_seq}
+       		  </script>  
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
@@ -74,7 +78,8 @@
                 <!-- 팔로워 게시물 -->
                 <div class="container">
                          
-                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">  
+                <c:forEach var="i" begin="0" end="${review.size()-1}" step="1">
+           
                 <!-- postBox클래스 반복 -->
                    <div class="postBox">
                     <div class="post">
@@ -193,14 +198,14 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="${review.get(i).rv_pic1}" id="reviewPicArea1">
+                        <img src="${review.get(2).rv_pic1}" id="reviewPicArea1">
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"><img src="${review.get(i).mb_pic}" width="50px" border-radius="50px"></a></div>
+                            <div class="profilepic"> <a href="#"><img src="${review.get(2).mb_pic}" width="50px" border-radius="50px"></a></div>
                             <div class="comusername">
-                                <div class="comname"> <a href="#"></a> ${review.get(i).mb_nick}</div>
-                                <div class="userid">${review.get(i).mb_id}</div>
+                                <div class="comname"> <a href="#"></a> ${review.get(2).mb_nick}</div>
+                                <div class="userid">${review.get(2).mb_id}</div>
                             </div>
                         </div>
                         <div class="text">
@@ -285,7 +290,11 @@
 	                                    </div>
 	                                    <div class="textAreaMain">
 	                                        <div class="textAreaMainPost">
+<<<<<<< HEAD
 	                                        	<textarea placeholder="내용을 입력해주세요." name="content"></textarea>
+=======
+	                                        	<textarea name="reviewContent" placeholder="내용을 입력해주세요."></textarea>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/SMS.git
 	                                        </div>
 	                                    </div>
 		                                    <div class="textAreaStar">
@@ -357,7 +366,7 @@
           console.log(result);
       });
   });
-ㄴ
+
 
   
   

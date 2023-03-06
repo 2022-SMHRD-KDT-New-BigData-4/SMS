@@ -229,21 +229,41 @@
   
   <!-- 유저 개인 보관함리뷰 데이터  -->
   <select id="userReview" parameterType="com.smhrd.model.userMapVO"
-  	      resultType="com.smhrd.model.reviewVO">
-	SELECT * FROM TB_REVIEW
-  	WHERE RV_SEQ IN (SELECT RV_SEQ
-  					   FROM TB_USERPICK
-  					  WHERE MB_ID = #{MB_ID})
+  	      resultType="com.smhrd.model.saveVO">
+  	select A.*, B.mb_name, B.mb_nick, C.mb_pic 
+    from tb_review A
+       , tb_member B
+       , tb_profile C
+  	where A.mb_id = B.mb_id
+      and A.mb_id = C.mb_id
+      and A.rv_seq in (select rv_seq
+  					   from tb_userpick
+  					  where mb_id = #{mb_id})				  
   </select>
   
   <!-- 유저 개인 보관함 데이터  -->
   <select id="userMap" parameterType="com.smhrd.model.userMapVO"
   	      resultType="com.smhrd.model.restaurantVO">
-	SELECT * FROM TB_RESTAURANT
-  	WHERE RES_SEQ IN (SELECT RES_SEQ
-  					   FROM TB_USERPICK
-  					  WHERE MB_ID = #{MB_ID})
+	select * from tb_restaurant
+  	where res_seq in (select res_seq
+  					   from tb_userpick
+  					  where mb_id = #{mb_id})
   </select>
+  	 <!-- 유저리뷰저장 쿼리문 -->
+  <insert id = "userReviewSave" parameterType = "com.smhrd.model.userMapVO">
+  	insert into tb_userpick
+  		  (  mb_id,
+  		  	 res_seq,
+  		  	 rv_seq  )
+  	values(
+  			#{mb_id},
+  			#{res_seq},
+  			#{rv_seq})
+  </insert>
+  <delete id="userReviewCancel" parameterType="com.smhrd.model.userMapVO">
+ 	DELETE FROM tb_userpick
+	WHERE mb_id = #{mb_id} AND res_seq = #{res_seq} AND rv_seq = #{rv_seq}
+  </delete>
   
 
 

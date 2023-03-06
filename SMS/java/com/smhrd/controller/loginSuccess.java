@@ -50,6 +50,11 @@ public class loginSuccess implements Command {
 		
 		userDAO dao = new userDAO();
 	    List<totalreplyVO> total = dao.total();
+		;
+		
+		
+		
+		
 		
 		// request 영역에 담아주기
 		request.setAttribute("review", result);

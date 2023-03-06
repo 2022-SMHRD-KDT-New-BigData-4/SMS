@@ -26,7 +26,9 @@ public class ReplyService implements Command {
 		
 
 		// 보고있는 게시글 번호 어떻게 받을거야??
-		int rv_req = 368;  // 일단은 아무리뷰에 댓글을 남겨보자
+		//int rv_req = 368;  // 일단은 아무리뷰에 댓글을 남겨보자
+
+		int rv_req = 321;  // 일단은 아무리뷰에 댓글을 남겨보자
 		
 		
 		// 정보를 보내줄 객체 생성 
@@ -45,8 +47,10 @@ public class ReplyService implements Command {
 
 		if (result > 0) {
 			// 댓글작성 성공
+
 			moveURL = "redirect:/loginSuccess.do" ;
 			// 댓글작성 성공했는지 확인하는 페이지
+
 
 		} else {
 			// 댓글작성 실패

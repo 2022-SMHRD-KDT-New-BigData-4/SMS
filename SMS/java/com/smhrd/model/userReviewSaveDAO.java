@@ -8,26 +8,26 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 
-public class userReviewDAO {
+public class userReviewSaveDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 
-	public List<saveVO> userReview(userMapVO vo) {
+	public int userReviewSave(userMapVO idResRv) {
 		
-		System.out.println("유저리뷰데이터 DAO : 들어오기 성공");
-		System.out.println("유저리뷰dao아이디체크 : "+vo.getMb_id());
-		List<saveVO> result1= new ArrayList<>();
-		SqlSession sqlsession1 = sqlSessionFactory.openSession(true);
+		System.out.println("DAO : 유저리뷰세이브 dao성공");
+		int result= 0;
+		SqlSession sqlsession = sqlSessionFactory.openSession(true);
 		//----------------------------------------------------------[
 		try {
 			//result=session.selectList("userMap");// 아이디값
 			//System.out.println("check" + result.get(0).getRes_name());
-			result1 =sqlsession1.selectList("userReview",vo);
-			System.out.println("유저 리뷰데이터 : "+ result1.get(0).getRv_seq());
+			System.out.println("유저리뷰세이브dao2 : "+idResRv.getRes_seq());
+			result =sqlsession.insert("userReviewSave",idResRv);
+			System.out.println("유저리뷰세이브result : "+result);
 		} finally {
-			sqlsession1.close();
+			sqlsession.close();
 		}
-		return result1;
+		return result;
 		
 	}
 
