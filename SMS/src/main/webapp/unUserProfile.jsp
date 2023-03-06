@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.controller.yyPic123"%>
+<%@page import="com.smhrd.model.yyPicVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.controller.profileRvService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -19,7 +23,7 @@
        <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
           	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    	    		<script>
+    <!-- 	    		<script>
     	
       	$.ajax({
     	    url: 'profileRvService.do',
@@ -38,9 +42,15 @@
     	    }
     	});
 		
-    	</script>
+    	</script> -->
+    	 <% yyPic123 sv = new yyPic123();
+    		sv.service(request, response);
+    		List<yyPicVO> yyPic=(List<yyPicVO>)request.getAttribute("yyPic");
+    		System.out.print(yyPic.get(0).getRv_pic1());
+    	 %>  
     </head>
     <body link="black" vlink="black" alink="black">
+     
         <div class="container1">
         
             <!-- 1. left -->
@@ -106,13 +116,13 @@
                     </div>
                   </div>
                   <div><hr id="proflie_bar"></div>
-                  <div class="userReview">
-                   <c:forEach var="i" begin="0" end="9">
-                
+                    <div class="userReview">
+                    <% for(int i=0; i<yyPic.size(); i++ ){
+                	   %>
                     <div>
-                         <a href="javascript:openPop()"><img src=""></a>
+                         <a class="yypic" href="javascript:openPop()"> <img src='<%=yyPic.get(i).getRv_pic1() %>'></a>
                       </div>
-                  </c:forEach>
+                  <%} %> 
                   </div>
                 </div>
                 
@@ -287,6 +297,12 @@
     </body>
     
 <script src="./js/comment.js"></script>
+<!-- <script>
+var myDiv = document.querySelector(".yypic");
+for(var i =0; i<dataArr.length-1; i++){
+	$('.yypic img').attr('src', dataArr[i])
+}
+</script>     -->
     
     
     
