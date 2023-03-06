@@ -98,7 +98,7 @@
                                                 <li style="font-size: 13px;">${rank.get(0).mb_name }</li>
                                             </ul>
                                         </div>
-                                        <div id="mainRec1_storeName"><p>${rank.get(0).res_name}</p></div>
+                                        <div id="mainRec1_storeName"><p>${rank.get(0).res_name} , ⭐ ${rank.get(0).rv_ratings}</p></div>
                                         <div id="mainRec1_content"><p>${rank.get(0).rv_content}</p></div>
                                         <div id="mainRec1_tag"><p>${rank.get(0).rv_hashtag}</p></div>
                                     </div>
@@ -124,7 +124,7 @@
                                                 <li style="font-size: 13px;">${rank.get(i).mb_name}</li>
                                             </ul>
                                         </div>
-                                        <div id="mainRec1_storeName"><p>${rank.get(i).res_name}</p></div>
+                                        <div id="mainRec1_storeName"><p>${rank.get(i).res_name} , ⭐ ${rank.get(0).rv_ratings}</p></div>
                                         <div id="mainRec1_content"><p>${rank.get(i).rv_content}</p></div>
                                         <div id="mainRec1_tag"><p>${rank.get(i).rv_hashtag}</p></div>
                                     </div>

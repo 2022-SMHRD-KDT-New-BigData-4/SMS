@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,14 @@ public class ReviewMake implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// 작성자 아이디 가져오기 -> 세션에서 로그인된 유저아이디
 		HttpSession session = request.getSession();
 		userVO vo_mem  = (userVO)session.getAttribute("user");

@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
+
+
+
+.commentPicTextArea {
+	width:500px;
+	height: 100px;
+}
+
 a { text-decoration:none; }
 
 .upload {
@@ -79,8 +92,8 @@ a { text-decoration:none; }
 
 .img {
 		border-radius: 50px;
-	    width: 60px;
-	        height: 60px;
+	    width: 50px;
+	        height: 50px;
 }
 
 
@@ -117,6 +130,7 @@ a { text-decoration:none; }
     height: 26px;
     border: 1px solid gainsboro;
     border-radius: 20px;
+    font-family: 'Jeju Gothic', sans-serif;
 }
 
 .submit {
@@ -136,8 +150,8 @@ a { text-decoration:none; }
 }
 
 .comProfilepic {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
     float: left;
     margin-top: 15px;
@@ -164,7 +178,7 @@ a { text-decoration:none; }
 }
 
 .comText p {
-	margin-top: 35px;
+	margin-top: 25px;
 }
 
 .card-description {
@@ -200,7 +214,7 @@ a { text-decoration:none; }
     height: 80px;
     float: left;
     margin-top: 32px;
-    margin-left: 30px;
+    margin-left: 35px;
 
 }
 

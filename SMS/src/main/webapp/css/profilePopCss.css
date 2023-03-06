@@ -6,78 +6,62 @@ body {
 font-family: 'Jeju Gothic', sans-serif;
 }
 
+.commentPicTextArea {
+	width:500px;
+	height: 100px;
+}
+
+a { text-decoration:none; }
+
 .upload {
     position: absolute;
-    margin: -900px 0px 0px -8px;
-
+    margin: -500px 0px 0px -300px;
+    margin-top: -11px;
+    margin-left: -2px;
+    display: flex;
+    width: 100px;
+    height: 600px;
 }
 
 .pic {
     display: flex;
-    min-width: 653px;
-    min-height: 800px;
-    max-height: 800px;
-    margin-left: 7px;
-    margin-top: -1px;
+    min-width: 500px;
+    min-height: 600px;
+    max-height: 600px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border: 1px solid gainsboro;
     float: left;
 }
 
-.pic img {
-	max-width: 653px;
-    max-height: 800px;
-    object-fit: contain;
-}
-
 .main {
     display: flex;
-    min-width: 440px;
-    min-height: 800px;
-    margin-top: -1px;
+    min-width: 500px;
+    min-height: 600px;
     float: left;
     flex-direction: column;
 }
 
 .profile {
-    width: 442px;
+    width: 500px;
     height: 80px;
     border-top-right-radius: 10px;
     border: 1px solid gainsboro;
 }
 
 .comment {
-    width: 444px;
-    height: 568px;
+    width: 500px;
+    height: 430px;
     border: 1px solid gainsboro;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 .userComment {
-    width: 442px;
-    height: 76px;
-    border: 0px 1px 1px 1px solid gainsboro;
+    width: 500px;
+    height: 86px;
+    border: 1px solid gainsboro;
     border-bottom-right-radius: 10px;
-}
-
-.searchCommentIcon{
-	width: 442px;
-    height: 69px;
-    border: 1px 1px 1px 0px solid gainsboro;
-}
-
-.searchCommentIcons img {
-	margin-top: 10px;
-	margin-left: 10px;
-	width: 25px;
-	height: 25px;
-}
-
-.likesSum {
-	margin-top: 10px;
-	margin-left: 10px;
 }
 
 .profilepic {
@@ -86,28 +70,37 @@ font-family: 'Jeju Gothic', sans-serif;
     border-radius: 50px;
     float: left;
     margin-top: 15px;
-    margin-left: 25px;
+    margin-left: 30px;
     border: 1px solid gainsboro;
 }
 
-.username {
-    width: 200px;
-    height: 40px;
-    float: left;
-    margin-top: 23px;
-    margin-left: 20px;
+.profilepic img {
+	border-radius: 50px;
+	    width: 50px;
+	        height: 50px;
 }
 
-.comname {
-    margin-top: 9px;
+.comusername {
+    width: 360px;
+    height: 50px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 15px;
 }
+
+.img {
+		border-radius: 50px;
+	    width: 60px;
+	        height: 60px;
+}
+
 
 .myProfilepic {
     width: 50px;
     height: 50px;
     border-radius: 50px;
     float: left;
-    margin-top: 13px;
+    margin-top: 18px;
     margin-left: 9px;
     border: 1px solid gainsboro;
 }
@@ -121,13 +114,13 @@ font-family: 'Jeju Gothic', sans-serif;
 }
 
 #comInput {
-    width: 280px;
+    width: 340px;
     height: 26px;
     border: 1px solid gainsboro;
     border-radius: 20px;
     float: left;
-    margin-top: 6px;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #submit {
@@ -140,8 +133,8 @@ font-family: 'Jeju Gothic', sans-serif;
 .submit {
     height: 26px;
     float: right;
-    margin-top: -42px;
-    margin-right: 15px;
+    margin-top: 30px;
+    margin-right: 10px;
 }
 
 .submitBtn {
@@ -158,8 +151,8 @@ font-family: 'Jeju Gothic', sans-serif;
     height: 60px;
     border-radius: 50px;
     float: left;
-    margin-top: 25px;
-    margin-left: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
     border: 1px solid gainsboro;
 }
 
@@ -168,20 +161,21 @@ font-family: 'Jeju Gothic', sans-serif;
     width: 70px;
     height: 60px;
     float: left;
-    margin-top: 18px;
-    margin-left: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
-.comName {
-    margin-top: 20px;
-}
 
 .comText {
-    min-width: 210px;
-    max-width: 210px;
+    min-width: 260px;
+    max-width: 260px;
     float: left;
-    margin-top: 45px;
-    margin-left: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.comText p {
+	margin-top: 30px;
 }
 
 .card-description {
@@ -221,11 +215,6 @@ font-family: 'Jeju Gothic', sans-serif;
 
 }
 
-.like img {
-    margin-top: 10px;
-    width: 20px;
-}
-
 .imgBtn {
     background: url("img/like.png");
     border: none;
@@ -241,3 +230,46 @@ font-family: 'Jeju Gothic', sans-serif;
     overflow-x: hidden;
   }
 
+  
+  .otherUserPic {
+  		
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  margin: auto;
+  }
+  
+  .picArea {
+  	margin: auto;
+  }
+  
+  #reviewPicArea {
+  	max-width: 500px;
+  	max-height: 600px;
+  	object-fit: contain;
+  }
+  
+  #reviewPicArea1 {
+    width: 500px;
+    max-height: 600px;
+  	object-fit: contain;
+  }
+  
+  .comName {
+  margin-top: 20px;
+  }
+  
+  #profile_review{
+      width: 500px;
+    height: 490px;
+    object-fit: contain;
+    border: 1px solid gainsboro;
+  }
+  
+  #reviewPtag {
+  	width: 400px;
+  	height: 110px;
+  	margin-top: 10px;
+  	margin-left: 15px;
+
+  	}

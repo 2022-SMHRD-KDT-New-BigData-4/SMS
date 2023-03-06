@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
+
 .uploadPost {
     position: absolute;
     margin: -500px 0px 0px -300px;
@@ -179,12 +185,19 @@ textarea {
 	width: 75px;
     height: 25px;
     border-radius: 10px;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+::placeholder {
+	font-family: 'Jeju Gothic', sans-serif;
+	font-size: 15px;
 }
 
 .picPost p {
     font-size: 20px;
     margin-top: 40px;
     width: 373px;
+    text-align: center;
 }
 
 .pick {
@@ -217,6 +230,7 @@ textarea {
   border-bottom-color: #e2e2e2;
   border-radius: 10px;
   width: 200px;
+  font-family: 'Jeju Gothic', sans-serif;
 }
 
 .pick input[type="file"] {  /* 파일 필드 숨기기 */
@@ -241,7 +255,7 @@ textarea {
   text-align: center;
   width: 5em;
   margin-left: 10px;
-  margin-top: 2px;
+  margin-top: 7px;
 }
  
 .star-rating input {

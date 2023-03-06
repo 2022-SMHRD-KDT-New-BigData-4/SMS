@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
+
+.starRatings{
+	    margin-left: 550px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
 a { text-decoration:none; }
 
 .left {
@@ -42,8 +54,8 @@ a { text-decoration:none; }
 }
 
 #getUserPic {
-	width: 35px;
-	height: 35px;
+	width: 45px;
+	height: 45px;
 	margin-left: -2px;
 	border-radius: 50%;
 }
@@ -56,6 +68,7 @@ a { text-decoration:none; }
 .plusBtn img{
     width: 40px;
     height: 40px;
+    margin-top:90px;
 }
 .right {
     /* border: 10px solid red; */
@@ -75,8 +88,8 @@ a { text-decoration:none; }
     margin: 0 auto;
 }
 .iconBtn li img{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -116,6 +129,7 @@ a { text-decoration:none; }
     border: 1px solid gainsboro;
     border-radius: 3px;
     margin-left: 10px;
+    font-family: 'Jeju Gothic', sans-serif;
 }
 .container{
     margin-top: 200px;
@@ -181,6 +195,11 @@ a { text-decoration:none; }
 	padding-left:0px;
 	margin-top: 20px;
 }
+
+.mainname li {
+	margin-top: 3px;
+}
+
 #postCenter img{
     width: 700px;
     height: 400px;

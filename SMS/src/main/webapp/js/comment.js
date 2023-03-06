@@ -1,14 +1,14 @@
 //팝업 띄우기
 
 function openPopImg(img_url) {
-	var profile_review =document.getElementById("profile_review");
-	profile_review.src =img_url;
+   var profile_review =document.getElementById("profile_review");
+   profile_review.src =img_url;
     document.getElementById("popup_layer").style.display = "block";
 }
 
 function openPopMain(img_url) {
-	var profile_review =document.getElementById("reviewPicArea");
-	profile_review.src =img_url;
+   var profile_review =document.getElementById("reviewPicArea");
+   profile_review.src =img_url;
     document.getElementById("popup_layer").style.display = "block";
 
 }
@@ -47,14 +47,14 @@ function closePopuplogout() {
 }
 
 //좋아요 하트 변경
-	var cnt = 0;
+   var cnt = 0;
 $(function heart(){
     var $likeBtn =$('.likeIcon');
 
         $likeBtn.click(function(){
         $(this).toggleClass('active');
 
-        if($likeBtn.hasClass('active')){          
+        if($likeBtn.hasClass('active') ){          
            $(this).find('img').attr({
               'src': 'img/hearts.png',
                 });
@@ -66,17 +66,17 @@ $(function heart(){
            })
            cnt= 0;
          }
-          	return cnt;
+             return cnt;
      })
 })
 var data11;
 //보관함 변경
 $(function save(){
-	
+   
     var $saveBtn =$('.saveIcon');
 
         $saveBtn.on('click', function(e){
-		e.preventDefault();
+      e.preventDefault();
         $(this).toggleClass('active');
 
         if($saveBtn.hasClass('active')){          
@@ -99,46 +99,46 @@ $(function save(){
          }
      if(cnt===1){
      console.log(cnt); 
-     	 $.ajax({
-	      url: 'userReviewSave.do',
-	      data: {
-	        resSeq: data11,
-	        rvSeq: data22
-	      },
-	      type: 'POST',
-	      success: function() {
-	        console.log("성공");
-	        alert("리뷰를 보관하였습니다!")
-	      },
-	      error: function() {
-	        console.log("리뷰저장통신실패");
-	      }
-	    })
+         $.ajax({
+         url: 'userReviewSave.do',
+         data: {
+           resSeq: data11,
+           rvSeq: data22
+         },
+         type: 'POST',
+         success: function() {
+           console.log("성공");
+           swal("리뷰를 보관하였습니다!", "모아둔 리뷰들을 보관함에서 확인하세요.", "success");
+         },
+         error: function() {
+           console.log("리뷰저장통신실패");
+         }
+       })
 
-	    }else if(cnt===0){
-			
-	 	    $.ajax({
-	 	      url: 'userReviewCancel.do',
-	 	      data: {
-	 	        resSeq: a,
-	 	        rvSeq: b
-	 	      },
-	 	      type: 'POST',
-	 	      success: function() {
-	 	        console.log("삭제성공");
-	 	        alert("리뷰를 삭제하였습니다!")
-	 	      },
-	 	      error: function() {
-	 	        console.log("리뷰삭제통신실패");
-	       }
-	     });
-			
-		}
+       }else if(cnt===0){
+         
+           $.ajax({
+             url: 'userReviewCancel.do',
+             data: {
+               resSeq: data11,
+               rvSeq: data22
+             },
+             type: 'POST',
+             success: function() {
+               console.log("삭제성공");
+               swal("보관함에서 삭제하였습니다.")
+             },
+             error: function() {
+               console.log("리뷰삭제통신실패");
+          }
+        });
+         
+      }
      })
  
-	
-	    	         
-	 }
+   
+                   
+    }
 )
 
 

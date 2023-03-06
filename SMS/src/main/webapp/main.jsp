@@ -19,7 +19,7 @@
        <link rel="stylesheet" href="./css/logoutCss.css">
        <link rel="stylesheet" href="./css/logoutPopupCss.css">
        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
@@ -83,12 +83,12 @@
                     <!-- 게시물 맨 위칸 -->
                         <div class="postTop">
                            <!-- 팔로워 프로필 사진 -->
-                            <a href="#"><img src="${review.get(i).mb_pic}"></a>
+                            <a href="unUserProfile.jsp"><img src="${review.get(i).mb_pic}"></a>
                             <ul class="mainname">
                                 <!-- 팔로워 아이디(게시물 작성자)-->                           
                                 <li><a href="#">${review.get(i).mb_id}</a></li>
                                 <!-- 해시태그 -->                           
-                                <li><a href="searchService.do">${review.get(i).rv_hashtag}</a></li>
+                                <li><a href="searchService.do">${review.get(i).res_name}, #${review.get(i).rv_hashtag}</a></li>
                                 
                             </ul>
                         </div> <!-- postTop 닫는 디브 -->
@@ -115,13 +115,13 @@
                                     <!-- 댓글 버튼 -->
                                     <a href="javascript:openPop(`${review.get(i).rv_pic1}`)" ><img src="./img/comment.png" id="reviewPicArea"></a>
                                     
-                                    
-                                    <!-- 보관 버튼 -->
                                     <div>
                                     <input class="input1" type="hidden" value="${review.get(i).res_seq}">
                                     <input class="input2" type="hidden" value="${review.get(i).rv_seq}">
                                     <a href="#" class="saveIcon save"><img src="./img/saveWhite.png"></a>
                                     </div>
+
+	                                <div class="starRatings">⭐ ${review.get(i).rv_ratings}</div>
                                 </li>
                                 <!-- 좋아요 누적수 -->
                                 <li class="two">
@@ -198,14 +198,17 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div class="pic">
-                        <img src="${review.get(2).rv_pic1}" id="reviewPicArea1">
+                        <img src="${review.get(0).rv_pic1}" id="reviewPicArea1">
                     </div>
+                    <!-- <div class="commentPicTextArea">
+                    	글귀 사진
+                    </div> -->
                     <div class="main">
                         <div class="profile">
                             <div class="profilepic"> <a href="#"><img src="${review.get(2).mb_pic}" width="50px" border-radius="50px"></a></div>
                             <div class="comusername">
-                                <div class="comname"> <a href="#"></a> ${review.get(2).mb_nick}</div>
-                                <div class="userid">${review.get(2).mb_id}</div>
+                                <div class="comname"> <a href="#"></a> ${review.get(2).mb_id}</div>
+                                <div class="userid">${review.get(2).mb_nick}</div>
                             </div>
                         </div>
                         <div class="text">
@@ -308,7 +311,7 @@
 												</div>
 		                                    </div>
 		                                    <div class="textAreaRoc">
-		                                    	<input type="text" name="userAddress" placeholder="위치">
+		                                    	<input type="text" name="userAddress" placeholder="가게명">
 		                                    </div>
 		                                    <div class="textAreaH">
 		                                    	<input type="text" name="userHashtag" placeholder="해시태그">
@@ -330,7 +333,7 @@
     <div style="height: 10px; width: 375px; float: top;"></div>
     <!--팝업 컨텐츠 영역-->
     <form action="#">
-      <div><a href="login.jsp">로그아웃</a></div>
+      <div class="logout"><a href="login.jsp">로그아웃</a></div>
     </form>
   </div>
 <div class="popup_overlay_logout" onclick="closePopuplogout()"></div>s

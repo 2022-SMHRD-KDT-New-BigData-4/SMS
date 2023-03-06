@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.userinfoVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.reviewVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,13 +20,14 @@
     	<link rel="stylesheet" href="./css/newPostMakePopup.css">
         <link rel="stylesheet" href="./css/logoutCss.css">
         <link rel="stylesheet" href="./css/logoutPopupCss.css"> 
-    	<link rel="stylesheet" href="./css/commentCss.css">
+    	<link rel="stylesheet" href="./css/profilePopCss.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  	
     	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body link="black" vlink="black" alink="black">
         <div class="container1">
-        
+        <% 
+        List<userinfoVO> a = (List<userinfoVO>)request.getAttribute("userinfo");%>
             <!-- 1. left -->
             <div class="left">
             <!-- 로고 -->
@@ -75,11 +79,11 @@
                   	<div><img id="setImg" src="${user2.mb_pic}"></div>
                     <div>
                     	<ul class="userSetText">
-                    		 <li style="margin-top:36px;">${userinfo.get(0).mb_id}<button style="margin-left:10px;">프로필 변경</button></li>
+                    		 <li style="margin-top:36px;">${userinfo.get(0).mb_id}</li>
               				 <li class="userSetText_sums">
-                  				<a href="#">리뷰00</a>
-                  				<a href="#">팔로우00</a>
-                 				 <a href="#">팔로잉00</a>
+                  				<a href="#">리뷰 <%= a.size() %> </a>
+                  				<a href="#">팔로우 4</a>
+                 				 <a href="#">팔로잉 4</a>
               				</li>
               				<li>${userinfo.get(0).mb_name}</li>
               				<li>${userinfo.get(0).mb_profile}</li>
@@ -127,25 +131,27 @@
             <div class="upload">
                 <div class="overlay"></div>
                     <div>
-                       <img src="${userinfo.get(i).rv_pic1}" id="profile_review">
+                       <img src="#" id="profile_review">
+						<P id ="reviewPtag"> ${userinfo.get(i).rv_content } </P>
                     </div>
                     <div class="main">
                         <div class="profile">
-                            <div class="profilepic"> <a href="#"></a></div>
+                            <div class="profilepic"> <a href="#"></a><img src="${user2.mb_pic }"></div>
                             <div class="comusername">
-                                <div class="comname"> <a href="#"></a> ${userinfo.get(i).mb_nick}</div>
-                                <div class="userid">${userinfo.get(i).mb_id}</div>
+                                <div class="comname"> <a href="#"></a> ${userinfo.get(i).mb_id}</div>
+                                <div class="userid">${userinfo.get(i).mb_nick}</div>
                             </div>
                         </div>
                         <div class="text">
                             <div class="comment">
-                         	<c:forEach var="i" begin="0" end="2">
-                                <div class="comProfilepic"><a href="#"></a></div>
+                         	<c:forEach var="i" begin="1" end="3">
+                                <div class="comProfilepic"><a href="#"></a><img src="${total.get(i).mb_pic }" style="width:60px;border-radius: 50%;"></div>
                                 <div class="comments">
-                                    <div class="comName"><a href="#"></a></div>
+                                    <div class="comName"><a href="#">${total.get(i).mb_id }</a></div>
                                 </div>
 		                         <div class="comText" onclick="toggleEllipsis(this)">
-            						<p>${total.get(i).rp_content}</p>             		
+            						<p>${total.get(i).rp_content}</p> 
+            						            		
 	    	                     </div>
                                 <div class="like">
                                     <a href="javascript:;" class="likeIcon heart">
@@ -155,7 +161,7 @@
                          	</c:forEach>  
                             </div>
                             <div class="userComment">
-                                <div class="myProfilepic"> <a href="#"></a></div>
+                                <div class="myProfilepic"> <a href="#"><img src="${user2.mb_pic }" style="width:50px;border-radius: 50%;"></a></div>
                                 <form action="ReplyService.do">
                                 <div class="myComment">
                                     <input type="text" id="comInput" name="commentText" placeholder="댓글달기">

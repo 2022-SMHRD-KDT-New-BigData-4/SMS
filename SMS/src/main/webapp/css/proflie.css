@@ -1,4 +1,16 @@
 @charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+.starRating{
+	    margin-left: 440px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
 .left {
     /* border: 10px solid red; */
     box-sizing: border-box;

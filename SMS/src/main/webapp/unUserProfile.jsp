@@ -71,17 +71,17 @@
                 </form>
                 <div class="container">
                   <div class="proflieBox">
-                  	<div><img id="setImg" src="./img/ex_post.jpg"></div>
+                  	<div><img id="setImg" src="${total.get(0).mb_pic}"></div>
                     <div>
                     	<ul class="userSetText">
-                    		 <li style="margin-top:36px;">유저아이디<button style="margin-left:10px;">프로필 변경</button><button style="margin-left:10px;">팔로우</button></li>
+                    		 <li style="margin-top:36px;">${total.get(0).mb_id}<button style="margin-left:10px;">프로필 변경</button><button style="margin-left:10px;">팔로잉</button></li>
               				 <li class="userSetText_sums">
-                  				<a href="#">게시물00</a>
-                  				<a href="#">팔로우00</a>
-                 				 <a href="#">팔로잉00</a>
+                  				<a href="#">게시물 10</a>
+                  				<a href="#">팔로우 3</a>
+                 				 <a href="#">팔로잉 3</a>
               				</li>
-              				<li>유저 이름</li>
-              				<li>소개글</li>
+              				<li>${total.get(0).mb_nick}</li>
+              				<li>8강의실 최강 미남</li>
                     	</ul>
                     </div>
                   </div>
@@ -90,7 +90,7 @@
                    <c:forEach var="i" begin="0" end="9">
                 
                     <div>
-                         <a href="javascript:openPop()"><img src="#"></a>
+                         <a href="javascript:openPop()"><img src="${reviewOpen.get(i).rv_pic1}"></a>
                       </div>
                   </c:forEach>
                   </div>
@@ -204,9 +204,10 @@
                                 <div class="textArea">
                                     <div class="textAreaPic">
                                         <div class="newTextProfilePic">
+                                        	<img src="${user2.mb_pic }" style="width:50px; border-radius: 50%;">
                                         </div>
                                         <div class="newTextProfileId">
-                                            id
+                                            ${user.mb_id }
                                         </div>
                                     </div>
                                     <div class="textAreaMain">

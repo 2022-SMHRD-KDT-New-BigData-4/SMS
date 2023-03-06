@@ -122,10 +122,11 @@
                         <%
                         	List<totalreplyVO> list2 = (List<totalreplyVO>) session.getAttribute("total");
                         	List<mainVO> list3 = (List<mainVO>) request.getAttribute("rank");
-                        	
+                        	int a = 0;
                         	
                         	for(mainVO vo:list3){
-                        %>
+                        		if(a <=3){
+                        %>		
 	                            <li class="rec">
 	                            <a><img class="rec_img" src="<%=vo.getMb_pic() %>"></a>
 	                                
@@ -134,7 +135,9 @@
 	                                <p><%=vo.getMb_name() %></p> 
 	                            </div>
 	                            </li>   
- 						<%} %>
+	                            
+ 						<% a++;
+ 						} }%>
                             
                               
                         </ul>

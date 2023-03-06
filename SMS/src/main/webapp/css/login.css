@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
+
 a { text-decoration:none; }
 .box1_min1 img{
 	width:200px;

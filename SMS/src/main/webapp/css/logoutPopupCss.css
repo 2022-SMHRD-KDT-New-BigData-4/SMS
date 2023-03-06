@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+font-family: 'Jeju Gothic', sans-serif;
+}
+
 /*popup*/
 .popup_layer_logout {
 	position:fixed;
@@ -20,7 +26,7 @@
     overflow: hidden; 
     height: 50px; 
     width: 200px;
-    margin-top: 90px;
+    margin-top: 160px;
     border-radius: 10px;
     border: 1px solid gainsboro;
     transform:translate(-50%, -50%);
